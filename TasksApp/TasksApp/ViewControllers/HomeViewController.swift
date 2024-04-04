@@ -8,25 +8,17 @@
 import UIKit
 
 protocol HomeViewControllerDelegate: AnyObject {
-    func didTappedButtonMenu()
+    func didTapButtonMenu()
 }
 
 final class HomeViewController: UIViewController {
-    
-    // MARK: - Properties
-    
     weak var delegate: HomeViewControllerDelegate?
-    
-    // MARK: - View Lifecycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         view.backgroundColor = .white
         setupNavigationBar()
     }
-    
-    // MARK: - Private Methods
     
     private func setupNavigationBar() {
         title = Constants.title
@@ -37,7 +29,7 @@ final class HomeViewController: UIViewController {
     }
     
     @objc private func barButtonTapped() {
-        delegate?.didTappedButtonMenu()
+        delegate?.didTapButtonMenu()
     }
 }
 

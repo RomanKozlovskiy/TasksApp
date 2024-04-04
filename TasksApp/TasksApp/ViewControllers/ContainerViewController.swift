@@ -8,14 +8,11 @@
 import UIKit
 
 final class ContainerViewController: UIViewController {
-    
     enum MenuState {
         case closed
         case opened
     }
-    
-    // MARK: - Private Properties
-    
+
     private var menuState: MenuState = .closed
     
     private let menuViewController = MenuViewController()
@@ -26,18 +23,13 @@ final class ContainerViewController: UIViewController {
     private lazy var task1ViewController = Task1ViewController()
     private lazy var task2ViewController = Task2ViewController()
     private lazy var task3ViewController = Task3ViewController()
-    
-    // MARK: - ViewLifecycle
-    
+  
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         configureChildsControllers()
         configureGestures()
     }
-    
-    // MARK: - Private Methods
-    
+
     private func configureChildsControllers() {
         addChild(menuViewController)
         view.addSubview(menuViewController.view)
@@ -111,19 +103,13 @@ final class ContainerViewController: UIViewController {
     }
 }
 
-// MARK: - HomeViewControllerDelegate
-
 extension ContainerViewController: HomeViewControllerDelegate {
-    
-    func didTappedButtonMenu() {
+    func didTapButtonMenu() {
         toggleMenu()
     }
 }
 
-// MARK: - MenuViewControllerDelegate
-
 extension ContainerViewController: MenuViewControllerDelegate {
-    
     func didSelect(menuItem: MenuViewController.MenuOptions) {
         toggleMenu()
         
@@ -140,12 +126,8 @@ extension ContainerViewController: MenuViewControllerDelegate {
     }
 }
 
-// MARK: - Constants
-
 private extension ContainerViewController {
-    
     enum Constants {
         static let homeViewControllerTitle = "Home"
     }
 }
-

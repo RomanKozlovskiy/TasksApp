@@ -12,7 +12,6 @@ protocol MenuViewControllerDelegate: AnyObject {
 }
 
 final class MenuViewController: UIViewController {
-    
     enum MenuOptions: String, CaseIterable {
         case home = "Home"
         case task1 = "Task №1"
@@ -20,7 +19,7 @@ final class MenuViewController: UIViewController {
         case task3 = "Task №3"
     }
     
-    // MARK: - Properties
+    weak var delegate: MenuViewControllerDelegate?
     
     private let tableView: UITableView = {
         let tableView = UITableView()
@@ -29,13 +28,8 @@ final class MenuViewController: UIViewController {
         return tableView
     }()
     
-    weak var delegate: MenuViewControllerDelegate?
-    
-    // MARK: - View Lifecycle
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         view.backgroundColor = .lightGray
         view.addSubview(tableView)
         tableView.delegate = self
@@ -47,8 +41,6 @@ final class MenuViewController: UIViewController {
         tableView.frame = CGRect(x: 0, y: view.safeAreaInsets.top, width: view.bounds.size.width, height: view.bounds.size.height)
     }
 }
-
-// MARK: - UITableViewDataSource, UITableViewDelegate
 
 extension MenuViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -64,13 +56,10 @@ extension MenuViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        
         let menuItem = MenuOptions.allCases[indexPath.row]
         delegate?.didSelect(menuItem: menuItem)
     }
 }
-
-// MARK: - Constants
 
 private extension MenuViewController {
     enum Constants {

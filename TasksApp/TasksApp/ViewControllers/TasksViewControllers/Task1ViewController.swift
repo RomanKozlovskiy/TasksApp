@@ -8,10 +8,8 @@
 import UIKit
 
 final class Task1ViewController: UIViewController {
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         view.backgroundColor = .red
         title = String(describing: Task1ViewController.self)
     }
