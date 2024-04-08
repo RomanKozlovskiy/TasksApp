@@ -17,6 +17,7 @@
 		CE1B0FC52BBD933100214119 /* Task1ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1B0FC42BBD933100214119 /* Task1ViewController.swift */; };
 		CE1B0FC72BBD933A00214119 /* Task2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1B0FC62BBD933A00214119 /* Task2ViewController.swift */; };
 		CE1B0FC92BBD934100214119 /* Task3ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1B0FC82BBD934100214119 /* Task3ViewController.swift */; };
+		CEBB27DC2BC401EA00076C3F /* CoverView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBB27DB2BC401EA00076C3F /* CoverView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		CE1B0FC42BBD933100214119 /* Task1ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Task1ViewController.swift; sourceTree = "<group>"; };
 		CE1B0FC62BBD933A00214119 /* Task2ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Task2ViewController.swift; sourceTree = "<group>"; };
 		CE1B0FC82BBD934100214119 /* Task3ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Task3ViewController.swift; sourceTree = "<group>"; };
+		CEBB27DB2BC401EA00076C3F /* CoverView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoverView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,6 +69,7 @@
 				CE1B0FAA2BBD91AC00214119 /* AppDelegate.swift */,
 				CE1B0FAC2BBD91AC00214119 /* SceneDelegate.swift */,
 				CE1B0FBE2BBD928700214119 /* ViewControllers */,
+				CEBB27DA2BC401A800076C3F /* Views */,
 				CE1B0FB32BBD91AD00214119 /* Assets.xcassets */,
 				CE1B0FB52BBD91AD00214119 /* LaunchScreen.storyboard */,
 				CE1B0FB82BBD91AD00214119 /* Info.plist */,
@@ -93,6 +96,14 @@
 				CE1B0FC82BBD934100214119 /* Task3ViewController.swift */,
 			);
 			path = TasksViewControllers;
+			sourceTree = "<group>";
+		};
+		CEBB27DA2BC401A800076C3F /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				CEBB27DB2BC401EA00076C3F /* CoverView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -167,6 +178,7 @@
 			files = (
 				CE1B0FC22BBD92F700214119 /* HomeViewController.swift in Sources */,
 				CE1B0FC92BBD934100214119 /* Task3ViewController.swift in Sources */,
+				CEBB27DC2BC401EA00076C3F /* CoverView.swift in Sources */,
 				CE1B0FAF2BBD91AC00214119 /* ContainerViewController.swift in Sources */,
 				CE1B0FC72BBD933A00214119 /* Task2ViewController.swift in Sources */,
 				CE1B0FAB2BBD91AC00214119 /* AppDelegate.swift in Sources */,
