@@ -14,7 +14,7 @@ protocol MenuViewControllerDelegate: AnyObject {
 final class MenuViewController: UIViewController {
     enum MenuOptions: String, CaseIterable {
         case home = "Home"
-        case task1 = "Task №1"
+        case task1 = "Погода"
         case task2 = "Task №2"
         case task3 = "Task №3"
     }

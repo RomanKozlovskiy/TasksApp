@@ -30,7 +30,6 @@ struct Locality: Decodable {
 
 struct Fact: Decodable {
     let temp: Int
-    let icon: String
 }
 
 struct Forecast: Decodable {

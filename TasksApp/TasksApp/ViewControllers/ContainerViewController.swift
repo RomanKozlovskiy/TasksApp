@@ -20,7 +20,7 @@ final class ContainerViewController: UIViewController {
     private var navigationVC: UINavigationController?
     private var tasksControllers = [UIViewController]()
     
-    private lazy var task1ViewController = Task1ViewController()
+    private lazy var task1ViewController = WeatherViewController()
     private lazy var task2ViewController = Task2ViewController()
     private lazy var task3ViewController = Task3ViewController()
   
