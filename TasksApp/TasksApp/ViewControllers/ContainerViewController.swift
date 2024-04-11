@@ -82,6 +82,7 @@ final class ContainerViewController: UIViewController {
                            options: .curveEaseInOut) {
                 
                 self.navigationVC?.view.frame.origin.x = self.homeViewController.view.frame.size.width - 100
+                self.homeViewController.view.backgroundColor = .lightGray
                 
             } completion: { [weak self] _ in
                 self?.menuState = .opened
@@ -95,7 +96,7 @@ final class ContainerViewController: UIViewController {
                            options: .curveEaseInOut) {
                 
                 self.navigationVC?.view.frame.origin.x = 0
-                
+                self.homeViewController.view.backgroundColor = .white
             } completion: { [weak self] _ in
                 self?.menuState = .closed
             }
