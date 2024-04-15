@@ -14,7 +14,7 @@ protocol MenuViewControllerDelegate: AnyObject {
 final class MenuViewController: UIViewController {
     enum MenuOptions: String, CaseIterable {
         case home = "Home"
-        case task1 = "Task №1"
+        case task1 = "Погода"
         case task2 = "Task №2"
         case task3 = "Task №3"
     }
@@ -30,7 +30,7 @@ final class MenuViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .lightGray
+        view.backgroundColor = .white
         view.addSubview(tableView)
         tableView.delegate = self
         tableView.dataSource = self
@@ -51,6 +51,8 @@ extension MenuViewController: UITableViewDataSource, UITableViewDelegate {
         let cell = tableView.dequeueReusableCell(withIdentifier: Constants.cellReuseId, for: indexPath)
         cell.textLabel?.text = MenuOptions.allCases[indexPath.row].rawValue
         cell.backgroundColor = .clear
+        cell.layer.borderWidth = 0.3
+        cell.layer.borderColor = UIColor.lightGray.cgColor
         return cell
     }
     
