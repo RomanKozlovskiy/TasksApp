@@ -15,42 +15,29 @@ struct WeatherInfo {
     let averageNightTemp: Int?
     
     var currentTempDescription: String {
-        switch currentTemp {
-        case 1, 21, 31, 41:
-            return "Температура сейчас \(currentTemp) градус"
-        case 2, 3, 4, 22, 23, 24, 32, 33, 34, 42, 43, 44:
-            return "Температура сейчас \(currentTemp) градуса"
-        default:
-            return "Температура сейчас \(currentTemp) градусов"
-        }
+        return "Температура сейчас \(currentTemp) \(getPluralForm(currentTemp, words: units))"
     }
     
     var averageDayTempDescription: String {
         if let averageDayTemp = averageDayTemp {
-            switch averageDayTemp {
-            case 1, 21, 31, 41:
-                return "Средняя температура днем \(averageDayTemp) градус"
-            case 2, 3, 4, 22, 23, 24, 32, 33, 34, 42, 43, 44:
-                return "Средняя температура днем \(averageDayTemp) градуса"
-            default:
-                return "Средняя температура днем \(averageDayTemp) градусов"
-            }
+            return "Средняя температура днем \(averageDayTemp) \(getPluralForm(averageDayTemp, words: units))"
         }
         return "Нет данных о средней температуре днем"
     }
     
     var averageNightTempDescription: String {
         if let averageNightTemp = averageNightTemp {
-            switch averageNightTemp {
-            case 1, 21, 31, 41:
-                return "Средняя температура ночью \(averageNightTemp) градус"
-            case 2, 3, 4, 22, 23, 24, 32, 33, 34, 42, 43, 44:
-                return "Средняя температура ночью \(averageNightTemp) градуса"
-            default:
-                return "Средняя температура ночью \(averageNightTemp) градусов"
-            }
+            return "Средняя температура ночью \(averageNightTemp) \(getPluralForm(averageNightTemp, words: units))"
         }
         return "Нет данных о средней температуре ночью"
+    }
+    
+    private let units = ["градус", "градуса", "градусов"]
+    
+    private func getPluralForm(_ number: Int, words: [String]) -> String {
+        let absNumber = abs(number)
+        let index = (absNumber % 100 > 4 && absNumber % 100 <= 20) ? 2 : absNumber % 10 == 1 ? 0 : (absNumber % 10 > 1 && absNumber % 10 < 5 ? 1 : 2)
+        return words[index]
     }
     
     init(weatherData: WeatherData) {
