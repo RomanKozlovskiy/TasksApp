@@ -78,36 +78,151 @@
 		CE1B0FA92BBD91AC00214119 /* TasksApp */ = {
 			isa = PBXGroup;
 			children = (
-				CE1B0FAA2BBD91AC00214119 /* AppDelegate.swift */,
-				CE1B0FAC2BBD91AC00214119 /* SceneDelegate.swift */,
-				CE1B0FBE2BBD928700214119 /* ViewControllers */,
-				CEBB27DA2BC401A800076C3F /* Views */,
-				CE1B0FB32BBD91AD00214119 /* Assets.xcassets */,
-				CE1B0FB52BBD91AD00214119 /* LaunchScreen.storyboard */,
-				CE1B0FB82BBD91AD00214119 /* Info.plist */,
+				CE61DC892BCE618F00DAC72A /* Application */,
+				CE61DC8A2BCE61A300DAC72A /* Library  */,
+				CE61DC8B2BCE61BF00DAC72A /* Configuration */,
+				CE61DC972BCE6AAA00DAC72A /* Resources */,
 			);
 			path = TasksApp;
 			sourceTree = "<group>";
 		};
-		CE1B0FBE2BBD928700214119 /* ViewControllers */ = {
+		CE61DC892BCE618F00DAC72A /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				CE1B0FAA2BBD91AC00214119 /* AppDelegate.swift */,
+				CE1B0FAC2BBD91AC00214119 /* SceneDelegate.swift */,
+				CE61DC8C2BCE62AA00DAC72A /* DI */,
+				CE61DC8D2BCE62B000DAC72A /* UI */,
+				CEF505DB2BC6914A0087406E /* Model */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
+		CE61DC8A2BCE61A300DAC72A /* Library  */ = {
+			isa = PBXGroup;
+			children = (
+				CE61DC902BCE634700DAC72A /* Coordinator */,
+			);
+			path = "Library ";
+			sourceTree = "<group>";
+		};
+		CE61DC8B2BCE61BF00DAC72A /* Configuration */ = {
+			isa = PBXGroup;
+			children = (
+				CE1B0FB82BBD91AD00214119 /* Info.plist */,
+				CEF505D92BC66C340087406E /* Config.plist */,
+			);
+			path = Configuration;
+			sourceTree = "<group>";
+		};
+		CE61DC8C2BCE62AA00DAC72A /* DI */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = DI;
+			sourceTree = "<group>";
+		};
+		CE61DC8D2BCE62B000DAC72A /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				CE61DC8F2BCE62EB00DAC72A /* Coordinators */,
+				CE61DC8E2BCE62E400DAC72A /* Screens */,
+				CEBB27DA2BC401A800076C3F /* Views */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		CE61DC8E2BCE62E400DAC72A /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				CE61DC912BCE640800DAC72A /* Menu */,
+				CE61DC922BCE642E00DAC72A /* Weather */,
+				CE61DC932BCE695B00DAC72A /* Task2 */,
+				CE61DC942BCE696400DAC72A /* Task3 */,
+			);
+			path = Screens;
+			sourceTree = "<group>";
+		};
+		CE61DC8F2BCE62EB00DAC72A /* Coordinators */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Coordinators;
+			sourceTree = "<group>";
+		};
+		CE61DC902BCE634700DAC72A /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Coordinator;
+			sourceTree = "<group>";
+		};
+		CE61DC912BCE640800DAC72A /* Menu */ = {
 			isa = PBXGroup;
 			children = (
 				CE1B0FAE2BBD91AC00214119 /* ContainerViewController.swift */,
 				CE1B0FBF2BBD92CD00214119 /* MenuViewController.swift */,
 				CE1B0FC12BBD92F700214119 /* HomeViewController.swift */,
-				CE1B0FC32BBD931000214119 /* TasksViewControllers */,
 			);
-			path = ViewControllers;
+			path = Menu;
 			sourceTree = "<group>";
 		};
-		CE1B0FC32BBD931000214119 /* TasksViewControllers */ = {
+		CE61DC922BCE642E00DAC72A /* Weather */ = {
 			isa = PBXGroup;
 			children = (
-				CEF505D52BC66B810087406E /* WeatherModule */,
+				CE1B0FC42BBD933100214119 /* WeatherViewController.swift */,
+			);
+			path = Weather;
+			sourceTree = "<group>";
+		};
+		CE61DC932BCE695B00DAC72A /* Task2 */ = {
+			isa = PBXGroup;
+			children = (
 				CE1B0FC62BBD933A00214119 /* Task2ViewController.swift */,
+			);
+			path = Task2;
+			sourceTree = "<group>";
+		};
+		CE61DC942BCE696400DAC72A /* Task3 */ = {
+			isa = PBXGroup;
+			children = (
 				CE1B0FC82BBD934100214119 /* Task3ViewController.swift */,
 			);
-			path = TasksViewControllers;
+			path = Task3;
+			sourceTree = "<group>";
+		};
+		CE61DC952BCE69FA00DAC72A /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+				CE61DC962BCE6A0B00DAC72A /* WeatherEntity */,
+			);
+			path = Entity;
+			sourceTree = "<group>";
+		};
+		CE61DC962BCE6A0B00DAC72A /* WeatherEntity */ = {
+			isa = PBXGroup;
+			children = (
+				CEF505DC2BC691650087406E /* WeatherData.swift */,
+				CEF505DE2BC6A1660087406E /* WeatherInfo.swift */,
+			);
+			path = WeatherEntity;
+			sourceTree = "<group>";
+		};
+		CE61DC972BCE6AAA00DAC72A /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				CE1B0FB32BBD91AD00214119 /* Assets.xcassets */,
+				CE1B0FB52BBD91AD00214119 /* LaunchScreen.storyboard */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		CE61DC982BCE6B5000DAC72A /* ApiClient */ = {
+			isa = PBXGroup;
+			children = (
+				CEF505D72BC66BC00087406E /* WeatherNetworkManager.swift */,
+			);
+			path = ApiClient;
 			sourceTree = "<group>";
 		};
 		CEBB27DA2BC401A800076C3F /* Views */ = {
@@ -118,32 +233,13 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
-		CEF505D52BC66B810087406E /* WeatherModule */ = {
+		CEF505DB2BC6914A0087406E /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				CE1B0FC42BBD933100214119 /* WeatherViewController.swift */,
-				CEF505D62BC66B950087406E /* WeatherNetworkService */,
-				CEF505DB2BC6914A0087406E /* Models */,
+				CE61DC982BCE6B5000DAC72A /* ApiClient */,
+				CE61DC952BCE69FA00DAC72A /* Entity */,
 			);
-			path = WeatherModule;
-			sourceTree = "<group>";
-		};
-		CEF505D62BC66B950087406E /* WeatherNetworkService */ = {
-			isa = PBXGroup;
-			children = (
-				CEF505D72BC66BC00087406E /* WeatherNetworkManager.swift */,
-				CEF505D92BC66C340087406E /* Config.plist */,
-			);
-			path = WeatherNetworkService;
-			sourceTree = "<group>";
-		};
-		CEF505DB2BC6914A0087406E /* Models */ = {
-			isa = PBXGroup;
-			children = (
-				CEF505DC2BC691650087406E /* WeatherData.swift */,
-				CEF505DE2BC6A1660087406E /* WeatherInfo.swift */,
-			);
-			path = Models;
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -381,7 +477,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = TasksApp/Info.plist;
+				INFOPLIST_FILE = TasksApp/Configuration/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
@@ -411,7 +507,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = TasksApp/Info.plist;
+				INFOPLIST_FILE = TasksApp/Configuration/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
