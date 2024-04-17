@@ -17,10 +17,10 @@ final class ApplicationCoordinator: BaseCoordinator {
     }
     
     override func start() {
-       runMenuScreen()
+       runMenuFlow()
     }
     
-    private func runMenuScreen() {
+    private func runMenuFlow() {
         let coordinator = coordinatorFactory.makeMenuCoordinator(router: router)
         coordinator.finishFlow = { [weak self, weak coordinator] in
             self?.start()

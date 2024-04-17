@@ -23,11 +23,11 @@ final class MenuCoordinator: BaseCoordinator {
     }
     
     private func makeMenu() {
-        let menuScreen = screenFactory.makeMenuScreen()
+        let menuContainerScreen = screenFactory.makeMenuScreen()
         
-        menuScreen.onFinish = { [weak self] in
+        menuContainerScreen.onFinish = { [weak self] in
             self?.finishFlow?()
         }
-        router.setRootModule(menuScreen, hideBar: true)
+        router.setRootModule(menuContainerScreen, hideBar: true)
     }
 }
