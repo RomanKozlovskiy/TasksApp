@@ -13,16 +13,18 @@ final class ContainerViewController: UIViewController {
         case opened
     }
 
+    var onFinish: (() -> Void)?
+    
     private var menuState: MenuState = .closed
     
-    private let menuViewController = MenuViewController()
-    private let homeViewController = HomeViewController()
+    private var menuViewController: MenuViewController!
+    private var homeViewController: HomeViewController!
+    private var weatherViewController: WeatherViewController!
+    private var task2ViewController: Task2ViewController!
+    private var task3ViewController: Task3ViewController!
+    
     private var navigationVC: UINavigationController?
     private var tasksControllers = [UIViewController]()
-    
-    private lazy var task1ViewController = WeatherViewController()
-    private lazy var task2ViewController = Task2ViewController()
-    private lazy var task3ViewController = Task3ViewController()
   
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,6 +32,20 @@ final class ContainerViewController: UIViewController {
         configureGestures()
     }
 
+     func addDependency(
+        menuVC: MenuViewController,
+        homeVC: HomeViewController,
+        weatherVC: WeatherViewController,
+        task2VC: Task2ViewController,
+        task3VC: Task3ViewController
+    ) {
+        self.menuViewController = menuVC
+        self.homeViewController = homeVC
+        self.weatherViewController = weatherVC
+        self.task2ViewController = task2VC
+        self.task3ViewController = task3VC
+    }
+    
     private func configureChildsControllers() {
         addChild(menuViewController)
         view.addSubview(menuViewController.view)
@@ -118,7 +134,7 @@ extension ContainerViewController: MenuViewControllerDelegate {
         case .home:
             resetToHome()
         case .task1:
-            open(task1ViewController)
+            open(weatherViewController)
         case .task2:
             open(task2ViewController)
         case .task3:

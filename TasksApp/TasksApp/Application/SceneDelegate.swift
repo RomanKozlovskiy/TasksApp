@@ -9,14 +9,21 @@ import UIKit
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     var window: UIWindow?
-    var coverView: CoverView?
+    private var coverView: CoverView?
+    private let appFactory: AppFactory = Di()
+    private var coordinator: Coordinator?
     
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         guard let windowScene = (scene as? UIWindowScene) else { return }
-        window = UIWindow(windowScene: windowScene)
-        let viewController = ContainerViewController()
-        window?.rootViewController = viewController
-        window?.makeKeyAndVisible()
+        runUI(windowScene: windowScene)
+    }
+    
+    private func runUI(windowScene: UIWindowScene) {
+        let (window, coordinator) = appFactory.makeKeyWindowWithCoordinator(windowScene: windowScene)
+        self.window = window
+        self.coordinator = coordinator
+        window.makeKeyAndVisible()
+        coordinator.start()
     }
     
     func sceneWillResignActive(_ scene: UIScene) {

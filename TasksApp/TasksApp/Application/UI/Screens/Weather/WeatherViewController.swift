@@ -9,11 +9,14 @@ import UIKit
 import SnapKit
 
 final class WeatherViewController: UIViewController {
-    private let weatherNetworkManager = WeatherNetworkManager()
+    private var weatherNetworkManager: WeatherNetworkManager!
     private var weatherInfo: WeatherInfo?
-    
     private let verticalStackView = UIStackView()
     private let horizontalStackView = UIStackView()
+    
+    func addDependency(weatherNetworkManager: WeatherNetworkManager) {
+        self.weatherNetworkManager = weatherNetworkManager
+    }
     
     private let activityIndicator: UIActivityIndicatorView = {
         let activityIndicator = UIActivityIndicatorView(style: .large)
