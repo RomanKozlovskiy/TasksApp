@@ -13,6 +13,8 @@ final class ContainerViewController: UIViewController {
         case opened
     }
 
+    var onFinish: (() -> Void)?
+    
     private var menuState: MenuState = .closed
     
     private let menuViewController = MenuViewController()
