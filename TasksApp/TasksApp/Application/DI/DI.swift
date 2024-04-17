@@ -10,10 +10,12 @@ import UIKit
 final class Di {
     fileprivate let screenFactory: ScreenFactory
     fileprivate let coordinatorFactory: CoordinatorFactory
+    fileprivate let weatherNetworkManager: WeatherNetworkManager
     
     init() {
         self.screenFactory = ScreenFactory()
         self.coordinatorFactory = CoordinatorFactory(screenFactory: screenFactory)
+        self.weatherNetworkManager = WeatherNetworkManager()
         self.screenFactory.di = self
     }
 }
@@ -40,7 +42,24 @@ final class ScreenFactory {
     fileprivate init() {}
     
     func makeMenuScreen() -> ContainerViewController {
-        return ContainerViewController()
+        let menuVC = MenuViewController()
+        let homeVC = HomeViewController()
+        let weatherVC = WeatherViewController()
+        let task2VC = Task2ViewController()
+        let task3VC = Task3ViewController()
+        weatherVC.addDependency(weatherNetworkManager: di.weatherNetworkManager)
+        
+        let containerViewController = ContainerViewController()
+        
+        containerViewController.addDependency(
+            menuVC: menuVC,
+            homeVC: homeVC,
+            weatherVC: weatherVC,
+            task2VC: task2VC,
+            task3VC: task3VC
+        )
+        
+        return containerViewController
     }
 }
 
