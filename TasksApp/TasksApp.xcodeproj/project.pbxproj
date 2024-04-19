@@ -15,7 +15,7 @@
 		CE1B0FC02BBD92CD00214119 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1B0FBF2BBD92CD00214119 /* MenuViewController.swift */; };
 		CE1B0FC22BBD92F700214119 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1B0FC12BBD92F700214119 /* HomeViewController.swift */; };
 		CE1B0FC52BBD933100214119 /* WeatherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1B0FC42BBD933100214119 /* WeatherViewController.swift */; };
-		CE1B0FC72BBD933A00214119 /* Task2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1B0FC62BBD933A00214119 /* Task2ViewController.swift */; };
+		CE1B0FC72BBD933A00214119 /* CountryListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1B0FC62BBD933A00214119 /* CountryListViewController.swift */; };
 		CE1B0FC92BBD934100214119 /* Task3ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1B0FC82BBD934100214119 /* Task3ViewController.swift */; };
 		CE560A532BC5667B00E0CEE7 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = CE560A522BC5667B00E0CEE7 /* Alamofire */; };
 		CE61DCB22BCEB24E00DAC72A /* DI.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE61DCB12BCEB24E00DAC72A /* DI.swift */; };
@@ -24,6 +24,7 @@
 		CE61DCB82BCEB51600DAC72A /* ApplicationCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE61DCB72BCEB51600DAC72A /* ApplicationCoordinator.swift */; };
 		CE61DCBA2BCEB67200DAC72A /* MenuCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE61DCB92BCEB67200DAC72A /* MenuCoordinator.swift */; };
 		CEBB27DC2BC401EA00076C3F /* CoverView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBB27DB2BC401EA00076C3F /* CoverView.swift */; };
+		CEBF8CD92BD28946003D9B70 /* CountryListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBF8CD82BD28946003D9B70 /* CountryListTableViewCell.swift */; };
 		CEF505D82BC66BC00087406E /* WeatherNetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF505D72BC66BC00087406E /* WeatherNetworkManager.swift */; };
 		CEF505DA2BC66C340087406E /* Config.plist in Resources */ = {isa = PBXBuildFile; fileRef = CEF505D92BC66C340087406E /* Config.plist */; };
 		CEF505DD2BC691650087406E /* WeatherData.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF505DC2BC691650087406E /* WeatherData.swift */; };
@@ -42,7 +43,7 @@
 		CE1B0FBF2BBD92CD00214119 /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		CE1B0FC12BBD92F700214119 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		CE1B0FC42BBD933100214119 /* WeatherViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherViewController.swift; sourceTree = "<group>"; };
-		CE1B0FC62BBD933A00214119 /* Task2ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Task2ViewController.swift; sourceTree = "<group>"; };
+		CE1B0FC62BBD933A00214119 /* CountryListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryListViewController.swift; sourceTree = "<group>"; };
 		CE1B0FC82BBD934100214119 /* Task3ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Task3ViewController.swift; sourceTree = "<group>"; };
 		CE61DCB12BCEB24E00DAC72A /* DI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DI.swift; sourceTree = "<group>"; };
 		CE61DCB32BCEB44300DAC72A /* Coordinator .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Coordinator .swift"; sourceTree = "<group>"; };
@@ -50,6 +51,7 @@
 		CE61DCB72BCEB51600DAC72A /* ApplicationCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationCoordinator.swift; sourceTree = "<group>"; };
 		CE61DCB92BCEB67200DAC72A /* MenuCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuCoordinator.swift; sourceTree = "<group>"; };
 		CEBB27DB2BC401EA00076C3F /* CoverView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoverView.swift; sourceTree = "<group>"; };
+		CEBF8CD82BD28946003D9B70 /* CountryListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryListTableViewCell.swift; sourceTree = "<group>"; };
 		CEF505D72BC66BC00087406E /* WeatherNetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherNetworkManager.swift; sourceTree = "<group>"; };
 		CEF505D92BC66C340087406E /* Config.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Config.plist; sourceTree = "<group>"; };
 		CEF505DC2BC691650087406E /* WeatherData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherData.swift; sourceTree = "<group>"; };
@@ -148,7 +150,7 @@
 			children = (
 				CE61DC912BCE640800DAC72A /* Menu */,
 				CE61DC922BCE642E00DAC72A /* Weather */,
-				CE61DC932BCE695B00DAC72A /* Task2 */,
+				CE61DC932BCE695B00DAC72A /* Country */,
 				CE61DC942BCE696400DAC72A /* Task3 */,
 			);
 			path = Screens;
@@ -190,12 +192,12 @@
 			path = Weather;
 			sourceTree = "<group>";
 		};
-		CE61DC932BCE695B00DAC72A /* Task2 */ = {
+		CE61DC932BCE695B00DAC72A /* Country */ = {
 			isa = PBXGroup;
 			children = (
-				CE1B0FC62BBD933A00214119 /* Task2ViewController.swift */,
+				CE1B0FC62BBD933A00214119 /* CountryListViewController.swift */,
 			);
-			path = Task2;
+			path = Country;
 			sourceTree = "<group>";
 		};
 		CE61DC942BCE696400DAC72A /* Task3 */ = {
@@ -244,6 +246,7 @@
 			isa = PBXGroup;
 			children = (
 				CEBB27DB2BC401EA00076C3F /* CoverView.swift */,
+				CEBF8CD82BD28946003D9B70 /* CountryListTableViewCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -344,9 +347,10 @@
 				CE61DCB42BCEB44300DAC72A /* Coordinator .swift in Sources */,
 				CE61DCBA2BCEB67200DAC72A /* MenuCoordinator.swift in Sources */,
 				CE1B0FAF2BBD91AC00214119 /* ContainerViewController.swift in Sources */,
+				CEBF8CD92BD28946003D9B70 /* CountryListTableViewCell.swift in Sources */,
 				CE61DCB62BCEB4F800DAC72A /* Router.swift in Sources */,
 				CEF505DD2BC691650087406E /* WeatherData.swift in Sources */,
-				CE1B0FC72BBD933A00214119 /* Task2ViewController.swift in Sources */,
+				CE1B0FC72BBD933A00214119 /* CountryListViewController.swift in Sources */,
 				CE1B0FAB2BBD91AC00214119 /* AppDelegate.swift in Sources */,
 				CEF505DF2BC6A1660087406E /* WeatherInfo.swift in Sources */,
 				CE1B0FC52BBD933100214119 /* WeatherViewController.swift in Sources */,

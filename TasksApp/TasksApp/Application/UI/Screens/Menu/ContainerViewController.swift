@@ -20,7 +20,7 @@ final class ContainerViewController: UIViewController {
     private var menuViewController: MenuViewController!
     private var homeViewController: HomeViewController!
     private var weatherViewController: WeatherViewController!
-    private var task2ViewController: Task2ViewController!
+    private var countryListViewController: CountryListViewController!
     private var task3ViewController: Task3ViewController!
     
     private var navigationVC: UINavigationController?
@@ -36,13 +36,13 @@ final class ContainerViewController: UIViewController {
         menuVC: MenuViewController,
         homeVC: HomeViewController,
         weatherVC: WeatherViewController,
-        task2VC: Task2ViewController,
+        countryListVC: CountryListViewController,
         task3VC: Task3ViewController
     ) {
         self.menuViewController = menuVC
         self.homeViewController = homeVC
         self.weatherViewController = weatherVC
-        self.task2ViewController = task2VC
+        self.countryListViewController = countryListVC
         self.task3ViewController = task3VC
     }
     
@@ -136,7 +136,7 @@ extension ContainerViewController: MenuViewControllerDelegate {
         case .task1:
             open(weatherViewController)
         case .task2:
-            open(task2ViewController)
+            open(countryListViewController)
         case .task3:
             open(task3ViewController)
         }

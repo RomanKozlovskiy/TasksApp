@@ -45,7 +45,7 @@ final class ScreenFactory {
         let menuVC = MenuViewController()
         let homeVC = HomeViewController()
         let weatherVC = WeatherViewController()
-        let task2VC = Task2ViewController()
+        let countryListVC = CountryListViewController()
         let task3VC = Task3ViewController()
         weatherVC.addDependency(weatherNetworkManager: di.weatherNetworkManager)
         
@@ -55,7 +55,7 @@ final class ScreenFactory {
             menuVC: menuVC,
             homeVC: homeVC,
             weatherVC: weatherVC,
-            task2VC: task2VC,
+            countryListVC: countryListVC,
             task3VC: task3VC
         )
         

@@ -15,7 +15,7 @@ final class MenuViewController: UIViewController {
     enum MenuOptions: String, CaseIterable {
         case home = "Home"
         case task1 = "Погода"
-        case task2 = "Task №2"
+        case task2 = "Countries"
         case task3 = "Task №3"
     }
     
