@@ -23,11 +23,11 @@ final class ContainerViewController: UIViewController {
     private var countryListViewController: CountryListViewController!
     private var task3ViewController: Task3ViewController!
     
-    private var navigationVC: UINavigationController?
-    private var tasksControllers = [UIViewController]()
+    private var childControllers = [UIViewController]()
   
     override func viewDidLoad() {
         super.viewDidLoad()
+        configureNavigationBar()
         configureChildsControllers()
         configureGestures()
     }
@@ -52,12 +52,9 @@ final class ContainerViewController: UIViewController {
         menuViewController.didMove(toParent: self)
         menuViewController.delegate = self
         
-        let navigationVC = UINavigationController(rootViewController: homeViewController)
-        addChild(navigationVC)
-        view.addSubview(navigationVC.view)
-        navigationVC.didMove(toParent: self)
-        self.navigationVC = navigationVC
-        homeViewController.delegate = self
+        addChild(homeViewController)
+        view.addSubview(homeViewController.view)
+        homeViewController.didMove(toParent: self)
     }
     
     private func configureGestures() {
@@ -77,16 +74,16 @@ final class ContainerViewController: UIViewController {
         homeViewController.view.addSubview(task.view)
         task.view.frame = homeViewController.view.frame
         task.didMove(toParent: homeViewController)
-        homeViewController.title = task.title
-        tasksControllers.append(task)
+        title = task.title
+        childControllers.append(task)
     }
     
     private func resetToHome() {
-        tasksControllers.forEach { taskVC in
+        childControllers.forEach { taskVC in
             taskVC.view.removeFromSuperview()
             taskVC.didMove(toParent: nil)
         }
-        homeViewController.title = Constants.homeViewControllerTitle
+        title = Constants.title
     }
     
     @objc private func toggleMenu() {
@@ -97,7 +94,7 @@ final class ContainerViewController: UIViewController {
                            initialSpringVelocity: 0,
                            options: .curveEaseInOut) {
                 
-                self.navigationVC?.view.frame.origin.x = self.homeViewController.view.frame.size.width - 100
+                self.homeViewController.view.frame.origin.x = self.homeViewController.view.frame.size.width - 100
                 self.homeViewController.view.backgroundColor = .lightGray
                 
             } completion: { [weak self] _ in
@@ -111,17 +108,24 @@ final class ContainerViewController: UIViewController {
                            initialSpringVelocity: 0,
                            options: .curveEaseInOut) {
                 
-                self.navigationVC?.view.frame.origin.x = 0
+                self.homeViewController?.view.frame.origin.x = 0
                 self.homeViewController.view.backgroundColor = .white
             } completion: { [weak self] _ in
                 self?.menuState = .closed
             }
         }
     }
-}
+    
+    private func configureNavigationBar() {
+        title = Constants.title
+        navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(systemName: Constants.imageSystemName),
+                                                           style: .done,
+                                                           target: self,
+                                                           action: #selector(barButtonTapped))
+        navigationController?.navigationBar.prefersLargeTitles = false
+    }
 
-extension ContainerViewController: HomeViewControllerDelegate {
-    func didTapButtonMenu() {
+    @objc private func barButtonTapped() {
         toggleMenu()
     }
 }
@@ -145,6 +149,7 @@ extension ContainerViewController: MenuViewControllerDelegate {
 
 private extension ContainerViewController {
     enum Constants {
-        static let homeViewControllerTitle = "Home"
+        static let title = "Home"
+        static let imageSystemName = "list.dash"
     }
 }

@@ -28,6 +28,6 @@ final class MenuCoordinator: BaseCoordinator {
         menuContainerScreen.onFinish = { [weak self] in
             self?.finishFlow?()
         }
-        router.setRootModule(menuContainerScreen, hideBar: true)
+        router.setRootModule(menuContainerScreen)
     }
 }
