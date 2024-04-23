@@ -9,9 +9,13 @@ import UIKit
 import SnapKit
 
 final class CountryListViewController: UIViewController {
+    private let countriesProvider: CountriesProvider
+    private var countries: [Country] = []
+    private var nextPagePath: String?
+    
     var onSelectedCountry: OnSelectedCountry?
     
-    var navigationBarIsHidden = false {
+    private var navigationBarIsHidden = false {
         didSet {
             navigationController?.setNavigationBarHidden(navigationBarIsHidden, animated: true)
         }
@@ -19,13 +23,22 @@ final class CountryListViewController: UIViewController {
     
     private lazy var tableView = UITableView()
     
+    init(countriesProvider: CountriesProvider) {
+        self.countriesProvider = countriesProvider
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .green
         title = "Countries"
         addSubviews()
         applyConstraints()
         configureTableView()
+        fetchCountries()
     }
     
     private func addSubviews() {
@@ -43,11 +56,20 @@ final class CountryListViewController: UIViewController {
         tableView.delegate = self
         tableView.register(CountryListTableViewCell.self, forCellReuseIdentifier: "cell")
     }
+
+    private func fetchCountries() {
+        countriesProvider.fetchCountries { countryList in
+            guard let countryList else { return }
+            self.countries = countryList.countries
+            self.nextPagePath = countryList.next
+            self.tableView.reloadData()
+        }
+    }
 }
 
 extension CountryListViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        25
+        countries.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -55,6 +77,8 @@ extension CountryListViewController: UITableViewDataSource, UITableViewDelegate 
             fatalError("The TableView could not dequeue a CountryListTableViewCell in ViewController.")
         }
         cell.accessoryType = .disclosureIndicator
+        let country = countries[indexPath.row]
+        cell.configure(with: country)
         return cell
     }
     

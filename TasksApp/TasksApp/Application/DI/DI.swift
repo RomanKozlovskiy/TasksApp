@@ -11,11 +11,21 @@ final class Di {
     fileprivate let screenFactory: ScreenFactory
     fileprivate let coordinatorFactory: CoordinatorFactory
     fileprivate let weatherNetworkManager: WeatherNetworkManager
+    fileprivate let countriesConfiguration: CountriesConfiguration
+    fileprivate let requestBuilder: RequestBuilder
+    fileprivate let countriesApiClient: CountriesApiClient
+    
+    fileprivate var countriesProvider: CountriesProvider {
+        CountriesProvider(countriesApiClient: countriesApiClient)
+    }
     
     init() {
         self.screenFactory = ScreenFactory()
         self.coordinatorFactory = CoordinatorFactory(screenFactory: screenFactory)
         self.weatherNetworkManager = WeatherNetworkManager()
+        self.countriesConfiguration = CountriesConfiguration()
+        self.requestBuilder = RequestBuilderImpl()
+        self.countriesApiClient = CountriesApiClient(configuration: countriesConfiguration, requestBuilder: requestBuilder)
         self.screenFactory.di = self
     }
 }
@@ -45,7 +55,7 @@ final class ScreenFactory {
         let menuVC = MenuViewController()
         let homeVC = HomeViewController()
         let weatherVC = WeatherViewController()
-        let countryListVC = CountryListViewController()
+        let countryListVC = CountryListViewController(countriesProvider: di.countriesProvider)
         let task3VC = Task3ViewController()
         weatherVC.addDependency(weatherNetworkManager: di.weatherNetworkManager)
         

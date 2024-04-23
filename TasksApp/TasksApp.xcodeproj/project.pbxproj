@@ -29,6 +29,13 @@
 		CEBDC1302BD66C7900458148 /* DetailCountryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBDC12F2BD66C7900458148 /* DetailCountryCollectionViewCell.swift */; };
 		CEBDC1322BD6742600458148 /* CountryBottomSheetController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBDC1312BD6742600458148 /* CountryBottomSheetController.swift */; };
 		CEBF8CD92BD28946003D9B70 /* CountryListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBF8CD82BD28946003D9B70 /* CountryListTableViewCell.swift */; };
+		CED8C4552BD7A1F1000890A5 /* Configuration .swift in Sources */ = {isa = PBXBuildFile; fileRef = CED8C4542BD7A1F1000890A5 /* Configuration .swift */; };
+		CED8C4572BD7A234000890A5 /* CountriesConfiguration .swift in Sources */ = {isa = PBXBuildFile; fileRef = CED8C4562BD7A234000890A5 /* CountriesConfiguration .swift */; };
+		CED8C45B2BD7AC95000890A5 /* RequestBuilder .swift in Sources */ = {isa = PBXBuildFile; fileRef = CED8C45A2BD7AC95000890A5 /* RequestBuilder .swift */; };
+		CED8C45F2BD7C493000890A5 /* CountriesApiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED8C45E2BD7C493000890A5 /* CountriesApiClient.swift */; };
+		CED8C4632BD7CEAE000890A5 /* CountryList.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED8C4622BD7CEAE000890A5 /* CountryList.swift */; };
+		CED8C4662BD7D761000890A5 /* Extension + UIImageView .swift in Sources */ = {isa = PBXBuildFile; fileRef = CED8C4652BD7D761000890A5 /* Extension + UIImageView .swift */; };
+		CED8C4692BD7F2CE000890A5 /* CountriesProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED8C4682BD7F2CE000890A5 /* CountriesProvider.swift */; };
 		CEF505D82BC66BC00087406E /* WeatherNetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF505D72BC66BC00087406E /* WeatherNetworkManager.swift */; };
 		CEF505DA2BC66C340087406E /* Config.plist in Resources */ = {isa = PBXBuildFile; fileRef = CEF505D92BC66C340087406E /* Config.plist */; };
 		CEF505DD2BC691650087406E /* WeatherData.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF505DC2BC691650087406E /* WeatherData.swift */; };
@@ -60,6 +67,13 @@
 		CEBDC12F2BD66C7900458148 /* DetailCountryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailCountryCollectionViewCell.swift; sourceTree = "<group>"; };
 		CEBDC1312BD6742600458148 /* CountryBottomSheetController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryBottomSheetController.swift; sourceTree = "<group>"; };
 		CEBF8CD82BD28946003D9B70 /* CountryListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryListTableViewCell.swift; sourceTree = "<group>"; };
+		CED8C4542BD7A1F1000890A5 /* Configuration .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Configuration .swift"; sourceTree = "<group>"; };
+		CED8C4562BD7A234000890A5 /* CountriesConfiguration .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CountriesConfiguration .swift"; sourceTree = "<group>"; };
+		CED8C45A2BD7AC95000890A5 /* RequestBuilder .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RequestBuilder .swift"; sourceTree = "<group>"; };
+		CED8C45E2BD7C493000890A5 /* CountriesApiClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountriesApiClient.swift; sourceTree = "<group>"; };
+		CED8C4622BD7CEAE000890A5 /* CountryList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryList.swift; sourceTree = "<group>"; };
+		CED8C4652BD7D761000890A5 /* Extension + UIImageView .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension + UIImageView .swift"; sourceTree = "<group>"; };
+		CED8C4682BD7F2CE000890A5 /* CountriesProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountriesProvider.swift; sourceTree = "<group>"; };
 		CEF505D72BC66BC00087406E /* WeatherNetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherNetworkManager.swift; sourceTree = "<group>"; };
 		CEF505D92BC66C340087406E /* Config.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Config.plist; sourceTree = "<group>"; };
 		CEF505DC2BC691650087406E /* WeatherData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherData.swift; sourceTree = "<group>"; };
@@ -121,6 +135,7 @@
 		CE61DC8A2BCE61A300DAC72A /* Library  */ = {
 			isa = PBXGroup;
 			children = (
+				CED8C4642BD7D749000890A5 /* Extensions */,
 				CEBDC12C2BD663D300458148 /* Types */,
 				CE61DC902BCE634700DAC72A /* Coordinator */,
 			);
@@ -132,6 +147,8 @@
 			children = (
 				CE1B0FB82BBD91AD00214119 /* Info.plist */,
 				CEF505D92BC66C340087406E /* Config.plist */,
+				CED8C4542BD7A1F1000890A5 /* Configuration .swift */,
+				CED8C4562BD7A234000890A5 /* CountriesConfiguration .swift */,
 			);
 			path = Configuration;
 			sourceTree = "<group>";
@@ -223,6 +240,7 @@
 			isa = PBXGroup;
 			children = (
 				CE61DC962BCE6A0B00DAC72A /* WeatherEntity */,
+				CED8C4622BD7CEAE000890A5 /* CountryList.swift */,
 			);
 			path = Entity;
 			sourceTree = "<group>";
@@ -249,6 +267,8 @@
 			isa = PBXGroup;
 			children = (
 				CEF505D72BC66BC00087406E /* WeatherNetworkManager.swift */,
+				CED8C45E2BD7C493000890A5 /* CountriesApiClient.swift */,
+				CED8C45A2BD7AC95000890A5 /* RequestBuilder .swift */,
 			);
 			path = ApiClient;
 			sourceTree = "<group>";
@@ -271,9 +291,26 @@
 			path = Types;
 			sourceTree = "<group>";
 		};
+		CED8C4642BD7D749000890A5 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				CED8C4652BD7D761000890A5 /* Extension + UIImageView .swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		CED8C4672BD7F2AA000890A5 /* Provider */ = {
+			isa = PBXGroup;
+			children = (
+				CED8C4682BD7F2CE000890A5 /* CountriesProvider.swift */,
+			);
+			path = Provider;
+			sourceTree = "<group>";
+		};
 		CEF505DB2BC6914A0087406E /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				CED8C4672BD7F2AA000890A5 /* Provider */,
 				CE61DC982BCE6B5000DAC72A /* ApiClient */,
 				CE61DC952BCE69FA00DAC72A /* Entity */,
 			);
@@ -361,25 +398,32 @@
 			files = (
 				CE1B0FC22BBD92F700214119 /* HomeViewController.swift in Sources */,
 				CE1B0FC92BBD934100214119 /* Task3ViewController.swift in Sources */,
+				CED8C45F2BD7C493000890A5 /* CountriesApiClient.swift in Sources */,
 				CEF505D82BC66BC00087406E /* WeatherNetworkManager.swift in Sources */,
+				CED8C45B2BD7AC95000890A5 /* RequestBuilder .swift in Sources */,
 				CE61DCB22BCEB24E00DAC72A /* DI.swift in Sources */,
 				CEBB27DC2BC401EA00076C3F /* CoverView.swift in Sources */,
 				CE61DCB42BCEB44300DAC72A /* Coordinator .swift in Sources */,
 				CE61DCBA2BCEB67200DAC72A /* MenuCoordinator.swift in Sources */,
+				CED8C4692BD7F2CE000890A5 /* CountriesProvider.swift in Sources */,
 				CE1B0FAF2BBD91AC00214119 /* ContainerViewController.swift in Sources */,
 				CEBF8CD92BD28946003D9B70 /* CountryListTableViewCell.swift in Sources */,
 				CE61DCB62BCEB4F800DAC72A /* Router.swift in Sources */,
 				CEF505DD2BC691650087406E /* WeatherData.swift in Sources */,
 				CEBDC12E2BD663E800458148 /* Foundation .swift in Sources */,
+				CED8C4632BD7CEAE000890A5 /* CountryList.swift in Sources */,
 				CE1B0FC72BBD933A00214119 /* CountryListViewController.swift in Sources */,
 				CEBDC12B2BD65FEE00458148 /* DetailCountryViewController .swift in Sources */,
 				CE1B0FAB2BBD91AC00214119 /* AppDelegate.swift in Sources */,
 				CEF505DF2BC6A1660087406E /* WeatherInfo.swift in Sources */,
 				CE1B0FC52BBD933100214119 /* WeatherViewController.swift in Sources */,
 				CEBDC1322BD6742600458148 /* CountryBottomSheetController.swift in Sources */,
+				CED8C4662BD7D761000890A5 /* Extension + UIImageView .swift in Sources */,
 				CEBDC1302BD66C7900458148 /* DetailCountryCollectionViewCell.swift in Sources */,
 				CE1B0FAD2BBD91AC00214119 /* SceneDelegate.swift in Sources */,
+				CED8C4572BD7A234000890A5 /* CountriesConfiguration .swift in Sources */,
 				CE1B0FC02BBD92CD00214119 /* MenuViewController.swift in Sources */,
+				CED8C4552BD7A1F1000890A5 /* Configuration .swift in Sources */,
 				CE61DCB82BCEB51600DAC72A /* ApplicationCoordinator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

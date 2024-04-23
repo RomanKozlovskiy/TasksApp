@@ -17,8 +17,7 @@ final class CountryListTableViewCell: UITableViewCell {
         let flagImage = UIImageView()
         flagImage.clipsToBounds = true
         flagImage.contentMode = .scaleAspectFit
-        flagImage.image = UIImage(systemName: "dot.square.fill")
-        flagImage.backgroundColor = .green
+        flagImage.image = UIImage(resource: .noFlag)
         return flagImage
     }()
     
@@ -26,7 +25,6 @@ final class CountryListTableViewCell: UITableViewCell {
         let countryName = UILabel()
         countryName.font = UIFont.systemFont(ofSize: 17, weight: .regular)
         countryName.textAlignment = .left
-        countryName.text = "Argentina"
         return countryName
     }()
     
@@ -35,7 +33,6 @@ final class CountryListTableViewCell: UITableViewCell {
         capitalName.font = UIFont.systemFont(ofSize: 13, weight: .regular)
         capitalName.textColor = .systemGray
         capitalName.textAlignment = .left
-        capitalName.text = "Buenos Aires"
         return capitalName
     }()
     
@@ -43,7 +40,6 @@ final class CountryListTableViewCell: UITableViewCell {
         let descriptionLabel = UILabel()
         descriptionLabel.font = UIFont.systemFont(ofSize: 15, weight: .regular)
         descriptionLabel.numberOfLines = 0
-        descriptionLabel.text = "In 2004, I completed two Inuit art buying trips to Iqaluit, the capital of Nunavut, Canada’s newest territory. For both trips, I flew out of Ottawa on Canadian airlines."
         return descriptionLabel
     }()
     
@@ -56,6 +52,20 @@ final class CountryListTableViewCell: UITableViewCell {
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    override func prepareForReuse() {
+        flagImage.image = nil
+        countryName.text = nil
+        capitalName.text = nil
+        descriptionLabel.text = nil
+    }
+    
+    func configure(with country: Country) {
+        flagImage.load(stringUrl: country.countryInfo.flag)
+        countryName.text = country.name
+        capitalName.text = country.capital
+        descriptionLabel.text = country.descriptionSmall
     }
     
     private func addSubviews() {
