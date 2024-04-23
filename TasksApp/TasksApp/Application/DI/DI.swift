@@ -61,6 +61,10 @@ final class ScreenFactory {
         
         return menuContainerViewController
     }
+    
+    func makeDetailCountryScreen() -> DetailCountryViewController {
+        DetailCountryViewController()
+    }
 }
 
 final class CoordinatorFactory {

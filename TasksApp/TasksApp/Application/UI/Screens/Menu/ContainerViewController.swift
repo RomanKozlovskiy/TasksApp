@@ -13,7 +13,8 @@ final class ContainerViewController: UIViewController {
         case opened
     }
 
-    var onFinish: (() -> Void)?
+    var onFinish: VoidClosure?
+    var onSelectedCountry: OnSelectedCountry?
     
     private var menuState: MenuState = .closed
     
@@ -30,6 +31,10 @@ final class ContainerViewController: UIViewController {
         configureNavigationBar()
         configureChildsControllers()
         configureGestures()
+        
+        countryListViewController.onSelectedCountry = { [weak self] index in
+            self?.onSelectedCountry?(index)
+        }
     }
 
      func addDependency(
