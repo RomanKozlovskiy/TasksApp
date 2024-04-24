@@ -87,7 +87,8 @@ extension CountryListViewController: UITableViewDataSource, UITableViewDelegate 
         if navigationController?.isNavigationBarHidden == true {
             navigationBarIsHidden = false
         }
-        onSelectedCountry?(indexPath.row) //TODO: - заменить на model Country
+        let country = countries[indexPath.row]
+        onSelectedCountry?(country)
     }
     
     func scrollViewWillBeginDecelerating(_ scrollView: UIScrollView) {

@@ -13,9 +13,8 @@ final class DetailCountryCollectionViewCell: UICollectionViewCell {
     private lazy var imageView: UIImageView = {
         let imageView = UIImageView()
         imageView.clipsToBounds = true
-        imageView.image = UIImage(systemName: "pencil.circle.fill")
+        imageView.image = UIImage(resource: .noFlag)
         imageView.contentMode = .scaleAspectFit
-        imageView.backgroundColor = .green
         return imageView
     }()
     
@@ -29,5 +28,9 @@ final class DetailCountryCollectionViewCell: UICollectionViewCell {
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    func loadImage(from stringUlr: String) {
+        imageView.load(stringUrl: stringUlr)
     }
 }

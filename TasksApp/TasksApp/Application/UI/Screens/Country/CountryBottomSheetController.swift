@@ -43,7 +43,6 @@ final class CountryBottomSheetController: UIViewController {
     )
     
     private lazy var capitalInfoLabel = createLabel(
-        text: "Москва",
         textColor: .systemGray,
         font: UIFont.systemFont(ofSize: 17, weight: .semibold),
         numberOfLines: 1,
@@ -51,7 +50,6 @@ final class CountryBottomSheetController: UIViewController {
     )
     
     private lazy var populationInfoLabel = createLabel(
-        text: "1 000 000",
         textColor: .systemGray,
         font: UIFont.systemFont(ofSize: 17, weight: .semibold),
         numberOfLines: 1,
@@ -59,7 +57,6 @@ final class CountryBottomSheetController: UIViewController {
     )
     
     private lazy var continentInfoLabel = createLabel(
-        text: "Континент",
         textColor: .systemGray,
         font: UIFont.systemFont(ofSize: 17, weight: .semibold),
         numberOfLines: 1,
@@ -67,7 +64,6 @@ final class CountryBottomSheetController: UIViewController {
     )
     
     private lazy var aboutLabel = createLabel(
-        text: "О стране",
         textColor: .black,
         font: UIFont.systemFont(ofSize: 15, weight: .semibold),
         numberOfLines: 1,
@@ -75,10 +71,6 @@ final class CountryBottomSheetController: UIViewController {
     )
     
     private lazy var descriptionLabel = createLabel(
-        text: """
-As long as humans can think, there will be wars. Wars over such concepts as freedom, honor, dignity, etc.. Wars over territory, greed, power, prejudice, etc.. War is a part of human nature. For example, every human being is prejudiced. If they don’t like some race, nationality or religion, they don’t like short or tall or fat or skinny or smart or not smart or loud or quiet people. Some people don’t like children, some people don’t like old people, some people don’t like people with pets, or people that play their music too loud, or bad drivers, or people that believe in God or people that don’t believe in God.
-As long as humans can think, there will be wars. Wars over such concepts as freedom, honor, dignity, etc.. Wars over territory, greed, power, prejudice, etc.. War is a part of human nature. For example, every human being is prejudiced. If they don’t like some race, nationality or religion, they don’t like short or tall or fat or skinny or smart or not smart or loud or quiet people. Some people don’t like children, some people don’t like old people, some people don’t like people with pets, or people that play their music too loud, or bad drivers, or people that believe in God or people that don’t believe in God.
-""",
         textColor: .black,
         font: UIFont.systemFont(ofSize: 15, weight: .regular),
         numberOfLines: 0,
@@ -141,10 +133,17 @@ As long as humans can think, there will be wars. Wars over such concepts as free
         super.viewDidLoad()
         
         view.backgroundColor = .white
-        title = "Argentina"
         navigationController?.navigationBar.prefersLargeTitles = true
         addSubviews()
         applyConstraints()
+    }
+    
+    func configureUI(with country: Country) {
+        title = country.name
+        capitalInfoLabel.text = country.capital
+        populationInfoLabel.text = String(country.population)
+        continentInfoLabel.text = country.continent
+        descriptionLabel.text = country.description
     }
     
     private func addSubviews() {

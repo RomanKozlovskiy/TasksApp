@@ -30,13 +30,13 @@ final class MenuCoordinator: BaseCoordinator {
         }
         router.setRootModule(menuContainerScreen)
         
-        menuContainerScreen.onSelectedCountry = { [weak self] index in
-            self?.makeDetailCountry()
+        menuContainerScreen.onSelectedCountry = { [weak self] country in
+            self?.makeDetailCountry(with: country)
         }
     }
     
-    private func makeDetailCountry() {
-        let detailCountryScreen = screenFactory.makeDetailCountryScreen()
+    private func makeDetailCountry(with country: Country) {
+        let detailCountryScreen = screenFactory.makeDetailCountryScreen(with: country)
         router.push(detailCountryScreen)
     }
 }

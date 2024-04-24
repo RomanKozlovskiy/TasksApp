@@ -32,8 +32,8 @@ final class ContainerViewController: UIViewController {
         configureChildsControllers()
         configureGestures()
         
-        countryListViewController.onSelectedCountry = { [weak self] index in
-            self?.onSelectedCountry?(index)
+        countryListViewController.onSelectedCountry = { [weak self] country in
+            self?.onSelectedCountry?(country)
         }
     }
 

@@ -7,4 +7,4 @@
 
 import Foundation
 typealias VoidClosure = () -> Void
-typealias OnSelectedCountry = (Int) -> Void
+typealias OnSelectedCountry = (Country) -> Void

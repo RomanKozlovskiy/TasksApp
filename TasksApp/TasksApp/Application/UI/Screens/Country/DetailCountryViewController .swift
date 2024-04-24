@@ -9,12 +9,12 @@ import UIKit
 import SnapKit
 
 final class DetailCountryViewController: UIViewController {
+    var country: Country!
     private var collectionView: UICollectionView!
     private var currentPage = 0
     
     private var pageControl: UIPageControl = {
         let pageControl = UIPageControl()
-        pageControl.numberOfPages = 4
         pageControl.currentPageIndicatorTintColor = .white
         pageControl.tintColor = .lightGray
         return pageControl
@@ -27,6 +27,7 @@ final class DetailCountryViewController: UIViewController {
         addSubviews()
         applyConstraints()
         configureBottomSheet()
+        configureUI()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -75,16 +76,33 @@ final class DetailCountryViewController: UIViewController {
         }
         countrySheetController.isModalInPresentation = true
         navigationController?.present(countrySheetController, animated: true)
+        if let viewController = countrySheetController.viewControllers.first as? CountryBottomSheetController, let country = country {
+            viewController.configureUI(with: country)
+        }
+    }
+    
+    private func configureUI() {
+        pageControl.numberOfPages = country.countryInfo.images.count
     }
 }
 
 extension DetailCountryViewController: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        4
+        !country.countryInfo.images.isEmpty ? country.countryInfo.images.count : 1
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! DetailCountryCollectionViewCell
+        if !country.countryInfo.images.isEmpty {
+            let imageUrl = country.countryInfo.images[indexPath.row]
+            cell.loadImage(from: imageUrl)
+        } else if country.image != ""  {
+            let imageUrl = country.image
+            cell.loadImage(from: imageUrl)
+        } else {
+            let flagImageUrl = country.countryInfo.flag
+            cell.loadImage(from: flagImageUrl)
+        }
         return cell
     }
     

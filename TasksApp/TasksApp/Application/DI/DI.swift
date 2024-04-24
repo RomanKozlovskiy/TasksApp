@@ -72,8 +72,10 @@ final class ScreenFactory {
         return menuContainerViewController
     }
     
-    func makeDetailCountryScreen() -> DetailCountryViewController {
-        DetailCountryViewController()
+    func makeDetailCountryScreen(with country: Country) -> DetailCountryViewController {
+        let detailCountryViewController = DetailCountryViewController()
+        detailCountryViewController.country = country
+        return detailCountryViewController
     }
 }
 
