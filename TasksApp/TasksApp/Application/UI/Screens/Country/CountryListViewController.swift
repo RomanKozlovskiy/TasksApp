@@ -23,6 +23,12 @@ final class CountryListViewController: UIViewController {
     
     private lazy var tableView = UITableView()
     
+    private lazy var refreshControl: UIRefreshControl = {
+        let refreshControl = UIRefreshControl()
+        refreshControl.addAction(UIAction(handler: { _ in self.fetchCountries() }), for: .valueChanged)
+        return refreshControl
+    }()
+    
     init(countriesProvider: CountriesProvider) {
         self.countriesProvider = countriesProvider
         super.init(nibName: nil, bundle: nil)
@@ -54,14 +60,19 @@ final class CountryListViewController: UIViewController {
     private func configureTableView() {
         tableView.dataSource = self
         tableView.delegate = self
+        tableView.refreshControl = refreshControl
         tableView.register(CountryListTableViewCell.self, forCellReuseIdentifier: "cell")
     }
 
-    private func fetchCountries() {
-        countriesProvider.fetchCountries { countryList in
-            guard let countryList else { return }
-            self.countries = countryList.countries
+    private func fetchCountries(nextPage: String? = nil) {
+        countriesProvider.fetchCountries(nextPage: nextPage) { [weak self] countryList in
+            guard let countryList, let self else { return }
+            self.countries.append(contentsOf: countryList.countries)
             self.nextPagePath = countryList.next
+            if self.refreshControl.isRefreshing {
+                self.countries = countryList.countries
+                self.refreshControl.endRefreshing()
+            }
             self.tableView.reloadData()
         }
     }
@@ -89,6 +100,12 @@ extension CountryListViewController: UITableViewDataSource, UITableViewDelegate 
         }
         let country = countries[indexPath.row]
         onSelectedCountry?(country)
+    }
+    
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        if indexPath.row == countries.count - 1, nextPagePath != nil && nextPagePath != "" {
+            fetchCountries(nextPage: nextPagePath)
+        }
     }
     
     func scrollViewWillBeginDecelerating(_ scrollView: UIScrollView) {

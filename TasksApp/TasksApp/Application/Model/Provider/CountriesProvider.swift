@@ -14,8 +14,8 @@ final class CountriesProvider {
         self.countriesApiClient = countriesApiClient
     }
     
-    func fetchCountries(completion: @escaping (CountryList?) -> Void) {
-        countriesApiClient.makeRequest(type: CountryList.self) { result in
+    func fetchCountries(nextPage: String? = nil, completion: @escaping (CountryList?) -> Void) {
+        countriesApiClient.makeRequest(nextPage: nextPage, type: CountryList.self) { result in
             switch result {
             case .success(let countryList):
                 DispatchQueue.main.async {
