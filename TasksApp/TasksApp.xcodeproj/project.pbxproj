@@ -29,6 +29,8 @@
 		CEBDC1302BD66C7900458148 /* DetailCountryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBDC12F2BD66C7900458148 /* DetailCountryCollectionViewCell.swift */; };
 		CEBDC1322BD6742600458148 /* CountryBottomSheetController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBDC1312BD6742600458148 /* CountryBottomSheetController.swift */; };
 		CEBF8CD92BD28946003D9B70 /* CountryListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBF8CD82BD28946003D9B70 /* CountryListTableViewCell.swift */; };
+		CED2041F2BD93789006CFE91 /* CachingService .swift in Sources */ = {isa = PBXBuildFile; fileRef = CED2041E2BD93789006CFE91 /* CachingService .swift */; };
+		CED204212BD94091006CFE91 /* DetailCountryProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED204202BD94091006CFE91 /* DetailCountryProvider.swift */; };
 		CED8C4552BD7A1F1000890A5 /* Configuration .swift in Sources */ = {isa = PBXBuildFile; fileRef = CED8C4542BD7A1F1000890A5 /* Configuration .swift */; };
 		CED8C4572BD7A234000890A5 /* CountriesConfiguration .swift in Sources */ = {isa = PBXBuildFile; fileRef = CED8C4562BD7A234000890A5 /* CountriesConfiguration .swift */; };
 		CED8C45B2BD7AC95000890A5 /* RequestBuilder .swift in Sources */ = {isa = PBXBuildFile; fileRef = CED8C45A2BD7AC95000890A5 /* RequestBuilder .swift */; };
@@ -67,6 +69,8 @@
 		CEBDC12F2BD66C7900458148 /* DetailCountryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailCountryCollectionViewCell.swift; sourceTree = "<group>"; };
 		CEBDC1312BD6742600458148 /* CountryBottomSheetController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryBottomSheetController.swift; sourceTree = "<group>"; };
 		CEBF8CD82BD28946003D9B70 /* CountryListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryListTableViewCell.swift; sourceTree = "<group>"; };
+		CED2041E2BD93789006CFE91 /* CachingService .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CachingService .swift"; sourceTree = "<group>"; };
+		CED204202BD94091006CFE91 /* DetailCountryProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailCountryProvider.swift; sourceTree = "<group>"; };
 		CED8C4542BD7A1F1000890A5 /* Configuration .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Configuration .swift"; sourceTree = "<group>"; };
 		CED8C4562BD7A234000890A5 /* CountriesConfiguration .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CountriesConfiguration .swift"; sourceTree = "<group>"; };
 		CED8C45A2BD7AC95000890A5 /* RequestBuilder .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RequestBuilder .swift"; sourceTree = "<group>"; };
@@ -291,6 +295,14 @@
 			path = Types;
 			sourceTree = "<group>";
 		};
+		CED2041D2BD93761006CFE91 /* Services  */ = {
+			isa = PBXGroup;
+			children = (
+				CED2041E2BD93789006CFE91 /* CachingService .swift */,
+			);
+			path = "Services ";
+			sourceTree = "<group>";
+		};
 		CED8C4642BD7D749000890A5 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
@@ -303,6 +315,7 @@
 			isa = PBXGroup;
 			children = (
 				CED8C4682BD7F2CE000890A5 /* CountriesProvider.swift */,
+				CED204202BD94091006CFE91 /* DetailCountryProvider.swift */,
 			);
 			path = Provider;
 			sourceTree = "<group>";
@@ -311,6 +324,7 @@
 			isa = PBXGroup;
 			children = (
 				CED8C4672BD7F2AA000890A5 /* Provider */,
+				CED2041D2BD93761006CFE91 /* Services  */,
 				CE61DC982BCE6B5000DAC72A /* ApiClient */,
 				CE61DC952BCE69FA00DAC72A /* Entity */,
 			);
@@ -402,10 +416,12 @@
 				CEF505D82BC66BC00087406E /* WeatherNetworkManager.swift in Sources */,
 				CED8C45B2BD7AC95000890A5 /* RequestBuilder .swift in Sources */,
 				CE61DCB22BCEB24E00DAC72A /* DI.swift in Sources */,
+				CED2041F2BD93789006CFE91 /* CachingService .swift in Sources */,
 				CEBB27DC2BC401EA00076C3F /* CoverView.swift in Sources */,
 				CE61DCB42BCEB44300DAC72A /* Coordinator .swift in Sources */,
 				CE61DCBA2BCEB67200DAC72A /* MenuCoordinator.swift in Sources */,
 				CED8C4692BD7F2CE000890A5 /* CountriesProvider.swift in Sources */,
+				CED204212BD94091006CFE91 /* DetailCountryProvider.swift in Sources */,
 				CE1B0FAF2BBD91AC00214119 /* ContainerViewController.swift in Sources */,
 				CEBF8CD92BD28946003D9B70 /* CountryListTableViewCell.swift in Sources */,
 				CE61DCB62BCEB4F800DAC72A /* Router.swift in Sources */,

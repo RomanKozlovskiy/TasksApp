@@ -30,7 +30,13 @@ final class DetailCountryCollectionViewCell: UICollectionViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func loadImage(from stringUlr: String) {
-        imageView.load(stringUrl: stringUlr)
+    func loadImage(from stringUlr: String, completion: @escaping (UIImage) -> Void) {
+        imageView.load(stringUrl: stringUlr) { image in
+            completion(image)
+        }
+    }
+    
+    func set(image: UIImage) {
+        imageView.image = image
     }
 }

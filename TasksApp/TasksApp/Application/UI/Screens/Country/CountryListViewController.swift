@@ -29,6 +29,11 @@ final class CountryListViewController: UIViewController {
         return refreshControl
     }()
     
+    private lazy var cachedDaraSource: NSCache<AnyObject, UIImage> = {
+        let cache = NSCache<AnyObject, UIImage>()
+        return cache
+    }()
+    
     init(countriesProvider: CountriesProvider) {
         self.countriesProvider = countriesProvider
         super.init(nibName: nil, bundle: nil)
@@ -90,6 +95,14 @@ extension CountryListViewController: UITableViewDataSource, UITableViewDelegate 
         cell.accessoryType = .disclosureIndicator
         let country = countries[indexPath.row]
         cell.configure(with: country)
+        if let image = countriesProvider.getCachedImage(for: indexPath.row) {
+            cell.set(image)
+        } else {
+            let stringUrl = country.countryInfo.flag
+            cell.loadImage(from: stringUrl) { [weak self] image in
+                self?.countriesProvider.cacheImage(image: image, for: indexPath.row)
+            }
+        }
         return cell
     }
     
