@@ -16,11 +16,7 @@ final class Di {
     fileprivate let countriesApiClient: CountriesApiClient
     
     fileprivate var countriesProvider: CountriesProvider {
-        CountriesProvider(countriesApiClient: countriesApiClient, cachingService: CachingService())
-    }
-    
-    fileprivate var detailCountryProvider: DetailCountryProvider {
-        DetailCountryProvider(cachingService: CachingService())
+        CountriesProvider(countriesApiClient: countriesApiClient)
     }
     
     init() {
@@ -77,7 +73,7 @@ final class ScreenFactory {
     }
     
     func makeDetailCountryScreen(with country: Country) -> DetailCountryViewController {
-        let detailCountryViewController = DetailCountryViewController(country: country, detailCountryProvider: di.detailCountryProvider)
+        let detailCountryViewController = DetailCountryViewController(country: country)
         return detailCountryViewController
     }
 }

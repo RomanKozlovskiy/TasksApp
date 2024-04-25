@@ -9,7 +9,6 @@ import UIKit
 import SnapKit
 
 final class DetailCountryCollectionViewCell: UICollectionViewCell {
-    
     private lazy var imageView: UIImageView = {
         let imageView = UIImageView()
         imageView.clipsToBounds = true
@@ -30,13 +29,7 @@ final class DetailCountryCollectionViewCell: UICollectionViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func loadImage(from stringUlr: String, completion: @escaping (UIImage) -> Void) {
-        imageView.load(stringUrl: stringUlr) { image in
-            completion(image)
-        }
-    }
-    
-    func set(image: UIImage) {
-        imageView.image = image
+    func configure(with stringUrl: String) {
+        imageView.downloadImage(stringUrl: stringUrl)
     }
 }

@@ -62,22 +62,12 @@ final class CountryListTableViewCell: UITableViewCell {
     }
     
     func configure(with country: Country) {
-       // flagImage.load(stringUrl: country.countryInfo.flag)
+        flagImage.downloadImage(stringUrl: country.countryInfo.flag)
         countryName.text = country.name
         capitalName.text = country.capital
         descriptionLabel.text = country.descriptionSmall
     }
-    
-    func loadImage(from stringUrl: String, completion: @escaping (UIImage) -> Void) {
-        flagImage.load(stringUrl: stringUrl) { image in
-            completion(image)
-        }
-    }
-    
-    func set(_ image: UIImage) {
-        flagImage.image = image
-    }
-    
+ 
     private func addSubviews() {
         addSubview(verticalStackView)
     }

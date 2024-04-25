@@ -10,8 +10,6 @@ import SnapKit
 
 final class DetailCountryViewController: UIViewController {
     private var country: Country
-    
-    private let detailCountryProvider: DetailCountryProvider
     private var collectionView: UICollectionView!
     private var currentPage = 0
     
@@ -22,9 +20,8 @@ final class DetailCountryViewController: UIViewController {
         return pageControl
     }()
      
-    init(country: Country!, detailCountryProvider: DetailCountryProvider) {
+    init(country: Country) {
         self.country = country
-        self.detailCountryProvider = detailCountryProvider
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -105,27 +102,16 @@ extension DetailCountryViewController: UICollectionViewDataSource, UICollectionV
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! DetailCountryCollectionViewCell
-        
-        if let image = detailCountryProvider.getCachedImage(for: indexPath.row) {
-            cell.set(image: image)
-            return cell
-        }
-      
+     
         if !country.countryInfo.images.isEmpty {
             let imageUrl = country.countryInfo.images[indexPath.row]
-            cell.loadImage(from: imageUrl) { [weak self] image in
-                self?.detailCountryProvider.cacheImage(image: image, for: indexPath.row)
-            }
+            cell.configure(with: imageUrl)
         } else if country.image != ""  {
             let imageUrl = country.image
-            cell.loadImage(from: imageUrl) { [weak self] image in
-                self?.detailCountryProvider.cacheImage(image: image, for: indexPath.row)
-            }
+            cell.configure(with: imageUrl)
         } else {
-            let flagImageUrl = country.countryInfo.flag
-            cell.loadImage(from: flagImageUrl) { [weak self] image in
-                self?.detailCountryProvider.cacheImage(image: image, for: indexPath.row)
-            }
+            let imageUrl = country.countryInfo.flag
+            cell.configure(with: imageUrl)
         }
         return cell
     }
