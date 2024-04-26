@@ -25,6 +25,9 @@
 		CE61DCBA2BCEB67200DAC72A /* MenuCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE61DCB92BCEB67200DAC72A /* MenuCoordinator.swift */; };
 		CE736B812BDA621A0060E4F1 /* CountryDataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = CE736B7F2BDA621A0060E4F1 /* CountryDataModel.xcdatamodeld */; };
 		CE736B832BDA63910060E4F1 /* CoreDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE736B822BDA63910060E4F1 /* CoreDataService.swift */; };
+		CE736B852BDB91370060E4F1 /* Extensions + Int.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE736B842BDB91370060E4F1 /* Extensions + Int.swift */; };
+		CE736B872BDB91F80060E4F1 /* Extension + UITableViewCell .swift in Sources */ = {isa = PBXBuildFile; fileRef = CE736B862BDB91F80060E4F1 /* Extension + UITableViewCell .swift */; };
+		CE736B892BDB922E0060E4F1 /* Extension + UICollectionViewCell .swift in Sources */ = {isa = PBXBuildFile; fileRef = CE736B882BDB922E0060E4F1 /* Extension + UICollectionViewCell .swift */; };
 		CEBB27DC2BC401EA00076C3F /* CoverView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBB27DB2BC401EA00076C3F /* CoverView.swift */; };
 		CEBDC12B2BD65FEE00458148 /* DetailCountryViewController .swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBDC12A2BD65FEE00458148 /* DetailCountryViewController .swift */; };
 		CEBDC12E2BD663E800458148 /* Foundation .swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBDC12D2BD663E800458148 /* Foundation .swift */; };
@@ -65,6 +68,9 @@
 		CE61DCB92BCEB67200DAC72A /* MenuCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuCoordinator.swift; sourceTree = "<group>"; };
 		CE736B802BDA621A0060E4F1 /* CountryDataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CountryDataModel.xcdatamodel; sourceTree = "<group>"; };
 		CE736B822BDA63910060E4F1 /* CoreDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataService.swift; sourceTree = "<group>"; };
+		CE736B842BDB91370060E4F1 /* Extensions + Int.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extensions + Int.swift"; sourceTree = "<group>"; };
+		CE736B862BDB91F80060E4F1 /* Extension + UITableViewCell .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension + UITableViewCell .swift"; sourceTree = "<group>"; };
+		CE736B882BDB922E0060E4F1 /* Extension + UICollectionViewCell .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension + UICollectionViewCell .swift"; sourceTree = "<group>"; };
 		CEBB27DB2BC401EA00076C3F /* CoverView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoverView.swift; sourceTree = "<group>"; };
 		CEBDC12A2BD65FEE00458148 /* DetailCountryViewController .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DetailCountryViewController .swift"; sourceTree = "<group>"; };
 		CEBDC12D2BD663E800458148 /* Foundation .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Foundation .swift"; sourceTree = "<group>"; };
@@ -308,6 +314,9 @@
 			isa = PBXGroup;
 			children = (
 				CED8C4652BD7D761000890A5 /* Extension + UIImageView .swift */,
+				CE736B842BDB91370060E4F1 /* Extensions + Int.swift */,
+				CE736B862BDB91F80060E4F1 /* Extension + UITableViewCell .swift */,
+				CE736B882BDB922E0060E4F1 /* Extension + UICollectionViewCell .swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -417,6 +426,7 @@
 				CED8C45B2BD7AC95000890A5 /* RequestBuilder .swift in Sources */,
 				CE61DCB22BCEB24E00DAC72A /* DI.swift in Sources */,
 				CEBB27DC2BC401EA00076C3F /* CoverView.swift in Sources */,
+				CE736B892BDB922E0060E4F1 /* Extension + UICollectionViewCell .swift in Sources */,
 				CE61DCB42BCEB44300DAC72A /* Coordinator .swift in Sources */,
 				CE61DCBA2BCEB67200DAC72A /* MenuCoordinator.swift in Sources */,
 				CED8C4692BD7F2CE000890A5 /* CountriesProvider.swift in Sources */,
@@ -424,6 +434,7 @@
 				CEBF8CD92BD28946003D9B70 /* CountryListTableViewCell.swift in Sources */,
 				CE61DCB62BCEB4F800DAC72A /* Router.swift in Sources */,
 				CEF505DD2BC691650087406E /* WeatherData.swift in Sources */,
+				CE736B872BDB91F80060E4F1 /* Extension + UITableViewCell .swift in Sources */,
 				CEBDC12E2BD663E800458148 /* Foundation .swift in Sources */,
 				CED8C4632BD7CEAE000890A5 /* CountryList.swift in Sources */,
 				CE736B812BDA621A0060E4F1 /* CountryDataModel.xcdatamodeld in Sources */,
@@ -433,6 +444,7 @@
 				CE1B0FAB2BBD91AC00214119 /* AppDelegate.swift in Sources */,
 				CEF505DF2BC6A1660087406E /* WeatherInfo.swift in Sources */,
 				CE1B0FC52BBD933100214119 /* WeatherViewController.swift in Sources */,
+				CE736B852BDB91370060E4F1 /* Extensions + Int.swift in Sources */,
 				CEBDC1322BD6742600458148 /* CountryBottomSheetController.swift in Sources */,
 				CED8C4662BD7D761000890A5 /* Extension + UIImageView .swift in Sources */,
 				CEBDC1302BD66C7900458148 /* DetailCountryCollectionViewCell.swift in Sources */,

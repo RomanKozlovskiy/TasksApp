@@ -18,7 +18,7 @@ class CountriesApiClient {
     }
     
     func makeRequest<T: Decodable>(nextPage: String? = nil, type: T.Type, completion: @escaping (Result<T?, Error>) -> Void) {
-        guard let request = requestBuilder.build(path: nextPage ?? configuration.path, method: .get, headers: [:], urlParameters: nil) else { return } //TODO: обработать ошибки
+        guard let request = requestBuilder.build(path: nextPage ?? configuration.path, method: .get, headers: [:], urlParameters: nil) else { return }
         AF.request(request)
             .responseDecodable(of: type.self) { response in
             switch response.result {
@@ -30,4 +30,3 @@ class CountriesApiClient {
         }
     }
 }
-

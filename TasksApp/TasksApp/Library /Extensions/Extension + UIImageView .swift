@@ -31,6 +31,7 @@ extension UIImageView {
                 self.imageCache.setObject(image, forKey: stringUrl as NSString)
                 DispatchQueue.main.async {
                     self.image = image
+                    self.isHidden = false
                 }
             }
             dataTask.resume()

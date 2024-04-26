@@ -12,6 +12,7 @@ final class DetailCountryViewController: UIViewController {
     private var country: Country
     private var collectionView: UICollectionView!
     private var currentPage = 0
+    private var images: [UIImage] = []
     
     private var pageControl: UIPageControl = {
         let pageControl = UIPageControl()
@@ -31,7 +32,7 @@ final class DetailCountryViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .orange
+        view.backgroundColor = .white
         configureCollectionView()
         addSubviews()
         applyConstraints()
@@ -72,7 +73,7 @@ final class DetailCountryViewController: UIViewController {
         collectionView.isPagingEnabled = true
         collectionView.delegate = self
         collectionView.dataSource = self
-        collectionView.register(DetailCountryCollectionViewCell.self, forCellWithReuseIdentifier: "cell") //TODO: - сделать extension  для ячейки с reuseId
+        collectionView.register(DetailCountryCollectionViewCell.self, forCellWithReuseIdentifier: DetailCountryCollectionViewCell.reuseId)
     }
     
     private func configureBottomSheet() {
@@ -101,7 +102,7 @@ extension DetailCountryViewController: UICollectionViewDataSource, UICollectionV
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! DetailCountryCollectionViewCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: DetailCountryCollectionViewCell.reuseId, for: indexPath) as! DetailCountryCollectionViewCell
      
         if !country.countryInfo.images.isEmpty {
             let imageUrl = country.countryInfo.images[indexPath.row]

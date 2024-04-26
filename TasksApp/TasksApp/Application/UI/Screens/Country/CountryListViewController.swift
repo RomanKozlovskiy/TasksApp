@@ -66,7 +66,7 @@ final class CountryListViewController: UIViewController {
         tableView.dataSource = self
         tableView.delegate = self
         tableView.refreshControl = refreshControl
-        tableView.register(CountryListTableViewCell.self, forCellReuseIdentifier: "cell")
+        tableView.register(CountryListTableViewCell.self, forCellReuseIdentifier: CountryListTableViewCell.reuseId)
     }
 
     private func fetchCountries(nextPage: String? = nil) {
@@ -89,7 +89,7 @@ extension CountryListViewController: UITableViewDataSource, UITableViewDelegate 
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as? CountryListTableViewCell else {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: CountryListTableViewCell.reuseId, for: indexPath) as? CountryListTableViewCell else {
             fatalError("The TableView could not dequeue a CountryListTableViewCell in ViewController.")
         }
         cell.accessoryType = .disclosureIndicator

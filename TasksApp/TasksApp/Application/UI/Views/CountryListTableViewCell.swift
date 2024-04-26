@@ -17,7 +17,7 @@ final class CountryListTableViewCell: UITableViewCell {
         let flagImage = UIImageView()
         flagImage.clipsToBounds = true
         flagImage.contentMode = .scaleAspectFit
-        flagImage.image = UIImage(resource: .noFlag)
+        flagImage.isHidden = true
         return flagImage
     }()
     

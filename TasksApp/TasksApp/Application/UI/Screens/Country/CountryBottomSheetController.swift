@@ -141,7 +141,7 @@ final class CountryBottomSheetController: UIViewController {
     func configureUI(with country: Country) {
         title = country.name
         capitalInfoLabel.text = country.capital
-        populationInfoLabel.text = String(country.population)
+        populationInfoLabel.text = String(country.population.formatDecimal())
         continentInfoLabel.text = country.continent
         descriptionLabel.text = country.description
     }
@@ -171,6 +171,7 @@ final class CountryBottomSheetController: UIViewController {
             }
         }
     }
+    
     private func createLabel(text: String? = nil, textColor: UIColor, font: UIFont, numberOfLines: Int, textAlignment: NSTextAlignment) -> UILabel {
         let label = UILabel()
         label.text = text
