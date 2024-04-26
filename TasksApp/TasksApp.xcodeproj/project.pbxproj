@@ -23,6 +23,8 @@
 		CE61DCB62BCEB4F800DAC72A /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE61DCB52BCEB4F800DAC72A /* Router.swift */; };
 		CE61DCB82BCEB51600DAC72A /* ApplicationCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE61DCB72BCEB51600DAC72A /* ApplicationCoordinator.swift */; };
 		CE61DCBA2BCEB67200DAC72A /* MenuCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE61DCB92BCEB67200DAC72A /* MenuCoordinator.swift */; };
+		CE736B812BDA621A0060E4F1 /* CountryDataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = CE736B7F2BDA621A0060E4F1 /* CountryDataModel.xcdatamodeld */; };
+		CE736B832BDA63910060E4F1 /* CoreDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE736B822BDA63910060E4F1 /* CoreDataService.swift */; };
 		CEBB27DC2BC401EA00076C3F /* CoverView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBB27DB2BC401EA00076C3F /* CoverView.swift */; };
 		CEBDC12B2BD65FEE00458148 /* DetailCountryViewController .swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBDC12A2BD65FEE00458148 /* DetailCountryViewController .swift */; };
 		CEBDC12E2BD663E800458148 /* Foundation .swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBDC12D2BD663E800458148 /* Foundation .swift */; };
@@ -61,6 +63,8 @@
 		CE61DCB52BCEB4F800DAC72A /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 		CE61DCB72BCEB51600DAC72A /* ApplicationCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationCoordinator.swift; sourceTree = "<group>"; };
 		CE61DCB92BCEB67200DAC72A /* MenuCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuCoordinator.swift; sourceTree = "<group>"; };
+		CE736B802BDA621A0060E4F1 /* CountryDataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CountryDataModel.xcdatamodel; sourceTree = "<group>"; };
+		CE736B822BDA63910060E4F1 /* CoreDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataService.swift; sourceTree = "<group>"; };
 		CEBB27DB2BC401EA00076C3F /* CoverView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoverView.swift; sourceTree = "<group>"; };
 		CEBDC12A2BD65FEE00458148 /* DetailCountryViewController .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DetailCountryViewController .swift"; sourceTree = "<group>"; };
 		CEBDC12D2BD663E800458148 /* Foundation .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Foundation .swift"; sourceTree = "<group>"; };
@@ -259,6 +263,7 @@
 			children = (
 				CE1B0FB32BBD91AD00214119 /* Assets.xcassets */,
 				CE1B0FB52BBD91AD00214119 /* LaunchScreen.storyboard */,
+				CE736B7F2BDA621A0060E4F1 /* CountryDataModel.xcdatamodeld */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -294,6 +299,7 @@
 		CED2041D2BD93761006CFE91 /* Services  */ = {
 			isa = PBXGroup;
 			children = (
+				CE736B822BDA63910060E4F1 /* CoreDataService.swift */,
 			);
 			path = "Services ";
 			sourceTree = "<group>";
@@ -420,7 +426,9 @@
 				CEF505DD2BC691650087406E /* WeatherData.swift in Sources */,
 				CEBDC12E2BD663E800458148 /* Foundation .swift in Sources */,
 				CED8C4632BD7CEAE000890A5 /* CountryList.swift in Sources */,
+				CE736B812BDA621A0060E4F1 /* CountryDataModel.xcdatamodeld in Sources */,
 				CE1B0FC72BBD933A00214119 /* CountryListViewController.swift in Sources */,
+				CE736B832BDA63910060E4F1 /* CoreDataService.swift in Sources */,
 				CEBDC12B2BD65FEE00458148 /* DetailCountryViewController .swift in Sources */,
 				CE1B0FAB2BBD91AC00214119 /* AppDelegate.swift in Sources */,
 				CEF505DF2BC6A1660087406E /* WeatherInfo.swift in Sources */,
@@ -683,6 +691,20 @@
 			productName = SnapKit;
 		};
 /* End XCSwiftPackageProductDependency section */
+
+/* Begin XCVersionGroup section */
+		CE736B7F2BDA621A0060E4F1 /* CountryDataModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				CE736B802BDA621A0060E4F1 /* CountryDataModel.xcdatamodel */,
+			);
+			currentVersion = CE736B802BDA621A0060E4F1 /* CountryDataModel.xcdatamodel */;
+			name = CountryDataModel.xcdatamodeld;
+			path = /Users/user/Desktop/TasksApp/TasksApp/TasksApp/Resources/CountryDataModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = CE1B0F9F2BBD91AC00214119 /* Project object */;
 }

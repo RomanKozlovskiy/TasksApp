@@ -14,9 +14,10 @@ final class Di {
     fileprivate let countriesConfiguration: CountriesConfiguration
     fileprivate let requestBuilder: RequestBuilder
     fileprivate let countriesApiClient: CountriesApiClient
+    fileprivate let coreDataService: CoreDataServiceProtocol
     
     fileprivate var countriesProvider: CountriesProvider {
-        CountriesProvider(countriesApiClient: countriesApiClient)
+        CountriesProvider(countriesApiClient: countriesApiClient, coreDataService: coreDataService)
     }
     
     init() {
@@ -26,6 +27,7 @@ final class Di {
         self.countriesConfiguration = CountriesConfiguration()
         self.requestBuilder = RequestBuilderImpl()
         self.countriesApiClient = CountriesApiClient(configuration: countriesConfiguration, requestBuilder: requestBuilder)
+        self.coreDataService = CoreDataService()
         self.screenFactory.di = self
     }
 }
