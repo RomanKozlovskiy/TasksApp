@@ -30,6 +30,8 @@ final class DetailCountryCollectionViewCell: UICollectionViewCell {
     }
     
     func configure(with stringUrl: String) {
-        imageView.downloadImage(stringUrl: stringUrl)
+        imageView.downloadImage(stringUrl: stringUrl) { [weak self] image in
+            self?.imageView.image = image
+        }
     }
 }

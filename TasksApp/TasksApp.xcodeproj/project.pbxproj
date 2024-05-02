@@ -17,6 +17,7 @@
 		CE1B0FC52BBD933100214119 /* WeatherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1B0FC42BBD933100214119 /* WeatherViewController.swift */; };
 		CE1B0FC72BBD933A00214119 /* CountryListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1B0FC62BBD933A00214119 /* CountryListViewController.swift */; };
 		CE1B0FC92BBD934100214119 /* Task3ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1B0FC82BBD934100214119 /* Task3ViewController.swift */; };
+		CE26D7FF2BE371EF00D30A64 /* CachingService .swift in Sources */ = {isa = PBXBuildFile; fileRef = CE26D7FE2BE371EF00D30A64 /* CachingService .swift */; };
 		CE560A532BC5667B00E0CEE7 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = CE560A522BC5667B00E0CEE7 /* Alamofire */; };
 		CE61DCB22BCEB24E00DAC72A /* DI.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE61DCB12BCEB24E00DAC72A /* DI.swift */; };
 		CE61DCB42BCEB44300DAC72A /* Coordinator .swift in Sources */ = {isa = PBXBuildFile; fileRef = CE61DCB32BCEB44300DAC72A /* Coordinator .swift */; };
@@ -25,7 +26,7 @@
 		CE61DCBA2BCEB67200DAC72A /* MenuCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE61DCB92BCEB67200DAC72A /* MenuCoordinator.swift */; };
 		CE736B812BDA621A0060E4F1 /* CountryDataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = CE736B7F2BDA621A0060E4F1 /* CountryDataModel.xcdatamodeld */; };
 		CE736B832BDA63910060E4F1 /* CoreDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE736B822BDA63910060E4F1 /* CoreDataService.swift */; };
-		CE736B852BDB91370060E4F1 /* Extensions + Int.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE736B842BDB91370060E4F1 /* Extensions + Int.swift */; };
+		CE736B852BDB91370060E4F1 /* Extension + Int.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE736B842BDB91370060E4F1 /* Extension + Int.swift */; };
 		CE736B872BDB91F80060E4F1 /* Extension + UITableViewCell .swift in Sources */ = {isa = PBXBuildFile; fileRef = CE736B862BDB91F80060E4F1 /* Extension + UITableViewCell .swift */; };
 		CE736B892BDB922E0060E4F1 /* Extension + UICollectionViewCell .swift in Sources */ = {isa = PBXBuildFile; fileRef = CE736B882BDB922E0060E4F1 /* Extension + UICollectionViewCell .swift */; };
 		CEBB27DC2BC401EA00076C3F /* CoverView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBB27DB2BC401EA00076C3F /* CoverView.swift */; };
@@ -61,6 +62,7 @@
 		CE1B0FC42BBD933100214119 /* WeatherViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherViewController.swift; sourceTree = "<group>"; };
 		CE1B0FC62BBD933A00214119 /* CountryListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryListViewController.swift; sourceTree = "<group>"; };
 		CE1B0FC82BBD934100214119 /* Task3ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Task3ViewController.swift; sourceTree = "<group>"; };
+		CE26D7FE2BE371EF00D30A64 /* CachingService .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CachingService .swift"; sourceTree = "<group>"; };
 		CE61DCB12BCEB24E00DAC72A /* DI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DI.swift; sourceTree = "<group>"; };
 		CE61DCB32BCEB44300DAC72A /* Coordinator .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Coordinator .swift"; sourceTree = "<group>"; };
 		CE61DCB52BCEB4F800DAC72A /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
@@ -68,7 +70,7 @@
 		CE61DCB92BCEB67200DAC72A /* MenuCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuCoordinator.swift; sourceTree = "<group>"; };
 		CE736B802BDA621A0060E4F1 /* CountryDataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CountryDataModel.xcdatamodel; sourceTree = "<group>"; };
 		CE736B822BDA63910060E4F1 /* CoreDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataService.swift; sourceTree = "<group>"; };
-		CE736B842BDB91370060E4F1 /* Extensions + Int.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extensions + Int.swift"; sourceTree = "<group>"; };
+		CE736B842BDB91370060E4F1 /* Extension + Int.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension + Int.swift"; sourceTree = "<group>"; };
 		CE736B862BDB91F80060E4F1 /* Extension + UITableViewCell .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension + UITableViewCell .swift"; sourceTree = "<group>"; };
 		CE736B882BDB922E0060E4F1 /* Extension + UICollectionViewCell .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension + UICollectionViewCell .swift"; sourceTree = "<group>"; };
 		CEBB27DB2BC401EA00076C3F /* CoverView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoverView.swift; sourceTree = "<group>"; };
@@ -306,6 +308,7 @@
 			isa = PBXGroup;
 			children = (
 				CE736B822BDA63910060E4F1 /* CoreDataService.swift */,
+				CE26D7FE2BE371EF00D30A64 /* CachingService .swift */,
 			);
 			path = "Services ";
 			sourceTree = "<group>";
@@ -314,7 +317,7 @@
 			isa = PBXGroup;
 			children = (
 				CED8C4652BD7D761000890A5 /* Extension + UIImageView .swift */,
-				CE736B842BDB91370060E4F1 /* Extensions + Int.swift */,
+				CE736B842BDB91370060E4F1 /* Extension + Int.swift */,
 				CE736B862BDB91F80060E4F1 /* Extension + UITableViewCell .swift */,
 				CE736B882BDB922E0060E4F1 /* Extension + UICollectionViewCell .swift */,
 			);
@@ -425,6 +428,7 @@
 				CEF505D82BC66BC00087406E /* WeatherNetworkManager.swift in Sources */,
 				CED8C45B2BD7AC95000890A5 /* RequestBuilder .swift in Sources */,
 				CE61DCB22BCEB24E00DAC72A /* DI.swift in Sources */,
+				CE26D7FF2BE371EF00D30A64 /* CachingService .swift in Sources */,
 				CEBB27DC2BC401EA00076C3F /* CoverView.swift in Sources */,
 				CE736B892BDB922E0060E4F1 /* Extension + UICollectionViewCell .swift in Sources */,
 				CE61DCB42BCEB44300DAC72A /* Coordinator .swift in Sources */,
@@ -444,7 +448,7 @@
 				CE1B0FAB2BBD91AC00214119 /* AppDelegate.swift in Sources */,
 				CEF505DF2BC6A1660087406E /* WeatherInfo.swift in Sources */,
 				CE1B0FC52BBD933100214119 /* WeatherViewController.swift in Sources */,
-				CE736B852BDB91370060E4F1 /* Extensions + Int.swift in Sources */,
+				CE736B852BDB91370060E4F1 /* Extension + Int.swift in Sources */,
 				CEBDC1322BD6742600458148 /* CountryBottomSheetController.swift in Sources */,
 				CED8C4662BD7D761000890A5 /* Extension + UIImageView .swift in Sources */,
 				CEBDC1302BD66C7900458148 /* DetailCountryCollectionViewCell.swift in Sources */,

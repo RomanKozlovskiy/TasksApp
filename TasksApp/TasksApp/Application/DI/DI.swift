@@ -17,7 +17,7 @@ final class Di {
     fileprivate let coreDataService: CoreDataServiceProtocol
     
     fileprivate var countriesProvider: CountriesProvider {
-        CountriesProvider(countriesApiClient: countriesApiClient, coreDataService: coreDataService)
+        CountriesProvider(countriesApiClient: countriesApiClient, coreDataService: coreDataService, cachingService: CachingService())
     }
     
     init() {

@@ -9,18 +9,12 @@ import UIKit
 import SnapKit
 
 final class CountryListViewController: UIViewController {
+    var onSelectedCountry: OnSelectedCountry?
+    
     private let countriesProvider: CountriesProvider
     private var countries: [Country] = []
     private var nextPagePath: String?
-    
-    var onSelectedCountry: OnSelectedCountry?
-    
-    private var navigationBarIsHidden = false {
-        didSet {
-            navigationController?.setNavigationBarHidden(navigationBarIsHidden, animated: true)
-        }
-    }
-    
+  
     private lazy var tableView = UITableView()
     
     private lazy var refreshControl: UIRefreshControl = {
@@ -28,12 +22,7 @@ final class CountryListViewController: UIViewController {
         refreshControl.addAction(UIAction(handler: { _ in self.fetchCountries() }), for: .valueChanged)
         return refreshControl
     }()
-    
-    private lazy var cachedDaraSource: NSCache<AnyObject, UIImage> = {
-        let cache = NSCache<AnyObject, UIImage>()
-        return cache
-    }()
-    
+
     init(countriesProvider: CountriesProvider) {
         self.countriesProvider = countriesProvider
         super.init(nibName: nil, bundle: nil)
@@ -96,14 +85,19 @@ extension CountryListViewController: UITableViewDataSource, UITableViewDelegate 
         let country = countries[indexPath.row]
         cell.configure(with: country)
        
+        if let image = countriesProvider.getCachedObject(for: indexPath.row as AnyObject) {
+            cell.setImage(image: image)
+        } else {
+            cell.downloadImage(stringUrl: country.countryInfo.flag) { image in
+                cell.setImage(image: image)
+                self.countriesProvider.setCachedObject(image: image, key: indexPath.row as AnyObject)
+            }
+        }
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        if navigationController?.isNavigationBarHidden == true {
-            navigationBarIsHidden = false
-        }
         let country = countries[indexPath.row]
         onSelectedCountry?(country)
     }
@@ -112,13 +106,5 @@ extension CountryListViewController: UITableViewDataSource, UITableViewDelegate 
         if indexPath.row == countries.count - 1, nextPagePath != nil && nextPagePath != "" {
             fetchCountries(nextPage: nextPagePath)
         }
-    }
-    
-    func scrollViewWillBeginDecelerating(_ scrollView: UIScrollView) {
-       if scrollView.panGestureRecognizer.translation(in: scrollView).y < 0 {
-           navigationBarIsHidden = true
-       } else {
-           navigationBarIsHidden = false
-       }
     }
 }

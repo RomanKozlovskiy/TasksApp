@@ -11,6 +11,8 @@ import Foundation
 final class CountriesProvider {
     private let countriesApiClient: CountriesApiClient
     private let coreDataService: CoreDataServiceProtocol
+    private let cachingService: CachingService
+    
     private var countriesAlreadyLoaded: Bool? {
         get {
             return UserDefaults.standard.bool(forKey: Keys.isLoaded.rawValue)
@@ -24,9 +26,10 @@ final class CountriesProvider {
         }
     }
     
-    init(countriesApiClient: CountriesApiClient, coreDataService: CoreDataServiceProtocol) {
+    init(countriesApiClient: CountriesApiClient, coreDataService: CoreDataServiceProtocol, cachingService: CachingService) {
         self.countriesApiClient = countriesApiClient
         self.coreDataService = coreDataService
+        self.cachingService = cachingService
     }
     
     func fetchCountries(nextPage: String? = nil, completion: @escaping (CountryList?) -> Void) {
@@ -85,6 +88,14 @@ final class CountriesProvider {
                 countryManagedObject.flag = country.countryInfo.flag
             }
         }
+    }
+    
+    func getCachedObject(for key: AnyObject) -> UIImage? {
+        cachingService.objectFor(key: key) as? UIImage
+    }
+    
+    func setCachedObject(image: UIImage, key: AnyObject) {
+        cachingService.setObject(object: image, key: key)
     }
     
     private enum Keys: String {

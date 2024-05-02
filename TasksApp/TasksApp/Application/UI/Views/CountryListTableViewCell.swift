@@ -56,16 +56,25 @@ final class CountryListTableViewCell: UITableViewCell {
     
     override func prepareForReuse() {
         flagImage.image = nil
+        flagImage.isHidden = true
         countryName.text = nil
         capitalName.text = nil
         descriptionLabel.text = nil
     }
     
     func configure(with country: Country) {
-        flagImage.downloadImage(stringUrl: country.countryInfo.flag)
         countryName.text = country.name
         capitalName.text = country.capital
         descriptionLabel.text = country.descriptionSmall
+    }
+    
+    func setImage(image: UIImage) {
+        flagImage.image = image
+        flagImage.isHidden = flagImage.image != nil ? false : true 
+    }
+    
+    func downloadImage(stringUrl: String, completion: @escaping (UIImage) -> Void) {
+        flagImage.downloadImage(stringUrl: stringUrl, completion: completion)
     }
  
     private func addSubviews() {
@@ -74,7 +83,8 @@ final class CountryListTableViewCell: UITableViewCell {
     
     private func applyConstraints() {
         verticalStackView.snp.makeConstraints {
-            $0.leading.trailing.equalToSuperview().inset(16)
+            $0.leading.equalToSuperview().inset(16)
+            $0.trailing.equalToSuperview().inset(30)
             $0.top.bottom.equalToSuperview().inset(8)
         }
         

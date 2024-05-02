@@ -128,8 +128,16 @@ final class ContainerViewController: UIViewController {
                                                            target: self,
                                                            action: #selector(barButtonTapped))
         navigationController?.navigationBar.prefersLargeTitles = false
+        
+        guard let navBar = navigationController?.navigationBar else {
+            return 
+        }
+        let standardAppearance = UINavigationBarAppearance()
+        standardAppearance.configureWithDefaultBackground()
+        navBar.standardAppearance = standardAppearance
+        navBar.scrollEdgeAppearance = standardAppearance
     }
-
+    
     @objc private func barButtonTapped() {
         toggleMenu()
     }
