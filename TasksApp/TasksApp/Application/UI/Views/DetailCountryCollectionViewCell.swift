@@ -12,7 +12,7 @@ final class DetailCountryCollectionViewCell: UICollectionViewCell {
     private lazy var imageView: UIImageView = {
         let imageView = UIImageView()
         imageView.clipsToBounds = true
-        imageView.image = UIImage(resource: .noFlag)
+        imageView.image = UIImage(resource: .failed)
         imageView.contentMode = .scaleAspectFit
         return imageView
     }()
