@@ -8,7 +8,7 @@
 import Foundation
 
 final class MenuCoordinator: BaseCoordinator {
-    var finishFlow: (() -> Void)?
+    var finishFlow: VoidClosure?
     
     private let router: Router
     private let screenFactory: ScreenFactory
@@ -28,6 +28,15 @@ final class MenuCoordinator: BaseCoordinator {
         menuContainerScreen.onFinish = { [weak self] in
             self?.finishFlow?()
         }
-        router.setRootModule(menuContainerScreen, hideBar: true)
+        router.setRootModule(menuContainerScreen)
+        
+        menuContainerScreen.onSelectedCountry = { [weak self] country in
+            self?.makeDetailCountry(with: country)
+        }
+    }
+    
+    private func makeDetailCountry(with country: Country) {
+        let detailCountryScreen = screenFactory.makeDetailCountryScreen(with: country)
+        router.push(detailCountryScreen)
     }
 }

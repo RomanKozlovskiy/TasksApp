@@ -11,11 +11,27 @@ final class Di {
     fileprivate let screenFactory: ScreenFactory
     fileprivate let coordinatorFactory: CoordinatorFactory
     fileprivate let weatherNetworkManager: WeatherNetworkManager
+    fileprivate let countriesConfiguration: CountriesConfiguration
+    fileprivate let requestBuilder: RequestBuilder
+    fileprivate let countriesApiClient: CountriesApiClient
+    fileprivate let coreDataService: CoreDataServiceProtocol
+    
+    fileprivate var countriesProvider: CountriesProvider {
+        CountriesProvider(countriesApiClient: countriesApiClient, coreDataService: coreDataService, cachingService: CachingService())
+    }
+    
+    fileprivate var detailCountryProvider: DetailCountryProvider {
+        DetailCountryProvider(cachingService: CachingService())
+    }
     
     init() {
         self.screenFactory = ScreenFactory()
         self.coordinatorFactory = CoordinatorFactory(screenFactory: screenFactory)
         self.weatherNetworkManager = WeatherNetworkManager()
+        self.countriesConfiguration = CountriesConfiguration()
+        self.requestBuilder = RequestBuilderImpl()
+        self.countriesApiClient = CountriesApiClient(configuration: countriesConfiguration, requestBuilder: requestBuilder)
+        self.coreDataService = CoreDataService()
         self.screenFactory.di = self
     }
 }
@@ -45,7 +61,7 @@ final class ScreenFactory {
         let menuVC = MenuViewController()
         let homeVC = HomeViewController()
         let weatherVC = WeatherViewController()
-        let task2VC = Task2ViewController()
+        let countryListVC = CountryListViewController(countriesProvider: di.countriesProvider)
         let task3VC = Task3ViewController()
         weatherVC.addDependency(weatherNetworkManager: di.weatherNetworkManager)
         
@@ -55,11 +71,16 @@ final class ScreenFactory {
             menuVC: menuVC,
             homeVC: homeVC,
             weatherVC: weatherVC,
-            task2VC: task2VC,
+            countryListVC: countryListVC,
             task3VC: task3VC
         )
         
         return menuContainerViewController
+    }
+    
+    func makeDetailCountryScreen(with country: Country) -> DetailCountryViewController {
+        let detailCountryViewController = DetailCountryViewController(detailCountryProvider: di.detailCountryProvider, country: country)
+        return detailCountryViewController
     }
 }
 
