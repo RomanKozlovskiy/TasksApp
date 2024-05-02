@@ -18,6 +18,7 @@
 		CE1B0FC72BBD933A00214119 /* CountryListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1B0FC62BBD933A00214119 /* CountryListViewController.swift */; };
 		CE1B0FC92BBD934100214119 /* Task3ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1B0FC82BBD934100214119 /* Task3ViewController.swift */; };
 		CE26D7FF2BE371EF00D30A64 /* CachingService .swift in Sources */ = {isa = PBXBuildFile; fileRef = CE26D7FE2BE371EF00D30A64 /* CachingService .swift */; };
+		CE26D8012BE3930300D30A64 /* DetailCountryProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE26D8002BE3930300D30A64 /* DetailCountryProvider.swift */; };
 		CE560A532BC5667B00E0CEE7 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = CE560A522BC5667B00E0CEE7 /* Alamofire */; };
 		CE61DCB22BCEB24E00DAC72A /* DI.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE61DCB12BCEB24E00DAC72A /* DI.swift */; };
 		CE61DCB42BCEB44300DAC72A /* Coordinator .swift in Sources */ = {isa = PBXBuildFile; fileRef = CE61DCB32BCEB44300DAC72A /* Coordinator .swift */; };
@@ -63,6 +64,7 @@
 		CE1B0FC62BBD933A00214119 /* CountryListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryListViewController.swift; sourceTree = "<group>"; };
 		CE1B0FC82BBD934100214119 /* Task3ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Task3ViewController.swift; sourceTree = "<group>"; };
 		CE26D7FE2BE371EF00D30A64 /* CachingService .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CachingService .swift"; sourceTree = "<group>"; };
+		CE26D8002BE3930300D30A64 /* DetailCountryProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailCountryProvider.swift; sourceTree = "<group>"; };
 		CE61DCB12BCEB24E00DAC72A /* DI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DI.swift; sourceTree = "<group>"; };
 		CE61DCB32BCEB44300DAC72A /* Coordinator .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Coordinator .swift"; sourceTree = "<group>"; };
 		CE61DCB52BCEB4F800DAC72A /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
@@ -328,6 +330,7 @@
 			isa = PBXGroup;
 			children = (
 				CED8C4682BD7F2CE000890A5 /* CountriesProvider.swift */,
+				CE26D8002BE3930300D30A64 /* DetailCountryProvider.swift */,
 			);
 			path = Provider;
 			sourceTree = "<group>";
@@ -437,6 +440,7 @@
 				CE1B0FAF2BBD91AC00214119 /* ContainerViewController.swift in Sources */,
 				CEBF8CD92BD28946003D9B70 /* CountryListTableViewCell.swift in Sources */,
 				CE61DCB62BCEB4F800DAC72A /* Router.swift in Sources */,
+				CE26D8012BE3930300D30A64 /* DetailCountryProvider.swift in Sources */,
 				CEF505DD2BC691650087406E /* WeatherData.swift in Sources */,
 				CE736B872BDB91F80060E4F1 /* Extension + UITableViewCell .swift in Sources */,
 				CEBDC12E2BD663E800458148 /* Foundation .swift in Sources */,

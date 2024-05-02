@@ -123,15 +123,19 @@ final class ContainerViewController: UIViewController {
     
     private func configureNavigationBar() {
         title = Constants.title
-        navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(systemName: Constants.imageSystemName),
-                                                           style: .done,
-                                                           target: self,
-                                                           action: #selector(barButtonTapped))
+        navigationItem.leftBarButtonItem = UIBarButtonItem(
+            image: UIImage(systemName: Constants.imageSystemName),
+            style: .done,
+            target: self,
+            action: #selector(barButtonTapped)
+        )
+        
         navigationController?.navigationBar.prefersLargeTitles = false
         
         guard let navBar = navigationController?.navigationBar else {
             return 
         }
+        
         let standardAppearance = UINavigationBarAppearance()
         standardAppearance.configureWithDefaultBackground()
         navBar.standardAppearance = standardAppearance

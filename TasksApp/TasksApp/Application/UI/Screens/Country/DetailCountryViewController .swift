@@ -14,6 +14,8 @@ final class DetailCountryViewController: UIViewController {
     private var currentPage = 0
     private var images: [UIImage] = []
     
+    private let detailCountryProvider: DetailCountryProvider
+    
     private var pageControl: UIPageControl = {
         let pageControl = UIPageControl()
         pageControl.currentPageIndicatorTintColor = .white
@@ -21,7 +23,8 @@ final class DetailCountryViewController: UIViewController {
         return pageControl
     }()
      
-    init(country: Country) {
+    init(detailCountryProvider: DetailCountryProvider, country: Country) {
+        self.detailCountryProvider = detailCountryProvider
         self.country = country
         super.init(nibName: nil, bundle: nil)
     }
@@ -103,16 +106,27 @@ extension DetailCountryViewController: UICollectionViewDataSource, UICollectionV
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: DetailCountryCollectionViewCell.reuseId, for: indexPath) as! DetailCountryCollectionViewCell
-     
-        if !country.countryInfo.images.isEmpty {
+        
+        if let image = detailCountryProvider.getCachedObject(for: indexPath.row as AnyObject) {
+            cell.setImage(image: image)
+        } else if !country.countryInfo.images.isEmpty {
             let imageUrl = country.countryInfo.images[indexPath.row]
-            cell.configure(with: imageUrl)
+            cell.configure(with: imageUrl) { [weak self] image in
+                cell.setImage(image: image)
+                self?.detailCountryProvider.setCachedObject(image: image, key: indexPath.row as AnyObject)
+            }
         } else if country.image != ""  {
             let imageUrl = country.image
-            cell.configure(with: imageUrl)
+            cell.configure(with: imageUrl) { [weak self] image in
+                cell.setImage(image: image)
+                self?.detailCountryProvider.setCachedObject(image: image, key: indexPath.row as AnyObject)
+            }
         } else {
             let imageUrl = country.countryInfo.flag
-            cell.configure(with: imageUrl)
+            cell.configure(with: imageUrl) { [weak self] image in
+                cell.setImage(image: image)
+                self?.detailCountryProvider.setCachedObject(image: image, key: indexPath.row as AnyObject)
+            }
         }
         return cell
     }

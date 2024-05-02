@@ -29,9 +29,11 @@ final class DetailCountryCollectionViewCell: UICollectionViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func configure(with stringUrl: String) {
-        imageView.downloadImage(stringUrl: stringUrl) { [weak self] image in
-            self?.imageView.image = image
-        }
+    func setImage(image: UIImage) {
+        imageView.image = image
+    }
+    
+    func configure(with stringUrl: String, completion: @escaping (UIImage) -> Void) {
+        imageView.downloadImage(stringUrl: stringUrl, completion: completion)
     }
 }
