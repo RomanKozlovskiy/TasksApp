@@ -16,7 +16,7 @@
 		CE1B0FC22BBD92F700214119 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1B0FC12BBD92F700214119 /* HomeViewController.swift */; };
 		CE1B0FC52BBD933100214119 /* WeatherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1B0FC42BBD933100214119 /* WeatherViewController.swift */; };
 		CE1B0FC72BBD933A00214119 /* CountryListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1B0FC62BBD933A00214119 /* CountryListViewController.swift */; };
-		CE1B0FC92BBD934100214119 /* Task3ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1B0FC82BBD934100214119 /* Task3ViewController.swift */; };
+		CE1B0FC92BBD934100214119 /* RichTextViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1B0FC82BBD934100214119 /* RichTextViewController.swift */; };
 		CE26D7FF2BE371EF00D30A64 /* CachingService .swift in Sources */ = {isa = PBXBuildFile; fileRef = CE26D7FE2BE371EF00D30A64 /* CachingService .swift */; };
 		CE26D8012BE3930300D30A64 /* DetailCountryProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE26D8002BE3930300D30A64 /* DetailCountryProvider.swift */; };
 		CE560A532BC5667B00E0CEE7 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = CE560A522BC5667B00E0CEE7 /* Alamofire */; };
@@ -48,6 +48,7 @@
 		CEF505DD2BC691650087406E /* WeatherData.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF505DC2BC691650087406E /* WeatherData.swift */; };
 		CEF505DF2BC6A1660087406E /* WeatherInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF505DE2BC6A1660087406E /* WeatherInfo.swift */; };
 		CEF505E22BC6C2020087406E /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = CEF505E12BC6C2020087406E /* SnapKit */; };
+		CEF70B7A2BEA1542003A175B /* RichTextKit in Frameworks */ = {isa = PBXBuildFile; productRef = CEF70B792BEA1542003A175B /* RichTextKit */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -62,7 +63,7 @@
 		CE1B0FC12BBD92F700214119 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		CE1B0FC42BBD933100214119 /* WeatherViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherViewController.swift; sourceTree = "<group>"; };
 		CE1B0FC62BBD933A00214119 /* CountryListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryListViewController.swift; sourceTree = "<group>"; };
-		CE1B0FC82BBD934100214119 /* Task3ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Task3ViewController.swift; sourceTree = "<group>"; };
+		CE1B0FC82BBD934100214119 /* RichTextViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RichTextViewController.swift; sourceTree = "<group>"; };
 		CE26D7FE2BE371EF00D30A64 /* CachingService .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CachingService .swift"; sourceTree = "<group>"; };
 		CE26D8002BE3930300D30A64 /* DetailCountryProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailCountryProvider.swift; sourceTree = "<group>"; };
 		CE61DCB12BCEB24E00DAC72A /* DI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DI.swift; sourceTree = "<group>"; };
@@ -101,6 +102,7 @@
 			files = (
 				CE560A532BC5667B00E0CEE7 /* Alamofire in Frameworks */,
 				CEF505E22BC6C2020087406E /* SnapKit in Frameworks */,
+				CEF70B7A2BEA1542003A175B /* RichTextKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -191,7 +193,7 @@
 				CE61DC912BCE640800DAC72A /* Menu */,
 				CE61DC922BCE642E00DAC72A /* Weather */,
 				CE61DC932BCE695B00DAC72A /* Country */,
-				CE61DC942BCE696400DAC72A /* Task3 */,
+				CE61DC942BCE696400DAC72A /* RichText */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -242,12 +244,12 @@
 			path = Country;
 			sourceTree = "<group>";
 		};
-		CE61DC942BCE696400DAC72A /* Task3 */ = {
+		CE61DC942BCE696400DAC72A /* RichText */ = {
 			isa = PBXGroup;
 			children = (
-				CE1B0FC82BBD934100214119 /* Task3ViewController.swift */,
+				CE1B0FC82BBD934100214119 /* RichTextViewController.swift */,
 			);
-			path = Task3;
+			path = RichText;
 			sourceTree = "<group>";
 		};
 		CE61DC952BCE69FA00DAC72A /* Entity */ = {
@@ -365,6 +367,7 @@
 			packageProductDependencies = (
 				CE560A522BC5667B00E0CEE7 /* Alamofire */,
 				CEF505E12BC6C2020087406E /* SnapKit */,
+				CEF70B792BEA1542003A175B /* RichTextKit */,
 			);
 			productName = TasksApp;
 			productReference = CE1B0FA72BBD91AC00214119 /* TasksApp.app */;
@@ -397,6 +400,7 @@
 			packageReferences = (
 				CE560A512BC5667B00E0CEE7 /* XCRemoteSwiftPackageReference "Alamofire" */,
 				CEF505E02BC6C2020087406E /* XCRemoteSwiftPackageReference "SnapKit" */,
+				CEF70B782BEA1542003A175B /* XCRemoteSwiftPackageReference "RichTextKit" */,
 			);
 			productRefGroup = CE1B0FA82BBD91AC00214119 /* Products */;
 			projectDirPath = "";
@@ -426,7 +430,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CE1B0FC22BBD92F700214119 /* HomeViewController.swift in Sources */,
-				CE1B0FC92BBD934100214119 /* Task3ViewController.swift in Sources */,
+				CE1B0FC92BBD934100214119 /* RichTextViewController.swift in Sources */,
 				CED8C45F2BD7C493000890A5 /* CountriesApiClient.swift in Sources */,
 				CEF505D82BC66BC00087406E /* WeatherNetworkManager.swift in Sources */,
 				CED8C45B2BD7AC95000890A5 /* RequestBuilder .swift in Sources */,
@@ -697,6 +701,14 @@
 				minimumVersion = 5.7.1;
 			};
 		};
+		CEF70B782BEA1542003A175B /* XCRemoteSwiftPackageReference "RichTextKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/danielsaidi/RichTextKit.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -709,6 +721,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = CEF505E02BC6C2020087406E /* XCRemoteSwiftPackageReference "SnapKit" */;
 			productName = SnapKit;
+		};
+		CEF70B792BEA1542003A175B /* RichTextKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CEF70B782BEA1542003A175B /* XCRemoteSwiftPackageReference "RichTextKit" */;
+			productName = RichTextKit;
 		};
 /* End XCSwiftPackageProductDependency section */
 
