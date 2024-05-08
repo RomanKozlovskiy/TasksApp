@@ -22,7 +22,7 @@ final class ContainerViewController: UIViewController {
     private var homeViewController: HomeViewController!
     private var weatherViewController: WeatherViewController!
     private var countryListViewController: CountryListViewController!
-    private var task3ViewController: Task3ViewController!
+    private var task3ViewController: RichTextViewController!
     
     private var childControllers = [UIViewController]()
   
@@ -42,7 +42,7 @@ final class ContainerViewController: UIViewController {
         homeVC: HomeViewController,
         weatherVC: WeatherViewController,
         countryListVC: CountryListViewController,
-        task3VC: Task3ViewController
+        task3VC: RichTextViewController
     ) {
         self.menuViewController = menuVC
         self.homeViewController = homeVC
