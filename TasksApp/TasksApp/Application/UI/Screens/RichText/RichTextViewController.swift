@@ -103,11 +103,13 @@ final class RichTextViewController: UIViewController {
 
 extension RichTextViewController: UITextViewDelegate {
     func textViewDidChangeSelection(_ textView: UITextView) {
-        print(richTextView.richTextStyles)
-        
         boldButton?.isSelected = richTextView.richTextStyles.contains(.bold) ? true : false
         italicButton?.isSelected = richTextView.richTextStyles.contains(.italic) ? true : false
         strikethroughButton?.isSelected = richTextView.richTextStyles.contains(.strikethrough) ? true : false
         underlinedButton?.isSelected = richTextView.richTextStyles.contains(.underlined) ? true : false
+    }
+    
+    func textViewDidChange(_ textView: UITextView) {
+        richTextView.resolveHashtag()
     }
 }

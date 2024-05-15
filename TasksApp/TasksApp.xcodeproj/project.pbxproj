@@ -30,6 +30,7 @@
 		CE736B852BDB91370060E4F1 /* Extension + Int.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE736B842BDB91370060E4F1 /* Extension + Int.swift */; };
 		CE736B872BDB91F80060E4F1 /* Extension + UITableViewCell .swift in Sources */ = {isa = PBXBuildFile; fileRef = CE736B862BDB91F80060E4F1 /* Extension + UITableViewCell .swift */; };
 		CE736B892BDB922E0060E4F1 /* Extension + UICollectionViewCell .swift in Sources */ = {isa = PBXBuildFile; fileRef = CE736B882BDB922E0060E4F1 /* Extension + UICollectionViewCell .swift */; };
+		CEA582B62BF20F5800D7A8A6 /* Extension + UITextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA582B52BF20F5800D7A8A6 /* Extension + UITextView.swift */; };
 		CEBB27DC2BC401EA00076C3F /* CoverView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBB27DB2BC401EA00076C3F /* CoverView.swift */; };
 		CEBDC12B2BD65FEE00458148 /* DetailCountryViewController .swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBDC12A2BD65FEE00458148 /* DetailCountryViewController .swift */; };
 		CEBDC12E2BD663E800458148 /* Foundation .swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBDC12D2BD663E800458148 /* Foundation .swift */; };
@@ -76,6 +77,7 @@
 		CE736B842BDB91370060E4F1 /* Extension + Int.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension + Int.swift"; sourceTree = "<group>"; };
 		CE736B862BDB91F80060E4F1 /* Extension + UITableViewCell .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension + UITableViewCell .swift"; sourceTree = "<group>"; };
 		CE736B882BDB922E0060E4F1 /* Extension + UICollectionViewCell .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension + UICollectionViewCell .swift"; sourceTree = "<group>"; };
+		CEA582B52BF20F5800D7A8A6 /* Extension + UITextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension + UITextView.swift"; sourceTree = "<group>"; };
 		CEBB27DB2BC401EA00076C3F /* CoverView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoverView.swift; sourceTree = "<group>"; };
 		CEBDC12A2BD65FEE00458148 /* DetailCountryViewController .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DetailCountryViewController .swift"; sourceTree = "<group>"; };
 		CEBDC12D2BD663E800458148 /* Foundation .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Foundation .swift"; sourceTree = "<group>"; };
@@ -324,6 +326,7 @@
 				CE736B842BDB91370060E4F1 /* Extension + Int.swift */,
 				CE736B862BDB91F80060E4F1 /* Extension + UITableViewCell .swift */,
 				CE736B882BDB922E0060E4F1 /* Extension + UICollectionViewCell .swift */,
+				CEA582B52BF20F5800D7A8A6 /* Extension + UITextView.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -454,6 +457,7 @@
 				CE736B832BDA63910060E4F1 /* CoreDataService.swift in Sources */,
 				CEBDC12B2BD65FEE00458148 /* DetailCountryViewController .swift in Sources */,
 				CE1B0FAB2BBD91AC00214119 /* AppDelegate.swift in Sources */,
+				CEA582B62BF20F5800D7A8A6 /* Extension + UITextView.swift in Sources */,
 				CEF505DF2BC6A1660087406E /* WeatherInfo.swift in Sources */,
 				CE1B0FC52BBD933100214119 /* WeatherViewController.swift in Sources */,
 				CE736B852BDB91370060E4F1 /* Extension + Int.swift in Sources */,
