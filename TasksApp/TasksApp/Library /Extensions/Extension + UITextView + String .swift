@@ -24,40 +24,57 @@ extension String {
 }
 
 extension RichTextView {
+
+    func convertHashtags() {
+        
+        guard let richTextAttrString = mutableAttributedString else { return }
+        
+        richTextAttrString.beginEditing()
     
-    func resolveHashtag() {
-        
-        setRichTextAttribute(.font, to: UIFont.systemFont(ofSize: 16), at: rangeBeforeInputCursor)
-        
-        let scheme = ["hashtag": "#"]
-        
-        let words = self.text.components(separatedBy: NSCharacterSet.whitespacesAndNewlines)
-        
-        guard let lastWord = words.last else { return }
-        
-        let startIndex = text.index(text.endIndex, offsetBy: -lastWord.count)
-        let endIndex = text.index(text.endIndex, offsetBy: 0)
-        let range = startIndex..<endIndex
-        
-        if let hashtag = scheme["hashtag"],
-           lastWord.hasPrefix(hashtag),
-           lastWord.count >= 3 {
-           
-            setRichTextColor(.foreground, to: UIColor.systemBlue, at: text.NSRangeFromRange(range: range))
-        }
-        else {
-            setRichTextColor(.foreground, to: UIColor.black, at: text.NSRangeFromRange(range: range))
-        }
-        
-        for word in words {
-            guard let hashtag = scheme["hashtag"] else { return }
+        do {
+            let hashtagRegex = try NSRegularExpression(pattern: "(?:\\s|^)(#(?:[a-zA-Z-а-яА-Я0-9]{3,}.*?|\\d+[a-zA-Z-а-яА-Я0-9]+.*?))\\b",
+                                                options: .anchorsMatchLines)
             
-            if word.hasPrefix(hashtag), word.count >= 3 {
-                let nsText: NSString = self.text as NSString
-                let matchRange: NSRange = nsText.range(of: word as String)
-                setRichTextAttribute(.foregroundColor, to: UIColor.systemBlue, at: matchRange)
+            let results = hashtagRegex.matches(in: text,
+                                        options: .withoutAnchoringBounds,
+                                        range: NSMakeRange(0, text.count))
+            
+            let array = results.map { (text as NSString).substring(with: $0.range) }
+            
+            for hashtag in array {
+                let range = (richTextAttrString.string as NSString).range(of: hashtag)
+                richTextAttrString.addAttribute(NSAttributedString.Key.foregroundColor, value: UIColor.systemBlue , range: range)
+               
             }
+            richTextAttrString.endEditing()
         }
+        catch {
+            richTextAttrString.endEditing()
+           
+        }
+        
+        do {
+            let defaultRegex = try NSRegularExpression(pattern: "(?:\\s|^)((?:[a-zA-Z-а-яА-Я0-9].*?|\\d+[a-zA-Z-а-яА-Я0-9]+.*?))\\b",
+                                                options: .anchorsMatchLines)
+            
+            let results = defaultRegex.matches(in: text,
+                                        options: .withoutAnchoringBounds,
+                                        range: NSMakeRange(0, text.count))
+            
+            let array = results.map { (text as NSString).substring(with: $0.range) }
+            
+            for hashtag in array {
+                let range = (richTextAttrString.string as NSString).range(of: hashtag)
+                richTextAttrString.addAttribute(NSAttributedString.Key.foregroundColor, value: UIColor.black , range: range)
+               
+            }
+            richTextAttrString.endEditing()
+        }
+        catch {
+            richTextAttrString.endEditing()
+           
+        }
+         setRichText(richTextAttrString)
     }
     
     func isValidLink(_ link: String) -> Bool {
@@ -84,8 +101,6 @@ extension RichTextView {
     }
     
     func removeHyperlink(at selectedRange: NSRange) {
-        var attributes = richTextAttributes(at: selectedRange)
-        let newAttributes = NSAttributedString(string: richText(at: selectedRange).string)
         replaceText(in: selectedRange, with: NSAttributedString(string: richText(at: selectedRange).string))
         setRichTextAttribute(.font, to: UIFont.systemFont(ofSize: 16), at: selectedRange)
     }

@@ -62,7 +62,7 @@ final class RichTextViewController: UIViewController {
     }
     
     private func addPlaceholder() {
-         placeholderLabel.text = "Enter text..."
+         placeholderLabel.text = "Enter text..." //TODO: - убрать баг с длинным текстом
          placeholderLabel.font = .italicSystemFont(ofSize: (richTextView.font?.pointSize)!)
          placeholderLabel.sizeToFit()
          richTextView.addSubview(placeholderLabel)
@@ -147,8 +147,9 @@ extension RichTextViewController: UITextViewDelegate {
     }
     
     func textViewDidChange(_ textView: UITextView) {
-        richTextView.resolveHashtag()
         placeholderLabel.isHidden = !richTextView.text.isEmpty
+
+        richTextView.convertHashtags()
     }
     
     func textViewDidEndEditing(_ textView: UITextView) {
