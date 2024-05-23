@@ -30,6 +30,7 @@
 		CE736B852BDB91370060E4F1 /* Extension + Int.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE736B842BDB91370060E4F1 /* Extension + Int.swift */; };
 		CE736B872BDB91F80060E4F1 /* Extension + UITableViewCell .swift in Sources */ = {isa = PBXBuildFile; fileRef = CE736B862BDB91F80060E4F1 /* Extension + UITableViewCell .swift */; };
 		CE736B892BDB922E0060E4F1 /* Extension + UICollectionViewCell .swift in Sources */ = {isa = PBXBuildFile; fileRef = CE736B882BDB922E0060E4F1 /* Extension + UICollectionViewCell .swift */; };
+		CE9CF1782BFF377D005B8416 /* GeolocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9CF1772BFF377D005B8416 /* GeolocationViewController.swift */; };
 		CEBB27DC2BC401EA00076C3F /* CoverView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBB27DB2BC401EA00076C3F /* CoverView.swift */; };
 		CEBDC12B2BD65FEE00458148 /* DetailCountryViewController .swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBDC12A2BD65FEE00458148 /* DetailCountryViewController .swift */; };
 		CEBDC12E2BD663E800458148 /* Foundation .swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBDC12D2BD663E800458148 /* Foundation .swift */; };
@@ -75,6 +76,7 @@
 		CE736B842BDB91370060E4F1 /* Extension + Int.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension + Int.swift"; sourceTree = "<group>"; };
 		CE736B862BDB91F80060E4F1 /* Extension + UITableViewCell .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension + UITableViewCell .swift"; sourceTree = "<group>"; };
 		CE736B882BDB922E0060E4F1 /* Extension + UICollectionViewCell .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension + UICollectionViewCell .swift"; sourceTree = "<group>"; };
+		CE9CF1772BFF377D005B8416 /* GeolocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeolocationViewController.swift; sourceTree = "<group>"; };
 		CEBB27DB2BC401EA00076C3F /* CoverView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoverView.swift; sourceTree = "<group>"; };
 		CEBDC12A2BD65FEE00458148 /* DetailCountryViewController .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DetailCountryViewController .swift"; sourceTree = "<group>"; };
 		CEBDC12D2BD663E800458148 /* Foundation .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Foundation .swift"; sourceTree = "<group>"; };
@@ -192,6 +194,7 @@
 				CE61DC922BCE642E00DAC72A /* Weather */,
 				CE61DC932BCE695B00DAC72A /* Country */,
 				CE61DC942BCE696400DAC72A /* Task3 */,
+				CE9CF1762BFF3735005B8416 /* Geolocation */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -286,6 +289,14 @@
 				CED8C45A2BD7AC95000890A5 /* RequestBuilder .swift */,
 			);
 			path = ApiClient;
+			sourceTree = "<group>";
+		};
+		CE9CF1762BFF3735005B8416 /* Geolocation */ = {
+			isa = PBXGroup;
+			children = (
+				CE9CF1772BFF377D005B8416 /* GeolocationViewController.swift */,
+			);
+			path = Geolocation;
 			sourceTree = "<group>";
 		};
 		CEBB27DA2BC401A800076C3F /* Views */ = {
@@ -439,6 +450,7 @@
 				CED8C4692BD7F2CE000890A5 /* CountriesProvider.swift in Sources */,
 				CE1B0FAF2BBD91AC00214119 /* ContainerViewController.swift in Sources */,
 				CEBF8CD92BD28946003D9B70 /* CountryListTableViewCell.swift in Sources */,
+				CE9CF1782BFF377D005B8416 /* GeolocationViewController.swift in Sources */,
 				CE61DCB62BCEB4F800DAC72A /* Router.swift in Sources */,
 				CE26D8012BE3930300D30A64 /* DetailCountryProvider.swift in Sources */,
 				CEF505DD2BC691650087406E /* WeatherData.swift in Sources */,
@@ -606,6 +618,8 @@
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = TasksApp/Configuration/Info.plist;
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "This app need your location to provide best feature based on location";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "This app need your location to provide best feature based on location";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
@@ -636,6 +650,8 @@
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = TasksApp/Configuration/Info.plist;
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "This app need your location to provide best feature based on location";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "This app need your location to provide best feature based on location";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
