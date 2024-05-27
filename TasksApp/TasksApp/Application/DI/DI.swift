@@ -24,6 +24,10 @@ final class Di {
         DetailCountryProvider(cachingService: CachingService())
     }
     
+    fileprivate var geolocationProvider: GeolocationProvider {
+        GeolocationProvider(coreDataService: coreDataService)
+    }
+    
     init() {
         self.screenFactory = ScreenFactory()
         self.coordinatorFactory = CoordinatorFactory(screenFactory: screenFactory)
@@ -63,7 +67,7 @@ final class ScreenFactory {
         let weatherVC = WeatherViewController()
         let countryListVC = CountryListViewController(countriesProvider: di.countriesProvider)
         let task3VC = Task3ViewController()
-        let geolocationVC = GeolocationViewController()
+        let geolocationVC = GeolocationViewController(geolocationProvider: di.geolocationProvider)
         weatherVC.addDependency(weatherNetworkManager: di.weatherNetworkManager)
         
         let menuContainerViewController = ContainerViewController()

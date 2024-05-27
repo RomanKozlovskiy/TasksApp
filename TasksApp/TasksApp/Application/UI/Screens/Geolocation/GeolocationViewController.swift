@@ -7,22 +7,89 @@
 
 import UIKit
 import CoreLocation
+import SnapKit
 
 final class GeolocationViewController: UIViewController {
+    private let longitudeTitle : UILabel = {
+        let label = UILabel()
+        label.numberOfLines = 0
+        label.font = UIFont.systemFont(ofSize: 22)
+        return label
+    }()
+    
+    private let latitudeTitle : UILabel = {
+        let label = UILabel()
+        label.numberOfLines = 0
+        label.font = UIFont.systemFont(ofSize: 22)
+        return label
+    }()
+    
+    private let timestampTitle : UILabel = {
+        let label = UILabel()
+        label.numberOfLines = 0
+        label.font = UIFont.systemFont(ofSize: 22)
+        return label
+    }()
+    
+    private let stackView = UIStackView()
+    
+    private let geolocationProvider: GeolocationProvider
+    
     private let locationManager = CLLocationManager()
     private var lastLocation: CLLocation?
+    
     private var timer: Timer?
+    
+    private var currentCoordinates: Coordinates?
+    
+    init(geolocationProvider: GeolocationProvider) {
+        self.geolocationProvider = geolocationProvider
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .cyan
+        view.backgroundColor = #colorLiteral(red: 0.7155137756, green: 1, blue: 0.9808211153, alpha: 1)
         
+        configureStackView()
         configureLocationManager()
         
         let notificationCenter = NotificationCenter.default
         notificationCenter.addObserver(self, selector: #selector(appDidEnterBackgroundOrTerminate), name: UIApplication.didEnterBackgroundNotification, object: nil)
         notificationCenter.addObserver(self, selector: #selector(appDidEnterBackgroundOrTerminate), name: UIApplication.willTerminateNotification, object: nil)
+    
         timer = Timer.scheduledTimer(timeInterval: 300, target: self, selector: #selector(updateLocation), userInfo: nil, repeats: true)
+    }
+    
+    private func configureStackView() {
+        stackView.axis = .vertical
+        stackView.distribution = .fillEqually
+        stackView.alignment = .center
+        stackView.backgroundColor = #colorLiteral(red: 0.721568644, green: 0.8862745166, blue: 0.5921568871, alpha: 1)
+        stackView.addArrangedSubview(longitudeTitle)
+        stackView.addArrangedSubview(latitudeTitle)
+        stackView.addArrangedSubview(timestampTitle)
+        
+        view.addSubview(stackView)
+        
+        stackView.snp.makeConstraints {
+            $0.center.equalToSuperview()
+            $0.width.equalToSuperview().inset(10)
+            $0.height.equalTo(400)
+        }
+        
+        stackView.layer.cornerRadius = 20
+    }
+
+    private func configureTitleDescription(from coordinates: Coordinates?) {
+        guard let coordinates else { return }
+        longitudeTitle.text = coordinates.longitudeDescription
+        latitudeTitle.text = coordinates.latitudeDescription
+        timestampTitle.text = coordinates.timestampDescription
     }
     
     private func configureLocationManager() {
@@ -38,7 +105,18 @@ final class GeolocationViewController: UIViewController {
     
     @objc func updateLocation() {
         locationManager.startUpdatingLocation()
-        // set to Core Data
+        let coordinates = locationManager.location?.coordinate
+        
+        guard
+            let longitude = coordinates?.longitude,
+            let latitude = coordinates?.latitude,
+            let timestamp = locationManager.location?.timestamp
+        else {
+            return
+        }
+        
+        let lastCoordinates = Coordinates(longitude: longitude, latitude: latitude, timestamp: timestamp)
+        geolocationProvider.saveCoordinates(lastCoordinates)
     }
     
     @objc private func appDidEnterBackgroundOrTerminate() {
@@ -47,7 +125,15 @@ final class GeolocationViewController: UIViewController {
     
     private func createRegion(location: CLLocation?) {
         if CLLocationManager.isMonitoringAvailable(for: CLCircularRegion.self) {
-            let coordinate = CLLocationCoordinate2DMake((location?.coordinate.latitude)!, (location?.coordinate.longitude)!)
+            
+            guard
+                let longitude = location?.coordinate.longitude,
+                let latitude = location?.coordinate.latitude
+            else {
+                return
+            }
+            
+            let coordinate = CLLocationCoordinate2DMake(latitude, longitude)
             let regionRadius = 50.0
             
             let region = CLCircularRegion(center: CLLocationCoordinate2D(latitude: coordinate.latitude, longitude: coordinate.longitude),
@@ -67,13 +153,23 @@ final class GeolocationViewController: UIViewController {
 
 extension GeolocationViewController: CLLocationManagerDelegate {
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        guard let location = locations.last else { return }
-        print("Latitude: \(location.coordinate.latitude), Longitude: \(location.coordinate.longitude), Date - \(location.timestamp)")
+        guard let location = locations.last else {
+            if let coordinatesFromCoreData = geolocationProvider.getLastCoordinates() {
+                configureTitleDescription(from: coordinatesFromCoreData)
+            }
+            return
+        }
+        
+        currentCoordinates = Coordinates(longitude: location.coordinate.longitude, latitude: location.coordinate.latitude, timestamp: location.timestamp)
+        configureTitleDescription(from: currentCoordinates)
+        
+        if let lastCoordinates = currentCoordinates {
+            print("Latitude: \(lastCoordinates.latitude), Longitude: \(lastCoordinates.longitude), Date - \(lastCoordinates.timestamp)")
+            
+        }
         
         if UIApplication.shared.applicationState != .active  {
-            
-            let location = locations.last
-            self.lastLocation = location
+            self.lastLocation = locations.last
             self.createRegion(location: lastLocation)
         }
     }
