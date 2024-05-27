@@ -9,58 +9,82 @@ import UIKit
 import CoreLocation
 
 final class GeolocationViewController: UIViewController {
-    
-    let locationManager: CLLocationManager = CLLocationManager()
+    private let locationManager = CLLocationManager()
+    private var lastLocation: CLLocation?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         view.backgroundColor = .cyan
         
+        configureLocationManager()
+        
+        let notificationCenter = NotificationCenter.default
+        notificationCenter.addObserver(self, selector: #selector(appDidEnterBackgroundOrTerminate), name: UIApplication.didEnterBackgroundNotification, object: nil)
+        notificationCenter.addObserver(self, selector: #selector(appDidEnterBackgroundOrTerminate), name: UIApplication.willTerminateNotification, object: nil)
+    }
+    
+    private func configureLocationManager() {
         locationManager.delegate = self
         locationManager.requestWhenInUseAuthorization()
         locationManager.allowsBackgroundLocationUpdates = true
         locationManager.showsBackgroundLocationIndicator = true
         
-        requestLocationUpdate()
-        locationManager.desiredAccuracy = kCLLocationAccuracyKilometer
-        locationManager.distanceFilter = 50
-        DispatchQueue.main.asyncAfter(deadline: .now() + 25) {
-            self.stopLocationUpdate()
-        }
-    }
-    
-    private func requestLocationUpdate() {
         locationManager.startUpdatingLocation()
+        locationManager.desiredAccuracy = kCLLocationAccuracyHundredMeters
+        locationManager.distanceFilter = 50
+    }
+
+    @objc private func appDidEnterBackgroundOrTerminate() {
+        createRegion(location: lastLocation)
     }
     
-    private func stopLocationUpdate() {
-        locationManager.stopUpdatingLocation()
+    private func createRegion(location: CLLocation?) {
+        if CLLocationManager.isMonitoringAvailable(for: CLCircularRegion.self) {
+            let coordinate = CLLocationCoordinate2DMake((location?.coordinate.latitude)!, (location?.coordinate.longitude)!)
+            let regionRadius = 50.0
+            
+            let region = CLCircularRegion(center: CLLocationCoordinate2D(latitude: coordinate.latitude, longitude: coordinate.longitude),
+                                          radius: regionRadius,
+                                          identifier: String(describing: GeolocationViewController.self))
+            
+            region.notifyOnExit = true
+            region.notifyOnEntry = true
+            
+            locationManager.stopUpdatingLocation()
+            locationManager.startMonitoring(for: region)
+        } else {
+            print("System can't track regions")
+        }
     }
 }
 
 extension GeolocationViewController: CLLocationManagerDelegate {
-    
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         guard let location = locations.last else { return }
         print("Latitude: \(location.coordinate.latitude), Longitude: \(location.coordinate.longitude), Date - \(location.timestamp)")
         
+        if UIApplication.shared.applicationState != .active  {
+            //send location to CoreData
+            
+            let location = locations.last
+            self.lastLocation = location
+            self.createRegion(location: lastLocation)
+        }
     }
     
     func locationManager(_ manager: CLLocationManager, didFailWithError error: any Error) {
-        
-        if let clErr = error as? CLError {
-            switch clErr.code {
+        if let clError = error as? CLError {
+            switch clError.code {
             case .locationUnknown, .denied, .network:
-                print("Location request failed with error: \(clErr.localizedDescription)") //TODO: -  added alert!
+                print("Location request failed with error: \(clError.localizedDescription)")
             case .headingFailure:
-                print("Heading request failed with error: \(clErr.localizedDescription)")
+                print("Heading request failed with error: \(clError.localizedDescription)")
             case .rangingUnavailable, .rangingFailure:
-                print("Ranging request failed with error: \(clErr.localizedDescription)")
+                print("Ranging request failed with error: \(clError.localizedDescription)")
             case .regionMonitoringDenied, .regionMonitoringFailure, .regionMonitoringSetupDelayed, .regionMonitoringResponseDelayed:
-                print("Region monitoring request failed with error: \(clErr.localizedDescription)")
+                print("Region monitoring request failed with error: \(clError.localizedDescription)")
             default:
-                print("Unknown location manager error: \(clErr.localizedDescription)")
+                print("Unknown location manager error: \(clError.localizedDescription)")
             }
         } else {
             print("Unknown error occurred while handling location manager error: \(error.localizedDescription)")
@@ -69,19 +93,15 @@ extension GeolocationViewController: CLLocationManagerDelegate {
     
     func locationManagerDidChangeAuthorization(_ manager: CLLocationManager) {
         switch manager.authorizationStatus {
-        case .notDetermined:
-            print("When user did not yet determined")
-        case .restricted:
-            print("Restricted by parental control")
-        case .denied:
-            print("When user select option Don't Allow")
         case .authorizedWhenInUse:
             locationManager.requestAlwaysAuthorization()
-            print("When user select option Allow While Using App or Allow Once")
-        case .authorizedAlways:
-            print("When user select option Allow")
         default:
-            print("default")
+            break
         }
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didExitRegion region: CLRegion) {
+        locationManager.stopMonitoring(for: region)
+        locationManager.startUpdatingLocation()
     }
 }
