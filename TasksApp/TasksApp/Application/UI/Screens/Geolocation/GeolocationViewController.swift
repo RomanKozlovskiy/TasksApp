@@ -11,6 +11,7 @@ import CoreLocation
 final class GeolocationViewController: UIViewController {
     private let locationManager = CLLocationManager()
     private var lastLocation: CLLocation?
+    private var timer: Timer?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,6 +22,7 @@ final class GeolocationViewController: UIViewController {
         let notificationCenter = NotificationCenter.default
         notificationCenter.addObserver(self, selector: #selector(appDidEnterBackgroundOrTerminate), name: UIApplication.didEnterBackgroundNotification, object: nil)
         notificationCenter.addObserver(self, selector: #selector(appDidEnterBackgroundOrTerminate), name: UIApplication.willTerminateNotification, object: nil)
+        timer = Timer.scheduledTimer(timeInterval: 300, target: self, selector: #selector(updateLocation), userInfo: nil, repeats: true)
     }
     
     private func configureLocationManager() {
@@ -33,7 +35,12 @@ final class GeolocationViewController: UIViewController {
         locationManager.desiredAccuracy = kCLLocationAccuracyHundredMeters
         locationManager.distanceFilter = 50
     }
-
+    
+    @objc func updateLocation() {
+        locationManager.startUpdatingLocation()
+        // set to Core Data
+    }
+    
     @objc private func appDidEnterBackgroundOrTerminate() {
         createRegion(location: lastLocation)
     }
@@ -64,7 +71,6 @@ extension GeolocationViewController: CLLocationManagerDelegate {
         print("Latitude: \(location.coordinate.latitude), Longitude: \(location.coordinate.longitude), Date - \(location.timestamp)")
         
         if UIApplication.shared.applicationState != .active  {
-            //send location to CoreData
             
             let location = locations.last
             self.lastLocation = location
