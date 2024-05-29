@@ -23,6 +23,7 @@ final class ContainerViewController: UIViewController {
     private var weatherViewController: WeatherViewController!
     private var countryListViewController: CountryListViewController!
     private var task3ViewController: Task3ViewController!
+    private var geolocationViewController: GeolocationViewController!
     
     private var childControllers = [UIViewController]()
   
@@ -42,13 +43,15 @@ final class ContainerViewController: UIViewController {
         homeVC: HomeViewController,
         weatherVC: WeatherViewController,
         countryListVC: CountryListViewController,
-        task3VC: Task3ViewController
+        task3VC: Task3ViewController,
+        geolocationVC: GeolocationViewController
     ) {
         self.menuViewController = menuVC
         self.homeViewController = homeVC
         self.weatherViewController = weatherVC
         self.countryListViewController = countryListVC
         self.task3ViewController = task3VC
+        self.geolocationViewController = geolocationVC
     }
     
     private func configureChildsControllers() {
@@ -160,6 +163,8 @@ extension ContainerViewController: MenuViewControllerDelegate {
             open(countryListViewController)
         case .task3:
             open(task3ViewController)
+        case .task4:
+            open(geolocationViewController)
         }
     }
 }

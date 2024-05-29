@@ -25,11 +25,15 @@
 		CE61DCB62BCEB4F800DAC72A /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE61DCB52BCEB4F800DAC72A /* Router.swift */; };
 		CE61DCB82BCEB51600DAC72A /* ApplicationCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE61DCB72BCEB51600DAC72A /* ApplicationCoordinator.swift */; };
 		CE61DCBA2BCEB67200DAC72A /* MenuCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE61DCB92BCEB67200DAC72A /* MenuCoordinator.swift */; };
+		CE66DC392C048519005CE512 /* CoordinatesDataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = CE66DC372C048519005CE512 /* CoordinatesDataModel.xcdatamodeld */; };
+		CE66DC3B2C0489E2005CE512 /* GeolocationProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE66DC3A2C0489E2005CE512 /* GeolocationProvider.swift */; };
+		CE66DC3D2C048A69005CE512 /* Coordinates.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE66DC3C2C048A69005CE512 /* Coordinates.swift */; };
 		CE736B812BDA621A0060E4F1 /* CountryDataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = CE736B7F2BDA621A0060E4F1 /* CountryDataModel.xcdatamodeld */; };
 		CE736B832BDA63910060E4F1 /* CoreDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE736B822BDA63910060E4F1 /* CoreDataService.swift */; };
 		CE736B852BDB91370060E4F1 /* Extension + Int.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE736B842BDB91370060E4F1 /* Extension + Int.swift */; };
 		CE736B872BDB91F80060E4F1 /* Extension + UITableViewCell .swift in Sources */ = {isa = PBXBuildFile; fileRef = CE736B862BDB91F80060E4F1 /* Extension + UITableViewCell .swift */; };
 		CE736B892BDB922E0060E4F1 /* Extension + UICollectionViewCell .swift in Sources */ = {isa = PBXBuildFile; fileRef = CE736B882BDB922E0060E4F1 /* Extension + UICollectionViewCell .swift */; };
+		CE9CF1782BFF377D005B8416 /* GeolocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9CF1772BFF377D005B8416 /* GeolocationViewController.swift */; };
 		CEBB27DC2BC401EA00076C3F /* CoverView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBB27DB2BC401EA00076C3F /* CoverView.swift */; };
 		CEBDC12B2BD65FEE00458148 /* DetailCountryViewController .swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBDC12A2BD65FEE00458148 /* DetailCountryViewController .swift */; };
 		CEBDC12E2BD663E800458148 /* Foundation .swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBDC12D2BD663E800458148 /* Foundation .swift */; };
@@ -70,11 +74,15 @@
 		CE61DCB52BCEB4F800DAC72A /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 		CE61DCB72BCEB51600DAC72A /* ApplicationCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationCoordinator.swift; sourceTree = "<group>"; };
 		CE61DCB92BCEB67200DAC72A /* MenuCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuCoordinator.swift; sourceTree = "<group>"; };
+		CE66DC382C048519005CE512 /* CoordinatesDataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CoordinatesDataModel.xcdatamodel; sourceTree = "<group>"; };
+		CE66DC3A2C0489E2005CE512 /* GeolocationProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeolocationProvider.swift; sourceTree = "<group>"; };
+		CE66DC3C2C048A69005CE512 /* Coordinates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinates.swift; sourceTree = "<group>"; };
 		CE736B802BDA621A0060E4F1 /* CountryDataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CountryDataModel.xcdatamodel; sourceTree = "<group>"; };
 		CE736B822BDA63910060E4F1 /* CoreDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataService.swift; sourceTree = "<group>"; };
 		CE736B842BDB91370060E4F1 /* Extension + Int.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension + Int.swift"; sourceTree = "<group>"; };
 		CE736B862BDB91F80060E4F1 /* Extension + UITableViewCell .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension + UITableViewCell .swift"; sourceTree = "<group>"; };
 		CE736B882BDB922E0060E4F1 /* Extension + UICollectionViewCell .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension + UICollectionViewCell .swift"; sourceTree = "<group>"; };
+		CE9CF1772BFF377D005B8416 /* GeolocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeolocationViewController.swift; sourceTree = "<group>"; };
 		CEBB27DB2BC401EA00076C3F /* CoverView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoverView.swift; sourceTree = "<group>"; };
 		CEBDC12A2BD65FEE00458148 /* DetailCountryViewController .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DetailCountryViewController .swift"; sourceTree = "<group>"; };
 		CEBDC12D2BD663E800458148 /* Foundation .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Foundation .swift"; sourceTree = "<group>"; };
@@ -192,6 +200,7 @@
 				CE61DC922BCE642E00DAC72A /* Weather */,
 				CE61DC932BCE695B00DAC72A /* Country */,
 				CE61DC942BCE696400DAC72A /* Task3 */,
+				CE9CF1762BFF3735005B8416 /* Geolocation */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -255,6 +264,7 @@
 			children = (
 				CE61DC962BCE6A0B00DAC72A /* WeatherEntity */,
 				CED8C4622BD7CEAE000890A5 /* CountryList.swift */,
+				CE66DC3C2C048A69005CE512 /* Coordinates.swift */,
 			);
 			path = Entity;
 			sourceTree = "<group>";
@@ -274,6 +284,7 @@
 				CE1B0FB32BBD91AD00214119 /* Assets.xcassets */,
 				CE1B0FB52BBD91AD00214119 /* LaunchScreen.storyboard */,
 				CE736B7F2BDA621A0060E4F1 /* CountryDataModel.xcdatamodeld */,
+				CE66DC372C048519005CE512 /* CoordinatesDataModel.xcdatamodeld */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -286,6 +297,14 @@
 				CED8C45A2BD7AC95000890A5 /* RequestBuilder .swift */,
 			);
 			path = ApiClient;
+			sourceTree = "<group>";
+		};
+		CE9CF1762BFF3735005B8416 /* Geolocation */ = {
+			isa = PBXGroup;
+			children = (
+				CE9CF1772BFF377D005B8416 /* GeolocationViewController.swift */,
+			);
+			path = Geolocation;
 			sourceTree = "<group>";
 		};
 		CEBB27DA2BC401A800076C3F /* Views */ = {
@@ -331,6 +350,7 @@
 			children = (
 				CED8C4682BD7F2CE000890A5 /* CountriesProvider.swift */,
 				CE26D8002BE3930300D30A64 /* DetailCountryProvider.swift */,
+				CE66DC3A2C0489E2005CE512 /* GeolocationProvider.swift */,
 			);
 			path = Provider;
 			sourceTree = "<group>";
@@ -439,6 +459,7 @@
 				CED8C4692BD7F2CE000890A5 /* CountriesProvider.swift in Sources */,
 				CE1B0FAF2BBD91AC00214119 /* ContainerViewController.swift in Sources */,
 				CEBF8CD92BD28946003D9B70 /* CountryListTableViewCell.swift in Sources */,
+				CE9CF1782BFF377D005B8416 /* GeolocationViewController.swift in Sources */,
 				CE61DCB62BCEB4F800DAC72A /* Router.swift in Sources */,
 				CE26D8012BE3930300D30A64 /* DetailCountryProvider.swift in Sources */,
 				CEF505DD2BC691650087406E /* WeatherData.swift in Sources */,
@@ -455,12 +476,15 @@
 				CE736B852BDB91370060E4F1 /* Extension + Int.swift in Sources */,
 				CEBDC1322BD6742600458148 /* CountryBottomSheetController.swift in Sources */,
 				CED8C4662BD7D761000890A5 /* Extension + UIImageView .swift in Sources */,
+				CE66DC392C048519005CE512 /* CoordinatesDataModel.xcdatamodeld in Sources */,
 				CEBDC1302BD66C7900458148 /* DetailCountryCollectionViewCell.swift in Sources */,
 				CE1B0FAD2BBD91AC00214119 /* SceneDelegate.swift in Sources */,
 				CED8C4572BD7A234000890A5 /* CountriesConfiguration .swift in Sources */,
 				CE1B0FC02BBD92CD00214119 /* MenuViewController.swift in Sources */,
+				CE66DC3B2C0489E2005CE512 /* GeolocationProvider.swift in Sources */,
 				CED8C4552BD7A1F1000890A5 /* Configuration .swift in Sources */,
 				CE61DCB82BCEB51600DAC72A /* ApplicationCoordinator.swift in Sources */,
+				CE66DC3D2C048A69005CE512 /* Coordinates.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -606,6 +630,8 @@
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = TasksApp/Configuration/Info.plist;
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "This app need your location to provide best feature based on location";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "This app need your location to provide best feature based on location";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
@@ -636,6 +662,8 @@
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = TasksApp/Configuration/Info.plist;
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "This app need your location to provide best feature based on location";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "This app need your location to provide best feature based on location";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
@@ -713,6 +741,17 @@
 /* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
+		CE66DC372C048519005CE512 /* CoordinatesDataModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				CE66DC382C048519005CE512 /* CoordinatesDataModel.xcdatamodel */,
+			);
+			currentVersion = CE66DC382C048519005CE512 /* CoordinatesDataModel.xcdatamodel */;
+			name = CoordinatesDataModel.xcdatamodeld;
+			path = /Users/user/Desktop/TasksApp/TasksApp/TasksApp/Resources/CoordinatesDataModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
 		CE736B7F2BDA621A0060E4F1 /* CountryDataModel.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
