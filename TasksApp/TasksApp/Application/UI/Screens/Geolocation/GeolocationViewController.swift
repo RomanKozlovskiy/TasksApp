@@ -10,26 +10,9 @@ import CoreLocation
 import SnapKit
 
 final class GeolocationViewController: UIViewController {
-    private let longitudeTitle : UILabel = {
-        let label = UILabel()
-        label.numberOfLines = 0
-        label.font = UIFont.systemFont(ofSize: 22)
-        return label
-    }()
-    
-    private let latitudeTitle : UILabel = {
-        let label = UILabel()
-        label.numberOfLines = 0
-        label.font = UIFont.systemFont(ofSize: 22)
-        return label
-    }()
-    
-    private let timestampTitle : UILabel = {
-        let label = UILabel()
-        label.numberOfLines = 0
-        label.font = UIFont.systemFont(ofSize: 22)
-        return label
-    }()
+    private var longitudeTitle: UILabel!
+    private var latitudeTitle: UILabel!
+    private var timestampTitle: UILabel!
     
     private let stackView = UIStackView()
     
@@ -65,11 +48,23 @@ final class GeolocationViewController: UIViewController {
         timer = Timer.scheduledTimer(timeInterval: 300, target: self, selector: #selector(updateLocation), userInfo: nil, repeats: true)
     }
     
+    private func createLabel(numberOfLines: Int = 0, fontSize: CGFloat = 22 ) -> UILabel {
+        let label = UILabel()
+        label.numberOfLines = numberOfLines
+        label.font = UIFont.systemFont(ofSize: fontSize)
+        return label
+    }
+    
     private func configureStackView() {
         stackView.axis = .vertical
         stackView.distribution = .fillEqually
         stackView.alignment = .center
         stackView.backgroundColor = #colorLiteral(red: 0.721568644, green: 0.8862745166, blue: 0.5921568871, alpha: 1)
+        
+        longitudeTitle = createLabel()
+        latitudeTitle = createLabel()
+        timestampTitle = createLabel()
+        
         stackView.addArrangedSubview(longitudeTitle)
         stackView.addArrangedSubview(latitudeTitle)
         stackView.addArrangedSubview(timestampTitle)
@@ -103,7 +98,7 @@ final class GeolocationViewController: UIViewController {
         locationManager.distanceFilter = 50
     }
     
-    @objc func updateLocation() {
+    @objc private func updateLocation() {
         locationManager.startUpdatingLocation()
         let coordinates = locationManager.location?.coordinate
         
@@ -162,12 +157,7 @@ extension GeolocationViewController: CLLocationManagerDelegate {
         
         currentCoordinates = Coordinates(longitude: location.coordinate.longitude, latitude: location.coordinate.latitude, timestamp: location.timestamp)
         configureTitleDescription(from: currentCoordinates)
-        
-        if let lastCoordinates = currentCoordinates {
-            print("Latitude: \(lastCoordinates.latitude), Longitude: \(lastCoordinates.longitude), Date - \(lastCoordinates.timestamp)")
-            
-        }
-        
+
         if UIApplication.shared.applicationState != .active  {
             self.lastLocation = locations.last
             self.createRegion(location: lastLocation)
