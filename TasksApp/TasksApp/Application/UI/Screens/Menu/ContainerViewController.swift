@@ -15,6 +15,7 @@ final class ContainerViewController: UIViewController {
 
     var onFinish: VoidClosure?
     var onSelectedCountry: OnSelectedCountry?
+    var onSelectedCar: OnSelectedCar?
     
     private var menuState: MenuState = .closed
     
@@ -24,6 +25,7 @@ final class ContainerViewController: UIViewController {
     private var countryListViewController: CountryListViewController!
     private var task3ViewController: Task3ViewController!
     private var geolocationViewController: GeolocationViewController!
+    private var carsListViewController: CarsListViewController!
     
     private var childControllers = [UIViewController]()
   
@@ -36,6 +38,10 @@ final class ContainerViewController: UIViewController {
         countryListViewController.onSelectedCountry = { [weak self] country in
             self?.onSelectedCountry?(country)
         }
+        
+        carsListViewController.onSelectedCar = { [weak self] car in
+            self?.onSelectedCar?(car)
+        }
     }
 
      func addDependency(
@@ -44,7 +50,8 @@ final class ContainerViewController: UIViewController {
         weatherVC: WeatherViewController,
         countryListVC: CountryListViewController,
         task3VC: Task3ViewController,
-        geolocationVC: GeolocationViewController
+        geolocationVC: GeolocationViewController,
+        carsListVC: CarsListViewController
     ) {
         self.menuViewController = menuVC
         self.homeViewController = homeVC
@@ -52,6 +59,7 @@ final class ContainerViewController: UIViewController {
         self.countryListViewController = countryListVC
         self.task3ViewController = task3VC
         self.geolocationViewController = geolocationVC
+        self.carsListViewController = carsListVC
     }
     
     private func configureChildsControllers() {
@@ -165,6 +173,8 @@ extension ContainerViewController: MenuViewControllerDelegate {
             open(task3ViewController)
         case .task4:
             open(geolocationViewController)
+        case .task5:
+            open(carsListViewController)
         }
     }
 }

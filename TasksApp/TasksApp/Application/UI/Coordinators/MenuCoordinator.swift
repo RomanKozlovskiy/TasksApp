@@ -33,10 +33,19 @@ final class MenuCoordinator: BaseCoordinator {
         menuContainerScreen.onSelectedCountry = { [weak self] country in
             self?.makeDetailCountry(with: country)
         }
+        
+        menuContainerScreen.onSelectedCar = { [weak self] car in
+            self?.makeDetailCarInfo(with: car)
+        }
     }
     
     private func makeDetailCountry(with country: Country) {
         let detailCountryScreen = screenFactory.makeDetailCountryScreen(with: country)
         router.push(detailCountryScreen)
+    }
+    
+    private func makeDetailCarInfo(with car: CarInfoProtocol) {
+        let detailCarScree = screenFactory.makeDetailCarScreen(with: car)
+        router.push(detailCarScree)
     }
 }

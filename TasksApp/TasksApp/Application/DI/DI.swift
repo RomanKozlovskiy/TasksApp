@@ -68,6 +68,7 @@ final class ScreenFactory {
         let countryListVC = CountryListViewController(countriesProvider: di.countriesProvider)
         let task3VC = Task3ViewController()
         let geolocationVC = GeolocationViewController(geolocationProvider: di.geolocationProvider)
+        let carsListVC = CarsListViewController()
         weatherVC.addDependency(weatherNetworkManager: di.weatherNetworkManager)
         
         let menuContainerViewController = ContainerViewController()
@@ -78,7 +79,8 @@ final class ScreenFactory {
             weatherVC: weatherVC,
             countryListVC: countryListVC,
             task3VC: task3VC,
-            geolocationVC: geolocationVC
+            geolocationVC: geolocationVC,
+            carsListVC: carsListVC
         )
         
         return menuContainerViewController
@@ -87,6 +89,10 @@ final class ScreenFactory {
     func makeDetailCountryScreen(with country: Country) -> DetailCountryViewController {
         let detailCountryViewController = DetailCountryViewController(detailCountryProvider: di.detailCountryProvider, country: country)
         return detailCountryViewController
+    }
+    
+    func makeDetailCarScreen(with car: CarInfoProtocol) -> DetailCarInfoViewController {
+        DetailCarInfoViewController(car: car)
     }
 }
 

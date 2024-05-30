@@ -18,6 +18,7 @@ final class MenuViewController: UIViewController {
         case task2 = "Countries"
         case task3 = "Task №3"
         case task4 = "Geolocation"
+        case task5 = "Cars List"
     }
     
     weak var delegate: MenuViewControllerDelegate?

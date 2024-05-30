@@ -38,6 +38,8 @@
 		CEABBA3E2C085F030031C27C /* DeeplinkCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEABBA3D2C085F030031C27C /* DeeplinkCoordinator.swift */; };
 		CEABBA402C0862ED0031C27C /* CarsDeeplinkHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEABBA3F2C0862ED0031C27C /* CarsDeeplinkHandler.swift */; };
 		CEABBA422C0884C50031C27C /* CarsListViewController .swift in Sources */ = {isa = PBXBuildFile; fileRef = CEABBA412C0884C50031C27C /* CarsListViewController .swift */; };
+		CEABBA442C08919B0031C27C /* CarTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEABBA432C08919B0031C27C /* CarTableViewCell.swift */; };
+		CEABBA462C08A2F60031C27C /* DetailCarInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEABBA452C08A2F60031C27C /* DetailCarInfoViewController.swift */; };
 		CEBB27DC2BC401EA00076C3F /* CoverView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBB27DB2BC401EA00076C3F /* CoverView.swift */; };
 		CEBDC12B2BD65FEE00458148 /* DetailCountryViewController .swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBDC12A2BD65FEE00458148 /* DetailCountryViewController .swift */; };
 		CEBDC12E2BD663E800458148 /* Foundation .swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBDC12D2BD663E800458148 /* Foundation .swift */; };
@@ -95,6 +97,8 @@
 		CEABBA3D2C085F030031C27C /* DeeplinkCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeeplinkCoordinator.swift; sourceTree = "<group>"; };
 		CEABBA3F2C0862ED0031C27C /* CarsDeeplinkHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarsDeeplinkHandler.swift; sourceTree = "<group>"; };
 		CEABBA412C0884C50031C27C /* CarsListViewController .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CarsListViewController .swift"; sourceTree = "<group>"; };
+		CEABBA432C08919B0031C27C /* CarTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarTableViewCell.swift; sourceTree = "<group>"; };
+		CEABBA452C08A2F60031C27C /* DetailCarInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailCarInfoViewController.swift; sourceTree = "<group>"; };
 		CEBB27DB2BC401EA00076C3F /* CoverView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoverView.swift; sourceTree = "<group>"; };
 		CEBDC12A2BD65FEE00458148 /* DetailCountryViewController .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DetailCountryViewController .swift"; sourceTree = "<group>"; };
 		CEBDC12D2BD663E800458148 /* Foundation .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Foundation .swift"; sourceTree = "<group>"; };
@@ -387,6 +391,8 @@
 			isa = PBXGroup;
 			children = (
 				CEABBA412C0884C50031C27C /* CarsListViewController .swift */,
+				CEABBA432C08919B0031C27C /* CarTableViewCell.swift */,
+				CEABBA452C08A2F60031C27C /* DetailCarInfoViewController.swift */,
 				CEE852EC2C075E8E00428AD4 /* CarView .swift */,
 				CEE852EE2C0771E800428AD4 /* BmwViewController.swift */,
 				CEE852F22C077D9200428AD4 /* AudiViewController.swift */,
@@ -507,6 +513,7 @@
 				CEE852ED2C075E8E00428AD4 /* CarView .swift in Sources */,
 				CE61DCB62BCEB4F800DAC72A /* Router.swift in Sources */,
 				CE26D8012BE3930300D30A64 /* DetailCountryProvider.swift in Sources */,
+				CEABBA462C08A2F60031C27C /* DetailCarInfoViewController.swift in Sources */,
 				CEF505DD2BC691650087406E /* WeatherData.swift in Sources */,
 				CE736B872BDB91F80060E4F1 /* Extension + UITableViewCell .swift in Sources */,
 				CEBDC12E2BD663E800458148 /* Foundation .swift in Sources */,
@@ -520,6 +527,7 @@
 				CEF505DF2BC6A1660087406E /* WeatherInfo.swift in Sources */,
 				CE1B0FC52BBD933100214119 /* WeatherViewController.swift in Sources */,
 				CEABBA3C2C085E660031C27C /* DeeplinkHandlerProtocol.swift in Sources */,
+				CEABBA442C08919B0031C27C /* CarTableViewCell.swift in Sources */,
 				CE736B852BDB91370060E4F1 /* Extension + Int.swift in Sources */,
 				CEBDC1322BD6742600458148 /* CountryBottomSheetController.swift in Sources */,
 				CEE852EF2C0771E800428AD4 /* BmwViewController.swift in Sources */,
