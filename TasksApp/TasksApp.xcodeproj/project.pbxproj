@@ -34,6 +34,10 @@
 		CE736B872BDB91F80060E4F1 /* Extension + UITableViewCell .swift in Sources */ = {isa = PBXBuildFile; fileRef = CE736B862BDB91F80060E4F1 /* Extension + UITableViewCell .swift */; };
 		CE736B892BDB922E0060E4F1 /* Extension + UICollectionViewCell .swift in Sources */ = {isa = PBXBuildFile; fileRef = CE736B882BDB922E0060E4F1 /* Extension + UICollectionViewCell .swift */; };
 		CE9CF1782BFF377D005B8416 /* GeolocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9CF1772BFF377D005B8416 /* GeolocationViewController.swift */; };
+		CEABBA3C2C085E660031C27C /* DeeplinkHandlerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEABBA3B2C085E660031C27C /* DeeplinkHandlerProtocol.swift */; };
+		CEABBA3E2C085F030031C27C /* DeeplinkCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEABBA3D2C085F030031C27C /* DeeplinkCoordinator.swift */; };
+		CEABBA402C0862ED0031C27C /* CarsDeeplinkHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEABBA3F2C0862ED0031C27C /* CarsDeeplinkHandler.swift */; };
+		CEABBA422C0884C50031C27C /* CarsListViewController .swift in Sources */ = {isa = PBXBuildFile; fileRef = CEABBA412C0884C50031C27C /* CarsListViewController .swift */; };
 		CEBB27DC2BC401EA00076C3F /* CoverView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBB27DB2BC401EA00076C3F /* CoverView.swift */; };
 		CEBDC12B2BD65FEE00458148 /* DetailCountryViewController .swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBDC12A2BD65FEE00458148 /* DetailCountryViewController .swift */; };
 		CEBDC12E2BD663E800458148 /* Foundation .swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBDC12D2BD663E800458148 /* Foundation .swift */; };
@@ -47,6 +51,10 @@
 		CED8C4632BD7CEAE000890A5 /* CountryList.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED8C4622BD7CEAE000890A5 /* CountryList.swift */; };
 		CED8C4662BD7D761000890A5 /* Extension + UIImageView .swift in Sources */ = {isa = PBXBuildFile; fileRef = CED8C4652BD7D761000890A5 /* Extension + UIImageView .swift */; };
 		CED8C4692BD7F2CE000890A5 /* CountriesProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED8C4682BD7F2CE000890A5 /* CountriesProvider.swift */; };
+		CEE852ED2C075E8E00428AD4 /* CarView .swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE852EC2C075E8E00428AD4 /* CarView .swift */; };
+		CEE852EF2C0771E800428AD4 /* BmwViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE852EE2C0771E800428AD4 /* BmwViewController.swift */; };
+		CEE852F12C077A6A00428AD4 /* CarModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE852F02C077A6A00428AD4 /* CarModel.swift */; };
+		CEE852F32C077D9200428AD4 /* AudiViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE852F22C077D9200428AD4 /* AudiViewController.swift */; };
 		CEF505D82BC66BC00087406E /* WeatherNetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF505D72BC66BC00087406E /* WeatherNetworkManager.swift */; };
 		CEF505DA2BC66C340087406E /* Config.plist in Resources */ = {isa = PBXBuildFile; fileRef = CEF505D92BC66C340087406E /* Config.plist */; };
 		CEF505DD2BC691650087406E /* WeatherData.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF505DC2BC691650087406E /* WeatherData.swift */; };
@@ -83,6 +91,10 @@
 		CE736B862BDB91F80060E4F1 /* Extension + UITableViewCell .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension + UITableViewCell .swift"; sourceTree = "<group>"; };
 		CE736B882BDB922E0060E4F1 /* Extension + UICollectionViewCell .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension + UICollectionViewCell .swift"; sourceTree = "<group>"; };
 		CE9CF1772BFF377D005B8416 /* GeolocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeolocationViewController.swift; sourceTree = "<group>"; };
+		CEABBA3B2C085E660031C27C /* DeeplinkHandlerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeeplinkHandlerProtocol.swift; sourceTree = "<group>"; };
+		CEABBA3D2C085F030031C27C /* DeeplinkCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeeplinkCoordinator.swift; sourceTree = "<group>"; };
+		CEABBA3F2C0862ED0031C27C /* CarsDeeplinkHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarsDeeplinkHandler.swift; sourceTree = "<group>"; };
+		CEABBA412C0884C50031C27C /* CarsListViewController .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CarsListViewController .swift"; sourceTree = "<group>"; };
 		CEBB27DB2BC401EA00076C3F /* CoverView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoverView.swift; sourceTree = "<group>"; };
 		CEBDC12A2BD65FEE00458148 /* DetailCountryViewController .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DetailCountryViewController .swift"; sourceTree = "<group>"; };
 		CEBDC12D2BD663E800458148 /* Foundation .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Foundation .swift"; sourceTree = "<group>"; };
@@ -96,6 +108,10 @@
 		CED8C4622BD7CEAE000890A5 /* CountryList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryList.swift; sourceTree = "<group>"; };
 		CED8C4652BD7D761000890A5 /* Extension + UIImageView .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension + UIImageView .swift"; sourceTree = "<group>"; };
 		CED8C4682BD7F2CE000890A5 /* CountriesProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountriesProvider.swift; sourceTree = "<group>"; };
+		CEE852EC2C075E8E00428AD4 /* CarView .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CarView .swift"; sourceTree = "<group>"; };
+		CEE852EE2C0771E800428AD4 /* BmwViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BmwViewController.swift; sourceTree = "<group>"; };
+		CEE852F02C077A6A00428AD4 /* CarModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarModel.swift; sourceTree = "<group>"; };
+		CEE852F22C077D9200428AD4 /* AudiViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudiViewController.swift; sourceTree = "<group>"; };
 		CEF505D72BC66BC00087406E /* WeatherNetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherNetworkManager.swift; sourceTree = "<group>"; };
 		CEF505D92BC66C340087406E /* Config.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Config.plist; sourceTree = "<group>"; };
 		CEF505DC2BC691650087406E /* WeatherData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherData.swift; sourceTree = "<group>"; };
@@ -201,6 +217,7 @@
 				CE61DC932BCE695B00DAC72A /* Country */,
 				CE61DC942BCE696400DAC72A /* Task3 */,
 				CE9CF1762BFF3735005B8416 /* Geolocation */,
+				CEE852EB2C07524200428AD4 /* CarsDeeplink */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -307,6 +324,16 @@
 			path = Geolocation;
 			sourceTree = "<group>";
 		};
+		CEABBA3A2C08593D0031C27C /* DeeplinkHandler */ = {
+			isa = PBXGroup;
+			children = (
+				CEABBA3B2C085E660031C27C /* DeeplinkHandlerProtocol.swift */,
+				CEABBA3F2C0862ED0031C27C /* CarsDeeplinkHandler.swift */,
+				CEABBA3D2C085F030031C27C /* DeeplinkCoordinator.swift */,
+			);
+			path = DeeplinkHandler;
+			sourceTree = "<group>";
+		};
 		CEBB27DA2BC401A800076C3F /* Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -328,6 +355,7 @@
 		CED2041D2BD93761006CFE91 /* Services  */ = {
 			isa = PBXGroup;
 			children = (
+				CEABBA3A2C08593D0031C27C /* DeeplinkHandler */,
 				CE736B822BDA63910060E4F1 /* CoreDataService.swift */,
 				CE26D7FE2BE371EF00D30A64 /* CachingService .swift */,
 			);
@@ -353,6 +381,18 @@
 				CE66DC3A2C0489E2005CE512 /* GeolocationProvider.swift */,
 			);
 			path = Provider;
+			sourceTree = "<group>";
+		};
+		CEE852EB2C07524200428AD4 /* CarsDeeplink */ = {
+			isa = PBXGroup;
+			children = (
+				CEABBA412C0884C50031C27C /* CarsListViewController .swift */,
+				CEE852EC2C075E8E00428AD4 /* CarView .swift */,
+				CEE852EE2C0771E800428AD4 /* BmwViewController.swift */,
+				CEE852F22C077D9200428AD4 /* AudiViewController.swift */,
+				CEE852F02C077A6A00428AD4 /* CarModel.swift */,
+			);
+			path = CarsDeeplink;
 			sourceTree = "<group>";
 		};
 		CEF505DB2BC6914A0087406E /* Model */ = {
@@ -446,6 +486,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CE1B0FC22BBD92F700214119 /* HomeViewController.swift in Sources */,
+				CEE852F12C077A6A00428AD4 /* CarModel.swift in Sources */,
 				CE1B0FC92BBD934100214119 /* Task3ViewController.swift in Sources */,
 				CED8C45F2BD7C493000890A5 /* CountriesApiClient.swift in Sources */,
 				CEF505D82BC66BC00087406E /* WeatherNetworkManager.swift in Sources */,
@@ -453,19 +494,24 @@
 				CE61DCB22BCEB24E00DAC72A /* DI.swift in Sources */,
 				CE26D7FF2BE371EF00D30A64 /* CachingService .swift in Sources */,
 				CEBB27DC2BC401EA00076C3F /* CoverView.swift in Sources */,
+				CEABBA402C0862ED0031C27C /* CarsDeeplinkHandler.swift in Sources */,
+				CEE852F32C077D9200428AD4 /* AudiViewController.swift in Sources */,
 				CE736B892BDB922E0060E4F1 /* Extension + UICollectionViewCell .swift in Sources */,
+				CEABBA422C0884C50031C27C /* CarsListViewController .swift in Sources */,
 				CE61DCB42BCEB44300DAC72A /* Coordinator .swift in Sources */,
 				CE61DCBA2BCEB67200DAC72A /* MenuCoordinator.swift in Sources */,
 				CED8C4692BD7F2CE000890A5 /* CountriesProvider.swift in Sources */,
 				CE1B0FAF2BBD91AC00214119 /* ContainerViewController.swift in Sources */,
 				CEBF8CD92BD28946003D9B70 /* CountryListTableViewCell.swift in Sources */,
 				CE9CF1782BFF377D005B8416 /* GeolocationViewController.swift in Sources */,
+				CEE852ED2C075E8E00428AD4 /* CarView .swift in Sources */,
 				CE61DCB62BCEB4F800DAC72A /* Router.swift in Sources */,
 				CE26D8012BE3930300D30A64 /* DetailCountryProvider.swift in Sources */,
 				CEF505DD2BC691650087406E /* WeatherData.swift in Sources */,
 				CE736B872BDB91F80060E4F1 /* Extension + UITableViewCell .swift in Sources */,
 				CEBDC12E2BD663E800458148 /* Foundation .swift in Sources */,
 				CED8C4632BD7CEAE000890A5 /* CountryList.swift in Sources */,
+				CEABBA3E2C085F030031C27C /* DeeplinkCoordinator.swift in Sources */,
 				CE736B812BDA621A0060E4F1 /* CountryDataModel.xcdatamodeld in Sources */,
 				CE1B0FC72BBD933A00214119 /* CountryListViewController.swift in Sources */,
 				CE736B832BDA63910060E4F1 /* CoreDataService.swift in Sources */,
@@ -473,8 +519,10 @@
 				CE1B0FAB2BBD91AC00214119 /* AppDelegate.swift in Sources */,
 				CEF505DF2BC6A1660087406E /* WeatherInfo.swift in Sources */,
 				CE1B0FC52BBD933100214119 /* WeatherViewController.swift in Sources */,
+				CEABBA3C2C085E660031C27C /* DeeplinkHandlerProtocol.swift in Sources */,
 				CE736B852BDB91370060E4F1 /* Extension + Int.swift in Sources */,
 				CEBDC1322BD6742600458148 /* CountryBottomSheetController.swift in Sources */,
+				CEE852EF2C0771E800428AD4 /* BmwViewController.swift in Sources */,
 				CED8C4662BD7D761000890A5 /* Extension + UIImageView .swift in Sources */,
 				CE66DC392C048519005CE512 /* CoordinatesDataModel.xcdatamodeld in Sources */,
 				CEBDC1302BD66C7900458148 /* DetailCountryCollectionViewCell.swift in Sources */,
