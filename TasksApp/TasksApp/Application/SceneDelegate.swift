@@ -13,6 +13,15 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     private let appFactory: AppFactory = Di()
     private var coordinator: Coordinator?
     
+    lazy var deeplinkCoordinator: DeeplinkCoordinatorProtocol = DeeplinkCoordinator(handlers: [
+        CarsDeeplinkHandler(rootViewController: rootViewController)
+    ]
+    )
+    
+    var rootViewController: UINavigationController? {
+        return window?.rootViewController as? UINavigationController
+    }
+    
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         guard let windowScene = (scene as? UIWindowScene) else { return }
         runUI(windowScene: windowScene)
@@ -37,5 +46,12 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     func sceneDidBecomeActive(_ scene: UIScene) {
         coverView?.removeFromSuperview()
         coverView = nil
+    }
+    
+    func scene(_ scene: UIScene, openURLContexts URLContexts: Set<UIOpenURLContext>) {
+        guard let firstUrl = URLContexts.first?.url else {
+            return
+        }
+        deeplinkCoordinator.handleURL(firstUrl)
     }
 }
