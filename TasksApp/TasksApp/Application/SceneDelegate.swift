@@ -52,7 +52,6 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let firstUrl = URLContexts.first?.url else {
             return
         }
-        print(firstUrl.path)
         deeplinkCoordinator.handleURL(firstUrl)
     }
 }

@@ -53,10 +53,7 @@
 		CED8C4632BD7CEAE000890A5 /* CountryList.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED8C4622BD7CEAE000890A5 /* CountryList.swift */; };
 		CED8C4662BD7D761000890A5 /* Extension + UIImageView .swift in Sources */ = {isa = PBXBuildFile; fileRef = CED8C4652BD7D761000890A5 /* Extension + UIImageView .swift */; };
 		CED8C4692BD7F2CE000890A5 /* CountriesProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED8C4682BD7F2CE000890A5 /* CountriesProvider.swift */; };
-		CEE852ED2C075E8E00428AD4 /* CarView .swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE852EC2C075E8E00428AD4 /* CarView .swift */; };
-		CEE852EF2C0771E800428AD4 /* BmwViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE852EE2C0771E800428AD4 /* BmwViewController.swift */; };
 		CEE852F12C077A6A00428AD4 /* CarModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE852F02C077A6A00428AD4 /* CarModel.swift */; };
-		CEE852F32C077D9200428AD4 /* AudiViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE852F22C077D9200428AD4 /* AudiViewController.swift */; };
 		CEF505D82BC66BC00087406E /* WeatherNetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF505D72BC66BC00087406E /* WeatherNetworkManager.swift */; };
 		CEF505DA2BC66C340087406E /* Config.plist in Resources */ = {isa = PBXBuildFile; fileRef = CEF505D92BC66C340087406E /* Config.plist */; };
 		CEF505DD2BC691650087406E /* WeatherData.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF505DC2BC691650087406E /* WeatherData.swift */; };
@@ -112,10 +109,7 @@
 		CED8C4622BD7CEAE000890A5 /* CountryList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryList.swift; sourceTree = "<group>"; };
 		CED8C4652BD7D761000890A5 /* Extension + UIImageView .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension + UIImageView .swift"; sourceTree = "<group>"; };
 		CED8C4682BD7F2CE000890A5 /* CountriesProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountriesProvider.swift; sourceTree = "<group>"; };
-		CEE852EC2C075E8E00428AD4 /* CarView .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CarView .swift"; sourceTree = "<group>"; };
-		CEE852EE2C0771E800428AD4 /* BmwViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BmwViewController.swift; sourceTree = "<group>"; };
 		CEE852F02C077A6A00428AD4 /* CarModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarModel.swift; sourceTree = "<group>"; };
-		CEE852F22C077D9200428AD4 /* AudiViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudiViewController.swift; sourceTree = "<group>"; };
 		CEF505D72BC66BC00087406E /* WeatherNetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherNetworkManager.swift; sourceTree = "<group>"; };
 		CEF505D92BC66C340087406E /* Config.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Config.plist; sourceTree = "<group>"; };
 		CEF505DC2BC691650087406E /* WeatherData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherData.swift; sourceTree = "<group>"; };
@@ -286,6 +280,7 @@
 				CE61DC962BCE6A0B00DAC72A /* WeatherEntity */,
 				CED8C4622BD7CEAE000890A5 /* CountryList.swift */,
 				CE66DC3C2C048A69005CE512 /* Coordinates.swift */,
+				CEE852F02C077A6A00428AD4 /* CarModel.swift */,
 			);
 			path = Entity;
 			sourceTree = "<group>";
@@ -393,10 +388,6 @@
 				CEABBA412C0884C50031C27C /* CarsListViewController .swift */,
 				CEABBA432C08919B0031C27C /* CarTableViewCell.swift */,
 				CEABBA452C08A2F60031C27C /* DetailCarInfoViewController.swift */,
-				CEE852EC2C075E8E00428AD4 /* CarView .swift */,
-				CEE852EE2C0771E800428AD4 /* BmwViewController.swift */,
-				CEE852F22C077D9200428AD4 /* AudiViewController.swift */,
-				CEE852F02C077A6A00428AD4 /* CarModel.swift */,
 			);
 			path = CarsDeeplink;
 			sourceTree = "<group>";
@@ -501,7 +492,6 @@
 				CE26D7FF2BE371EF00D30A64 /* CachingService .swift in Sources */,
 				CEBB27DC2BC401EA00076C3F /* CoverView.swift in Sources */,
 				CEABBA402C0862ED0031C27C /* CarsDeeplinkHandler.swift in Sources */,
-				CEE852F32C077D9200428AD4 /* AudiViewController.swift in Sources */,
 				CE736B892BDB922E0060E4F1 /* Extension + UICollectionViewCell .swift in Sources */,
 				CEABBA422C0884C50031C27C /* CarsListViewController .swift in Sources */,
 				CE61DCB42BCEB44300DAC72A /* Coordinator .swift in Sources */,
@@ -510,7 +500,6 @@
 				CE1B0FAF2BBD91AC00214119 /* ContainerViewController.swift in Sources */,
 				CEBF8CD92BD28946003D9B70 /* CountryListTableViewCell.swift in Sources */,
 				CE9CF1782BFF377D005B8416 /* GeolocationViewController.swift in Sources */,
-				CEE852ED2C075E8E00428AD4 /* CarView .swift in Sources */,
 				CE61DCB62BCEB4F800DAC72A /* Router.swift in Sources */,
 				CE26D8012BE3930300D30A64 /* DetailCountryProvider.swift in Sources */,
 				CEABBA462C08A2F60031C27C /* DetailCarInfoViewController.swift in Sources */,
@@ -530,7 +519,6 @@
 				CEABBA442C08919B0031C27C /* CarTableViewCell.swift in Sources */,
 				CE736B852BDB91370060E4F1 /* Extension + Int.swift in Sources */,
 				CEBDC1322BD6742600458148 /* CountryBottomSheetController.swift in Sources */,
-				CEE852EF2C0771E800428AD4 /* BmwViewController.swift in Sources */,
 				CED8C4662BD7D761000890A5 /* Extension + UIImageView .swift in Sources */,
 				CE66DC392C048519005CE512 /* CoordinatesDataModel.xcdatamodeld in Sources */,
 				CEBDC1302BD66C7900458148 /* DetailCountryCollectionViewCell.swift in Sources */,

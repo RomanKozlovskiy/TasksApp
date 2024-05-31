@@ -26,7 +26,6 @@ extension DeeplinkCoordinator: DeeplinkCoordinatorProtocol {
         guard let handler = handlers.first(where: { $0.canOpenURL(url) }) else {
             return false
         }
-        print(handler)
         handler.openURL(url)
         return true
     }
