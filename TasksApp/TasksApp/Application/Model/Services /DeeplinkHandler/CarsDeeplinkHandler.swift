@@ -8,11 +8,11 @@
 import UIKit
 
 final class CarsDeeplinkHandler: DeeplinkHandlerProtocol {
-    private weak var rootViewController: UINavigationController?
+    private weak var navigationController: UINavigationController?
     private var viewController: UIViewController?
     
     init(rootViewController: UINavigationController?) {
-        self.rootViewController = rootViewController
+        self.navigationController = rootViewController
     }
     
     func canOpenURL(_ url: URL) -> Bool {
@@ -26,14 +26,43 @@ final class CarsDeeplinkHandler: DeeplinkHandlerProtocol {
         
         switch url.path {
         case "/audi":
-            viewController = AudiViewController()
+            viewController = DetailCarInfoViewController(car: Audi())
+        case "/bmw":
+            viewController = DetailCarInfoViewController(car: Bmw())
         default:
-            viewController = BmwViewController()
+            viewController = DetailCarInfoViewController(car: Mercedes())
         }
         
-        if viewController != nil {
-            rootViewController?.popToRootViewController(animated: true)
-            rootViewController?.pushViewController(viewController!, animated: true)
+        guard
+            let navigationController,
+            let viewController else {
+            return
         }
+
+      
+        if navigationController.viewControllers.count > 1 {
+           
+            if let containerVC = navigationController.viewControllers.first,
+                let homeViewController = containerVC.children.first(where: { $0 is HomeViewController}) {
+       
+                homeViewController.view.subviews.forEach { subview in
+                    if !(subview is UIImageView) {
+                        subview.removeFromSuperview()
+                    }
+                }
+                
+                containerVC.addChild(homeViewController)
+                containerVC.view.addSubview(homeViewController.view)
+                homeViewController.view.frame = containerVC.view.frame
+                homeViewController.didMove(toParent: containerVC)
+                containerVC.title = homeViewController.title
+             
+                navigationController.popToRootViewController(animated: true)
+            }
+        }
+        
+        let carsList = CarsListViewController()
+        navigationController.pushViewController(carsList, animated: true)
+        navigationController.pushViewController(viewController, animated: true)
     }
 }
