@@ -8,4 +8,4 @@
 import Foundation
 typealias VoidClosure = () -> Void
 typealias OnSelectedCountry = (Country) -> Void
-typealias OnSelectedCar = (CarInfoProtocol) -> Void
+typealias OnSelectedCar = (Car) -> Void

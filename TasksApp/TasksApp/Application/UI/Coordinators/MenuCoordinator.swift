@@ -44,7 +44,7 @@ final class MenuCoordinator: BaseCoordinator {
         router.push(detailCountryScreen)
     }
     
-    private func makeDetailCarInfo(with car: CarInfoProtocol) {
+    private func makeDetailCarInfo(with car: Car) {
         let detailCarScree = screenFactory.makeDetailCarScreen(with: car)
         router.push(detailCarScree)
     }

@@ -13,7 +13,7 @@ final class CarsListViewController: UIViewController {
     var onSelectedCar: OnSelectedCar?
     
     private lazy var tableView = UITableView()
-    private let carsList: [CarInfoProtocol] = [Bmw(), Audi(), Mercedes()]
+    private let carsList: [Car] = Cars().listOfAll
     
     override func viewDidLoad() {
         super.viewDidLoad()

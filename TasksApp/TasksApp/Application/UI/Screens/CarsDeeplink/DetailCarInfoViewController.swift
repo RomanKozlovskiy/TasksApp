@@ -8,9 +8,9 @@
 import UIKit
 
 final class DetailCarInfoViewController: UIViewController {
-    private let car: CarInfoProtocol
+    private let car: Car
     
-    init(car: CarInfoProtocol) {
+    init(car: Car) {
         self.car = car
         super.init(nibName: nil, bundle: nil)
     }

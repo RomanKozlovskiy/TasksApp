@@ -26,11 +26,11 @@ final class CarsDeeplinkHandler: DeeplinkHandlerProtocol {
         
         switch url.path {
         case "/audi":
-            viewController = DetailCarInfoViewController(car: Audi())
+            viewController = DetailCarInfoViewController(car: Cars.audi)
         case "/bmw":
-            viewController = DetailCarInfoViewController(car: Bmw())
+            viewController = DetailCarInfoViewController(car: Cars.bmw)
         default:
-            viewController = DetailCarInfoViewController(car: Mercedes())
+            viewController = DetailCarInfoViewController(car: Cars.mercedes)
         }
         
         guard
@@ -39,7 +39,14 @@ final class CarsDeeplinkHandler: DeeplinkHandlerProtocol {
             return
         }
 
-      
+        popToHomeViewController(navigationController: navigationController)
+        
+        let carsList = CarsListViewController()
+        navigationController.pushViewController(carsList, animated: true)
+        navigationController.pushViewController(viewController, animated: true)
+    }
+    
+    private func popToHomeViewController(navigationController: UINavigationController) {
         if navigationController.viewControllers.count > 1 {
            
             if let containerVC = navigationController.viewControllers.first,
@@ -56,13 +63,8 @@ final class CarsDeeplinkHandler: DeeplinkHandlerProtocol {
                 homeViewController.view.frame = containerVC.view.frame
                 homeViewController.didMove(toParent: containerVC)
                 containerVC.title = homeViewController.title
-             
                 navigationController.popToRootViewController(animated: true)
             }
         }
-        
-        let carsList = CarsListViewController()
-        navigationController.pushViewController(carsList, animated: true)
-        navigationController.pushViewController(viewController, animated: true)
     }
 }

@@ -19,7 +19,9 @@ final class CarTableViewCell: UITableViewCell {
     
     private let carNameLabel: UILabel = {
         let label = UILabel()
-        label.font = UIFont.systemFont(ofSize: 22)
+        label.font = UIFont.systemFont(ofSize: 20)
+        label.adjustsFontSizeToFitWidth = true
+        label.minimumScaleFactor = 0.1
         return label
     }()
     
@@ -32,10 +34,9 @@ final class CarTableViewCell: UITableViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func configureCell(with car: CarInfoProtocol) {
+    func configureCell(with car: Car) {
         carImageView.image = car.carLogo
-        carNameLabel.text = car.carName
-    }
+        carNameLabel.text = car.carBrand.rawValue    }
     
     private func configureUI() {
         addSubview(carImageView)

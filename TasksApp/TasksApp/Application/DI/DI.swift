@@ -91,7 +91,7 @@ final class ScreenFactory {
         return detailCountryViewController
     }
     
-    func makeDetailCarScreen(with car: CarInfoProtocol) -> DetailCarInfoViewController {
+    func makeDetailCarScreen(with car: Car) -> DetailCarInfoViewController {
         DetailCarInfoViewController(car: car)
     }
 }
