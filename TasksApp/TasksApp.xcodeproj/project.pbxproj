@@ -17,6 +17,7 @@
 		CE1B0FC52BBD933100214119 /* WeatherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1B0FC42BBD933100214119 /* WeatherViewController.swift */; };
 		CE1B0FC72BBD933A00214119 /* CountryListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1B0FC62BBD933A00214119 /* CountryListViewController.swift */; };
 		CE1B0FC92BBD934100214119 /* Task3ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1B0FC82BBD934100214119 /* Task3ViewController.swift */; };
+		CE1C2C082C105CB3009A11AB /* LocalNotificationsViewController .swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1C2C072C105CB3009A11AB /* LocalNotificationsViewController .swift */; };
 		CE26D7FF2BE371EF00D30A64 /* CachingService .swift in Sources */ = {isa = PBXBuildFile; fileRef = CE26D7FE2BE371EF00D30A64 /* CachingService .swift */; };
 		CE26D8012BE3930300D30A64 /* DetailCountryProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE26D8002BE3930300D30A64 /* DetailCountryProvider.swift */; };
 		CE560A532BC5667B00E0CEE7 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = CE560A522BC5667B00E0CEE7 /* Alamofire */; };
@@ -74,6 +75,7 @@
 		CE1B0FC42BBD933100214119 /* WeatherViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherViewController.swift; sourceTree = "<group>"; };
 		CE1B0FC62BBD933A00214119 /* CountryListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryListViewController.swift; sourceTree = "<group>"; };
 		CE1B0FC82BBD934100214119 /* Task3ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Task3ViewController.swift; sourceTree = "<group>"; };
+		CE1C2C072C105CB3009A11AB /* LocalNotificationsViewController .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LocalNotificationsViewController .swift"; sourceTree = "<group>"; };
 		CE26D7FE2BE371EF00D30A64 /* CachingService .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CachingService .swift"; sourceTree = "<group>"; };
 		CE26D8002BE3930300D30A64 /* DetailCountryProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailCountryProvider.swift; sourceTree = "<group>"; };
 		CE61DCB12BCEB24E00DAC72A /* DI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DI.swift; sourceTree = "<group>"; };
@@ -156,6 +158,14 @@
 			path = TasksApp;
 			sourceTree = "<group>";
 		};
+		CE1C2C062C105C6C009A11AB /* LocalNotificatios */ = {
+			isa = PBXGroup;
+			children = (
+				CE1C2C072C105CB3009A11AB /* LocalNotificationsViewController .swift */,
+			);
+			path = LocalNotificatios;
+			sourceTree = "<group>";
+		};
 		CE61DC892BCE618F00DAC72A /* Application */ = {
 			isa = PBXGroup;
 			children = (
@@ -216,6 +226,7 @@
 				CE61DC942BCE696400DAC72A /* Task3 */,
 				CE9CF1762BFF3735005B8416 /* Geolocation */,
 				CEE852EB2C07524200428AD4 /* CarsDeeplink */,
+				CE1C2C062C105C6C009A11AB /* LocalNotificatios */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -504,6 +515,7 @@
 				CE26D8012BE3930300D30A64 /* DetailCountryProvider.swift in Sources */,
 				CEABBA462C08A2F60031C27C /* DetailCarInfoViewController.swift in Sources */,
 				CEF505DD2BC691650087406E /* WeatherData.swift in Sources */,
+				CE1C2C082C105CB3009A11AB /* LocalNotificationsViewController .swift in Sources */,
 				CE736B872BDB91F80060E4F1 /* Extension + UITableViewCell .swift in Sources */,
 				CEBDC12E2BD663E800458148 /* Foundation .swift in Sources */,
 				CED8C4632BD7CEAE000890A5 /* CountryList.swift in Sources */,
