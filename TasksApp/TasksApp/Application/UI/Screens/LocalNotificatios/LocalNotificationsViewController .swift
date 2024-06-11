@@ -10,31 +10,6 @@ import UserNotifications
 
 final class LocalNotificationsViewController: UIViewController {
     
-    private enum NotificationAction {
-        case reply
-        case follow
-        case category
-        
-        var id: String {
-            switch self {
-            case .reply:
-                return "replyID"
-            case .follow:
-                return "followID"
-            case .category:
-                return "categoryID"
-            }
-        }
-    }
-    
-    private enum Constants {
-        static let notifyButtonTitle = "Send Local Notification"
-        static let replyActionTitle = "Reply"
-        static let followActionTitle = "Follow"
-        static let notificationContentTitle = "Notification"
-        static let notificationContentBody = "You received a local notification"
-    }
-    
     private let notificationCenter = UNUserNotificationCenter.current()
     
     private let notifyButton: UIButton = {
@@ -99,5 +74,32 @@ extension LocalNotificationsViewController: UNUserNotificationCenterDelegate {
         }
         
        completionHandler()
+    }
+}
+
+private extension LocalNotificationsViewController {
+    private enum NotificationAction {
+        case reply
+        case follow
+        case category
+        
+        var id: String {
+            switch self {
+            case .reply:
+                return "replyID"
+            case .follow:
+                return "followID"
+            case .category:
+                return "categoryID"
+            }
+        }
+    }
+    
+    private enum Constants {
+        static let notifyButtonTitle = "Send Local Notification"
+        static let replyActionTitle = "Reply"
+        static let followActionTitle = "Follow"
+        static let notificationContentTitle = "Notification"
+        static let notificationContentBody = "You received a local notification"
     }
 }
