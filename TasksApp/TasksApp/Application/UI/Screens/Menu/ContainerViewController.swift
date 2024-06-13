@@ -26,6 +26,7 @@ final class ContainerViewController: UIViewController {
     private var task3ViewController: Task3ViewController!
     private var geolocationViewController: GeolocationViewController!
     private var carsListViewController: CarsListViewController!
+    private var localNotificationsViewController: LocalNotificationsViewController!
     
     private var childControllers = [UIViewController]()
   
@@ -51,7 +52,8 @@ final class ContainerViewController: UIViewController {
         countryListVC: CountryListViewController,
         task3VC: Task3ViewController,
         geolocationVC: GeolocationViewController,
-        carsListVC: CarsListViewController
+        carsListVC: CarsListViewController,
+        localNotificationsVC: LocalNotificationsViewController
     ) {
         self.menuViewController = menuVC
         self.homeViewController = homeVC
@@ -60,6 +62,7 @@ final class ContainerViewController: UIViewController {
         self.task3ViewController = task3VC
         self.geolocationViewController = geolocationVC
         self.carsListViewController = carsListVC
+        self.localNotificationsViewController = localNotificationsVC
     }
     
     private func configureChildsControllers() {
@@ -175,6 +178,8 @@ extension ContainerViewController: MenuViewControllerDelegate {
             open(geolocationViewController)
         case .task5:
             open(carsListViewController)
+        case .task6:
+            open(localNotificationsViewController)
         }
     }
 }
