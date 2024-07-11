@@ -41,8 +41,8 @@ struct WeatherInfo {
     }
     
     init(weatherData: WeatherData) {
-        self.countryName = weatherData.geoObject.country.name
-        self.cityName = weatherData.geoObject.locality.name
+        self.countryName = weatherData.geoObject?.country.name ?? ""
+        self.cityName = weatherData.geoObject?.locality.name ?? ""
         self.currentTemp = weatherData.fact.temp
         self.averageDayTemp = weatherData.forecasts.first?.parts.day.tempAvg
         self.averageNightTemp = weatherData.forecasts.first?.parts.night.tempAvg
