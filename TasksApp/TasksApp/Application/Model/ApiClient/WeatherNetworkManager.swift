@@ -57,3 +57,11 @@ private extension WeatherNetworkManager {
         static let rostovCoordinates = ["lat": "47.2313", "lon": "39.7233"]
     }
 }
+
+class MockNetworkService: WeatherNetworkProtocol {
+    var executeCalled = false
+  
+    func makeRequest<T>(type: T.Type, completion: @escaping (Result<T?, Error>) -> Void) where T : Decodable {
+         executeCalled = true
+    }
+}
