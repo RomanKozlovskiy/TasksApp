@@ -8,7 +8,7 @@
 import Foundation
 
 struct WeatherData: Decodable {
-    let geoObject: GeoObject
+    let geoObject: GeoObject?
     let fact: Fact
     let forecasts: [Forecast]
     

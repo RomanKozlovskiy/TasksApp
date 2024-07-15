@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4E3BF86B2C3FF047006DF2CB /* CoordinatesDataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4E3BF8672C3FF047006DF2CB /* CoordinatesDataModel.xcdatamodeld */; };
+		4E3BF86C2C3FF047006DF2CB /* CountryDataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4E3BF8692C3FF047006DF2CB /* CountryDataModel.xcdatamodeld */; };
+		4E3BF8762C400958006DF2CB /* TasksAppNetworkTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E3BF8752C400958006DF2CB /* TasksAppNetworkTests.swift */; };
+		4E3BF8832C402139006DF2CB /* TasksAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E3BF8822C402139006DF2CB /* TasksAppUITests.swift */; };
+		4E3BF8852C402139006DF2CB /* TasksAppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E3BF8842C402139006DF2CB /* TasksAppUITestsLaunchTests.swift */; };
 		CE1B0FAB2BBD91AC00214119 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1B0FAA2BBD91AC00214119 /* AppDelegate.swift */; };
 		CE1B0FAD2BBD91AC00214119 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1B0FAC2BBD91AC00214119 /* SceneDelegate.swift */; };
 		CE1B0FAF2BBD91AC00214119 /* ContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1B0FAE2BBD91AC00214119 /* ContainerViewController.swift */; };
@@ -26,10 +31,8 @@
 		CE61DCB62BCEB4F800DAC72A /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE61DCB52BCEB4F800DAC72A /* Router.swift */; };
 		CE61DCB82BCEB51600DAC72A /* ApplicationCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE61DCB72BCEB51600DAC72A /* ApplicationCoordinator.swift */; };
 		CE61DCBA2BCEB67200DAC72A /* MenuCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE61DCB92BCEB67200DAC72A /* MenuCoordinator.swift */; };
-		CE66DC392C048519005CE512 /* CoordinatesDataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = CE66DC372C048519005CE512 /* CoordinatesDataModel.xcdatamodeld */; };
 		CE66DC3B2C0489E2005CE512 /* GeolocationProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE66DC3A2C0489E2005CE512 /* GeolocationProvider.swift */; };
 		CE66DC3D2C048A69005CE512 /* Coordinates.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE66DC3C2C048A69005CE512 /* Coordinates.swift */; };
-		CE736B812BDA621A0060E4F1 /* CountryDataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = CE736B7F2BDA621A0060E4F1 /* CountryDataModel.xcdatamodeld */; };
 		CE736B832BDA63910060E4F1 /* CoreDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE736B822BDA63910060E4F1 /* CoreDataService.swift */; };
 		CE736B852BDB91370060E4F1 /* Extension + Int.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE736B842BDB91370060E4F1 /* Extension + Int.swift */; };
 		CE736B872BDB91F80060E4F1 /* Extension + UITableViewCell .swift in Sources */ = {isa = PBXBuildFile; fileRef = CE736B862BDB91F80060E4F1 /* Extension + UITableViewCell .swift */; };
@@ -62,7 +65,31 @@
 		CEF505E22BC6C2020087406E /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = CEF505E12BC6C2020087406E /* SnapKit */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		4E3BF8772C400958006DF2CB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CE1B0F9F2BBD91AC00214119 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CE1B0FA62BBD91AC00214119;
+			remoteInfo = TasksApp;
+		};
+		4E3BF8862C402139006DF2CB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CE1B0F9F2BBD91AC00214119 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CE1B0FA62BBD91AC00214119;
+			remoteInfo = TasksApp;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
+		4E3BF8682C3FF047006DF2CB /* CoordinatesDataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CoordinatesDataModel.xcdatamodel; sourceTree = "<group>"; };
+		4E3BF86A2C3FF047006DF2CB /* CountryDataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CountryDataModel.xcdatamodel; sourceTree = "<group>"; };
+		4E3BF8732C400957006DF2CB /* TasksAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TasksAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		4E3BF8752C400958006DF2CB /* TasksAppNetworkTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksAppNetworkTests.swift; sourceTree = "<group>"; };
+		4E3BF8802C402139006DF2CB /* TasksAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TasksAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		4E3BF8822C402139006DF2CB /* TasksAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksAppUITests.swift; sourceTree = "<group>"; };
+		4E3BF8842C402139006DF2CB /* TasksAppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksAppUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		CE1B0FA72BBD91AC00214119 /* TasksApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TasksApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE1B0FAA2BBD91AC00214119 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CE1B0FAC2BBD91AC00214119 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -83,10 +110,8 @@
 		CE61DCB52BCEB4F800DAC72A /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 		CE61DCB72BCEB51600DAC72A /* ApplicationCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationCoordinator.swift; sourceTree = "<group>"; };
 		CE61DCB92BCEB67200DAC72A /* MenuCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuCoordinator.swift; sourceTree = "<group>"; };
-		CE66DC382C048519005CE512 /* CoordinatesDataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CoordinatesDataModel.xcdatamodel; sourceTree = "<group>"; };
 		CE66DC3A2C0489E2005CE512 /* GeolocationProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeolocationProvider.swift; sourceTree = "<group>"; };
 		CE66DC3C2C048A69005CE512 /* Coordinates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinates.swift; sourceTree = "<group>"; };
-		CE736B802BDA621A0060E4F1 /* CountryDataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CountryDataModel.xcdatamodel; sourceTree = "<group>"; };
 		CE736B822BDA63910060E4F1 /* CoreDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataService.swift; sourceTree = "<group>"; };
 		CE736B842BDB91370060E4F1 /* Extension + Int.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension + Int.swift"; sourceTree = "<group>"; };
 		CE736B862BDB91F80060E4F1 /* Extension + UITableViewCell .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension + UITableViewCell .swift"; sourceTree = "<group>"; };
@@ -119,6 +144,20 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		4E3BF8702C400957006DF2CB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4E3BF87D2C402139006DF2CB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		CE1B0FA42BBD91AC00214119 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -131,10 +170,29 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4E3BF8742C400958006DF2CB /* TasksAppTests */ = {
+			isa = PBXGroup;
+			children = (
+				4E3BF8752C400958006DF2CB /* TasksAppNetworkTests.swift */,
+			);
+			path = TasksAppTests;
+			sourceTree = "<group>";
+		};
+		4E3BF8812C402139006DF2CB /* TasksAppUITests */ = {
+			isa = PBXGroup;
+			children = (
+				4E3BF8822C402139006DF2CB /* TasksAppUITests.swift */,
+				4E3BF8842C402139006DF2CB /* TasksAppUITestsLaunchTests.swift */,
+			);
+			path = TasksAppUITests;
+			sourceTree = "<group>";
+		};
 		CE1B0F9E2BBD91AC00214119 = {
 			isa = PBXGroup;
 			children = (
 				CE1B0FA92BBD91AC00214119 /* TasksApp */,
+				4E3BF8742C400958006DF2CB /* TasksAppTests */,
+				4E3BF8812C402139006DF2CB /* TasksAppUITests */,
 				CE1B0FA82BBD91AC00214119 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -143,6 +201,8 @@
 			isa = PBXGroup;
 			children = (
 				CE1B0FA72BBD91AC00214119 /* TasksApp.app */,
+				4E3BF8732C400957006DF2CB /* TasksAppTests.xctest */,
+				4E3BF8802C402139006DF2CB /* TasksAppUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -308,10 +368,10 @@
 		CE61DC972BCE6AAA00DAC72A /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				4E3BF8672C3FF047006DF2CB /* CoordinatesDataModel.xcdatamodeld */,
+				4E3BF8692C3FF047006DF2CB /* CountryDataModel.xcdatamodeld */,
 				CE1B0FB32BBD91AD00214119 /* Assets.xcassets */,
 				CE1B0FB52BBD91AD00214119 /* LaunchScreen.storyboard */,
-				CE736B7F2BDA621A0060E4F1 /* CountryDataModel.xcdatamodeld */,
-				CE66DC372C048519005CE512 /* CoordinatesDataModel.xcdatamodeld */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -417,6 +477,42 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		4E3BF8722C400957006DF2CB /* TasksAppTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4E3BF8792C400958006DF2CB /* Build configuration list for PBXNativeTarget "TasksAppTests" */;
+			buildPhases = (
+				4E3BF86F2C400957006DF2CB /* Sources */,
+				4E3BF8702C400957006DF2CB /* Frameworks */,
+				4E3BF8712C400957006DF2CB /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				4E3BF8782C400958006DF2CB /* PBXTargetDependency */,
+			);
+			name = TasksAppTests;
+			productName = TasksAppTests;
+			productReference = 4E3BF8732C400957006DF2CB /* TasksAppTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		4E3BF87F2C402139006DF2CB /* TasksAppUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4E3BF8882C402139006DF2CB /* Build configuration list for PBXNativeTarget "TasksAppUITests" */;
+			buildPhases = (
+				4E3BF87C2C402139006DF2CB /* Sources */,
+				4E3BF87D2C402139006DF2CB /* Frameworks */,
+				4E3BF87E2C402139006DF2CB /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				4E3BF8872C402139006DF2CB /* PBXTargetDependency */,
+			);
+			name = TasksAppUITests;
+			productName = TasksAppUITests;
+			productReference = 4E3BF8802C402139006DF2CB /* TasksAppUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
 		CE1B0FA62BBD91AC00214119 /* TasksApp */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = CE1B0FBB2BBD91AD00214119 /* Build configuration list for PBXNativeTarget "TasksApp" */;
@@ -445,9 +541,17 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
-				LastSwiftUpdateCheck = 1530;
+				LastSwiftUpdateCheck = 1520;
 				LastUpgradeCheck = 1530;
 				TargetAttributes = {
+					4E3BF8722C400957006DF2CB = {
+						CreatedOnToolsVersion = 15.2;
+						TestTargetID = CE1B0FA62BBD91AC00214119;
+					};
+					4E3BF87F2C402139006DF2CB = {
+						CreatedOnToolsVersion = 15.2;
+						TestTargetID = CE1B0FA62BBD91AC00214119;
+					};
 					CE1B0FA62BBD91AC00214119 = {
 						CreatedOnToolsVersion = 15.3;
 					};
@@ -471,11 +575,27 @@
 			projectRoot = "";
 			targets = (
 				CE1B0FA62BBD91AC00214119 /* TasksApp */,
+				4E3BF8722C400957006DF2CB /* TasksAppTests */,
+				4E3BF87F2C402139006DF2CB /* TasksAppUITests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		4E3BF8712C400957006DF2CB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4E3BF87E2C402139006DF2CB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		CE1B0FA52BBD91AC00214119 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -489,6 +609,23 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		4E3BF86F2C400957006DF2CB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4E3BF8762C400958006DF2CB /* TasksAppNetworkTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4E3BF87C2C402139006DF2CB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4E3BF8852C402139006DF2CB /* TasksAppUITestsLaunchTests.swift in Sources */,
+				4E3BF8832C402139006DF2CB /* TasksAppUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		CE1B0FA32BBD91AC00214119 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -496,6 +633,8 @@
 				CE1B0FC22BBD92F700214119 /* HomeViewController.swift in Sources */,
 				CEE852F12C077A6A00428AD4 /* CarModel.swift in Sources */,
 				CE1B0FC92BBD934100214119 /* Task3ViewController.swift in Sources */,
+				4E3BF86B2C3FF047006DF2CB /* CoordinatesDataModel.xcdatamodeld in Sources */,
+				4E3BF86C2C3FF047006DF2CB /* CountryDataModel.xcdatamodeld in Sources */,
 				CED8C45F2BD7C493000890A5 /* CountriesApiClient.swift in Sources */,
 				CEF505D82BC66BC00087406E /* WeatherNetworkManager.swift in Sources */,
 				CED8C45B2BD7AC95000890A5 /* RequestBuilder .swift in Sources */,
@@ -520,7 +659,6 @@
 				CEBDC12E2BD663E800458148 /* Foundation .swift in Sources */,
 				CED8C4632BD7CEAE000890A5 /* CountryList.swift in Sources */,
 				CEABBA3E2C085F030031C27C /* DeeplinkCoordinator.swift in Sources */,
-				CE736B812BDA621A0060E4F1 /* CountryDataModel.xcdatamodeld in Sources */,
 				CE1B0FC72BBD933A00214119 /* CountryListViewController.swift in Sources */,
 				CE736B832BDA63910060E4F1 /* CoreDataService.swift in Sources */,
 				CEBDC12B2BD65FEE00458148 /* DetailCountryViewController .swift in Sources */,
@@ -532,7 +670,6 @@
 				CE736B852BDB91370060E4F1 /* Extension + Int.swift in Sources */,
 				CEBDC1322BD6742600458148 /* CountryBottomSheetController.swift in Sources */,
 				CED8C4662BD7D761000890A5 /* Extension + UIImageView .swift in Sources */,
-				CE66DC392C048519005CE512 /* CoordinatesDataModel.xcdatamodeld in Sources */,
 				CEBDC1302BD66C7900458148 /* DetailCountryCollectionViewCell.swift in Sources */,
 				CE1B0FAD2BBD91AC00214119 /* SceneDelegate.swift in Sources */,
 				CED8C4572BD7A234000890A5 /* CountriesConfiguration .swift in Sources */,
@@ -546,6 +683,19 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		4E3BF8782C400958006DF2CB /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = CE1B0FA62BBD91AC00214119 /* TasksApp */;
+			targetProxy = 4E3BF8772C400958006DF2CB /* PBXContainerItemProxy */;
+		};
+		4E3BF8872C402139006DF2CB /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = CE1B0FA62BBD91AC00214119 /* TasksApp */;
+			targetProxy = 4E3BF8862C402139006DF2CB /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin PBXVariantGroup section */
 		CE1B0FB52BBD91AD00214119 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
@@ -558,6 +708,86 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		4E3BF87A2C400958006DF2CB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = UNMAYVRLD7;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				MACOSX_DEPLOYMENT_TARGET = 14.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = ru.RomanKozlovsky.TasksAppTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TasksApp.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/TasksApp";
+			};
+			name = Debug;
+		};
+		4E3BF87B2C400958006DF2CB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = UNMAYVRLD7;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				MACOSX_DEPLOYMENT_TARGET = 14.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = ru.RomanKozlovsky.TasksAppTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TasksApp.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/TasksApp";
+			};
+			name = Release;
+		};
+		4E3BF8892C402139006DF2CB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = UNMAYVRLD7;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = ru.RomanKozlovsky.TasksAppUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = TasksApp;
+			};
+			name = Debug;
+		};
+		4E3BF88A2C402139006DF2CB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = UNMAYVRLD7;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = ru.RomanKozlovsky.TasksAppUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = TasksApp;
+			};
+			name = Release;
+		};
 		CE1B0FB92BBD91AD00214119 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -692,6 +922,7 @@
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -724,6 +955,7 @@
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -744,6 +976,24 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		4E3BF8792C400958006DF2CB /* Build configuration list for PBXNativeTarget "TasksAppTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4E3BF87A2C400958006DF2CB /* Debug */,
+				4E3BF87B2C400958006DF2CB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4E3BF8882C402139006DF2CB /* Build configuration list for PBXNativeTarget "TasksAppUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4E3BF8892C402139006DF2CB /* Debug */,
+				4E3BF88A2C402139006DF2CB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		CE1B0FA22BBD91AC00214119 /* Build configuration list for PBXProject "TasksApp" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -797,25 +1047,23 @@
 /* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
-		CE66DC372C048519005CE512 /* CoordinatesDataModel.xcdatamodeld */ = {
+		4E3BF8672C3FF047006DF2CB /* CoordinatesDataModel.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				CE66DC382C048519005CE512 /* CoordinatesDataModel.xcdatamodel */,
+				4E3BF8682C3FF047006DF2CB /* CoordinatesDataModel.xcdatamodel */,
 			);
-			currentVersion = CE66DC382C048519005CE512 /* CoordinatesDataModel.xcdatamodel */;
-			name = CoordinatesDataModel.xcdatamodeld;
-			path = /Users/user/Desktop/TasksApp/TasksApp/TasksApp/Resources/CoordinatesDataModel.xcdatamodeld;
+			currentVersion = 4E3BF8682C3FF047006DF2CB /* CoordinatesDataModel.xcdatamodel */;
+			path = CoordinatesDataModel.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};
-		CE736B7F2BDA621A0060E4F1 /* CountryDataModel.xcdatamodeld */ = {
+		4E3BF8692C3FF047006DF2CB /* CountryDataModel.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				CE736B802BDA621A0060E4F1 /* CountryDataModel.xcdatamodel */,
+				4E3BF86A2C3FF047006DF2CB /* CountryDataModel.xcdatamodel */,
 			);
-			currentVersion = CE736B802BDA621A0060E4F1 /* CountryDataModel.xcdatamodel */;
-			name = CountryDataModel.xcdatamodeld;
-			path = /Users/user/Desktop/TasksApp/TasksApp/TasksApp/Resources/CountryDataModel.xcdatamodeld;
+			currentVersion = 4E3BF86A2C3FF047006DF2CB /* CountryDataModel.xcdatamodel */;
+			path = CountryDataModel.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};
