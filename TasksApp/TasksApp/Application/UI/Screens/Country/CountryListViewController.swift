@@ -81,6 +81,7 @@ extension CountryListViewController: UITableViewDataSource, UITableViewDelegate 
         guard let cell = tableView.dequeueReusableCell(withIdentifier: CountryListTableViewCell.reuseId, for: indexPath) as? CountryListTableViewCell else {
             fatalError("The TableView could not dequeue a CountryListTableViewCell in ViewController.")
         }
+        cell.accessibilityIdentifier = "myCell_\(indexPath.row)"
         cell.accessoryType = .disclosureIndicator
         let country = countries[indexPath.row]
         cell.configure(with: country)
